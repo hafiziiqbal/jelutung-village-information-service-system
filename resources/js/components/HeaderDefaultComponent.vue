@@ -3,12 +3,14 @@
         <div
             class="container d-flex align-items-center justify-content-between"
         >
-            <div class="d-flex">
-                <button class="sidebar-button me-2">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-primary me-1" type="button">
                     <i class="bi bi-list"></i>
                 </button>
                 <div id="logo">
-                    <h6 class="fw-bold">Sistem Informasi & Pelayanan</h6>
+                    <h6 class="fw-bold text-primary">
+                        Sistem Informasi & Pelayanan
+                    </h6>
                     <h6>Desa Jelutung Kec. Pemangkat</h6>
                 </div>
             </div>
@@ -28,6 +30,16 @@
                         content="Produk Hukum"
                     />
                 </ul>
+                <form class="d-flex ms-2">
+                    <input
+                        class="form-control me-1"
+                        type="search"
+                        placeholder="Cari Artikel di Website Desa Jelutung"
+                    />
+                    <button class="btn btn-outline-primary" type="button">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </header>

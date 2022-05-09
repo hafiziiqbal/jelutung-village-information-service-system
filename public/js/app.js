@@ -28121,6 +28121,8 @@ var render = function () {
               ],
               1
             ),
+            _vm._v(" "),
+            _vm._m(1),
           ]),
         ]
       ),
@@ -28132,18 +28134,45 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d-flex" }, [
-      _c("button", { staticClass: "sidebar-button me-2" }, [
-        _c("i", { staticClass: "bi bi-list" }),
-      ]),
+    return _c("div", { staticClass: "d-flex align-items-center" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-outline-primary me-1",
+          attrs: { type: "button" },
+        },
+        [_c("i", { staticClass: "bi bi-list" })]
+      ),
       _vm._v(" "),
       _c("div", { attrs: { id: "logo" } }, [
-        _c("h6", { staticClass: "fw-bold" }, [
-          _vm._v("Sistem Informasi & Pelayanan"),
+        _c("h6", { staticClass: "fw-bold text-primary" }, [
+          _vm._v(
+            "\n                    Sistem Informasi & Pelayanan\n                "
+          ),
         ]),
         _vm._v(" "),
         _c("h6", [_vm._v("Desa Jelutung Kec. Pemangkat")]),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("form", { staticClass: "d-flex ms-2" }, [
+      _c("input", {
+        staticClass: "form-control me-1",
+        attrs: {
+          type: "search",
+          placeholder: "Cari Artikel di Website Desa Jelutung",
+        },
+      }),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-outline-primary", attrs: { type: "button" } },
+        [_c("i", { staticClass: "bi bi-search" })]
+      ),
     ])
   },
 ]

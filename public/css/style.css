@@ -13,19 +13,25 @@ label {
 }
 
 /* 
+* Change Bootstrap
+*/
+.form-control:focus {
+    box-shadow: none;
+}
+.btn-check:focus + .btn-outline-primary,
+.btn-outline-primary:focus {
+    box-shadow: none;
+}
+
+/* 
 *Header 
 */
 #header {
     background: #ffff;
     padding: 10px 0;
 }
-#header .sidebar-button {
-    background: #106eea;
-    border-radius: 5px;
-    color: #ffff;
-    border: none;
-    height: 30px;
-    width: 30px;
+#header #logo * {
+    color: #444444;
 }
 
 /**
@@ -46,7 +52,7 @@ label {
 }
 .navbar > ul > li {
     white-space: nowrap;
-    padding: 0px 0px 0px 15px;
+    padding: 0px 0px 0px 10px;
 }
 .navbar .navbar-default-component {
     background: #ffffff;
@@ -81,4 +87,28 @@ label {
 .navbar .active:before {
     visibility: visible;
     width: 100%;
+}
+@media (max-width: 992px) {
+    #header > div {
+        flex-direction: column;
+        align-items: start !important;
+    }
+    .navbar .navbar-default-component {
+        padding: 5px 5px 5px 0px;
+    }
+    .navbar {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .navbar > ul > li {
+        padding: 0px 10px 0px 0px;
+    }
+    .navbar form {
+        margin: 10px 0px !important;
+    }
+}
+@media (max-width: 600px) {
+    .navbar {
+        display: none;
+    }
 }
