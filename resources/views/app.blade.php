@@ -14,10 +14,16 @@
     <!-- PWA  -->
     <meta name="theme-color" content="#ffff" />
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
+
+    {{-- CSS --}}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
 <body>
-
+    <div id="app">
+        <default-page></default-page>
+    </div>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('/sw.js') }}"></script>
     <script>
         if (!navigator.serviceWorker.controller) {
