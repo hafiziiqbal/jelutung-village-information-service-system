@@ -1,21 +1,10 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Halaman Default</div>
-
-                    <div class="card-body">Konten Halaman Defaule.</div>
-                </div>
+    <div>
+        <header-default-component></header-default-component>
+        <div class="container-fluid">
+            <div class="container">
+                <div>ini adalah halaman default</div>
             </div>
         </div>
     </div>
 </template>
-
-<script>
-export default {
-    mounted() {
-        console.log("Component mounted.");
-    },
-};
-</script>

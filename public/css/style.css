@@ -1,0 +1,84 @@
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    margin: 0px;
+}
+
+/* 
+*Header 
+*/
+#header {
+    background: #ffff;
+    padding: 10px 0;
+}
+#header .sidebar-button {
+    background: #106eea;
+    border-radius: 5px;
+    color: #ffff;
+    border: none;
+    height: 30px;
+    width: 30px;
+}
+
+/**
+* Desktop Navigation 
+*/
+.navbar {
+    padding: 0;
+}
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.navbar li {
+    position: relative;
+}
+.navbar > ul > li {
+    white-space: nowrap;
+    padding: 0px 0px 0px 15px;
+}
+.navbar .navbar-default-component {
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #444444;
+    display: flex;
+    align-items: center;
+    border: none;
+    position: relative;
+}
+.navbar > ul > li > button.navbar-default-component:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 1px;
+    left: 0;
+    background-color: #106eea;
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+}
+.navbar button.navbar-default-component:focus,
+.navbar button.navbar-default-component:hover {
+    color: #106eea;
+}
+.navbar button.navbar-default-component:focus:before,
+.navbar button.navbar-default-component:hover:before,
+.navbar li:hover > button.navbar-default-component:before,
+.navbar .active:before {
+    visibility: visible;
+    width: 100%;
+}
