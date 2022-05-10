@@ -1,6 +1,7 @@
 require('./bootstrap');
 
 import Vue from 'vue';
+import router from './router/index.js';
 
 // Pages
 Vue.component('default-page', require('./pages/DefaultPage.vue').default);
@@ -11,4 +12,5 @@ Vue.component('navbar-default-component', require('./components/NavbarDefaultCom
 
 const app = new Vue({
     el: '#app',
+    router
 });
