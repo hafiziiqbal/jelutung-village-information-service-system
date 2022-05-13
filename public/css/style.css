@@ -233,3 +233,62 @@ li.dropdown button.dropdown-default-component:hover {
     visibility: hidden;
     opacity: 0;
 }
+
+/*
+* Hero
+*/
+#hero {
+    background-image: url(/img/hero.jpg);
+    width: 100%;
+    height: 40vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0d6efd;
+    margin-top: 45px;
+}
+#hero .container {
+    height: 40vh;
+    width: 100%;
+}
+#hero * {
+    color: #ffff;
+}
+#hero h1 {
+    font-size: 90px;
+}
+#hero h2 {
+    font-weight: 700;
+}
+#hero .running-text {
+    background: #0d6efd61;
+    position: absolute;
+    align-self: end;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 992px) {
+    #hero h2 {
+        font-size: 22px;
+    }
+    #hero {
+        margin-top: 100px;
+    }
+    #hero .fs-3 {
+        font-size: 15px !important;
+    }
+    #hero h1 {
+        font-size: 50px;
+    }
+    #hero .row .col-6 {
+        width: 70%;
+    }
+}
+@media (max-width: 600px) {
+    #hero {
+        display: none;
+    }
+}

@@ -2,18 +2,8 @@
     <div>
         <sidebar-default-component></sidebar-default-component>
         <header-default-component></header-default-component>
-        <div
-            style="
-                background-image: url(img/hero.jpg);
-                width: 100%;
-                background-blend-mode: hard-light;
-                height: 45vh;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-color: #0d6efd;
-            "
-        ></div>
+        <hero-default-component></hero-default-component>
+        <menu-default-component></menu-default-component>
         <div class="container-fluid">
             <div class="container">
                 <div>
