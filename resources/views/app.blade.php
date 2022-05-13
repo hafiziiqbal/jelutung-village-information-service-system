@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sistem Informasi Desa Jelutung</title>
 
@@ -14,6 +16,13 @@
     <!-- PWA  -->
     <meta name="theme-color" content="#ffff" />
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- possible content values: default, black or black-translucent -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 
     {{-- CSS --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -31,6 +40,7 @@
         <default-page></default-page>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('/sw.js') }}"></script>
     <script>
         if (!navigator.serviceWorker.controller) {

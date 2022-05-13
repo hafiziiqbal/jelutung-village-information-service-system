@@ -4,9 +4,12 @@
             class="container d-flex align-items-center justify-content-between"
         >
             <div class="d-flex align-items-center">
-                <button class="btn btn-outline-primary me-1" type="button">
-                    <i class="bi bi-list"></i>
-                </button>
+                <div>
+                    <input type="checkbox" id="sidebarDefaultButton" />
+                    <div class="btn btn-outline-primary me-1" type="button">
+                        <i class="bi bi-list"></i>
+                    </div>
+                </div>
                 <div id="logo">
                     <h6 class="fw-bold text-primary">
                         Sistem Informasi & Pelayanan
@@ -16,18 +19,45 @@
             </div>
             <div id="navbar" class="navbar">
                 <ul>
-                    <navbar-default-component
-                        id="profilDesa"
+                    <dropdown-default-component
+                        id="profilDesaNavbar"
                         content="Profil Desa"
+                        :list-item="[
+                            'Sejarah Desa',
+                            'Profil Desa',
+                            'Visi Misi',
+                            'Pemerintah Desa',
+                            'Aparatur Desa',
+                            'Struktur',
+                        ]"
                     />
-                    <navbar-default-component id="lembaga" content="Lembaga" />
-                    <navbar-default-component
-                        id="statistik"
+                    <dropdown-default-component
+                        id="lembagaNavbar"
+                        content="Lembaga"
+                        :list-item="['BPD']"
+                    />
+                    <dropdown-default-component
+                        id="statistikNavbar"
                         content="Statistik"
+                        :list-item="[
+                            'Wilayah Administratif',
+                            'Jenis Kelamin',
+                            'Pekerjaan',
+                            'Pendidikan',
+                            'Agama',
+                            'Kelompok Umur',
+                            'Status Perkawinan',
+                            'Kelas Sosial',
+                            'Calon Pemilih',
+                            'Kategori Umur',
+                            'Peta',
+                            'Status IDM',
+                        ]"
                     />
-                    <navbar-default-component
-                        id="produkHukum"
+                    <dropdown-default-component
+                        id="produkHukumNavbar"
                         content="Produk Hukum"
+                        :list-item="['Peraturan']"
                     />
                 </ul>
                 <form class="d-flex ms-2">

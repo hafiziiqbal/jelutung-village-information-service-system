@@ -1,3 +1,14 @@
+html {
+    min-height: calc(100% + env(safe-area-inset-top));
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+        env(safe-area-inset-bottom) env(safe-area-inset-left);
+    background-attachment: fixed;
+    background-image: url("/bg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 body {
     font-family: "Poppins", sans-serif;
 }
@@ -15,11 +26,11 @@ label {
 /* 
 * Change Bootstrap
 */
-.form-control:focus {
-    box-shadow: none;
-}
 .btn-check:focus + .btn-outline-primary,
 .btn-outline-primary:focus {
+    box-shadow: none;
+}
+.form-control:focus {
     box-shadow: none;
 }
 
@@ -33,104 +44,117 @@ label {
 #header #logo * {
     color: #444444;
 }
+#header #sidebarDefaultButton {
+    position: absolute;
+    transform: scale(3.5);
+    top: 22px;
+    opacity: 0;
+    margin-left: 15px;
+}
+#sidebarDefaultButton,
+#sidebarDefaultButton + div {
+    display: none;
+}
 
 /**
 * Desktop Navigation 
 */
+.dropdown ul {
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(127, 137, 161, 0.1);
+    display: block;
+    margin: 0;
+    opacity: 0;
+    padding: 5px;
+    position: absolute;
+    top: calc(100% + 30px);
+    transition: 0.3s;
+    visibility: hidden;
+    z-index: 99;
+}
+.dropdown ul a {
+    color: #444444;
+    font-size: 14px;
+    text-decoration: none;
+}
+.dropdown ul a:hover,
+.dropdown ul .active:hover,
+.dropdown ul li:hover > a {
+    color: #106eea;
+}
+
+.dropdown ul li {
+    min-width: 200px;
+    padding: 5px 0px;
+}
 .navbar {
     padding: 0;
 }
-.navbar ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    align-items: center;
+.navbar > ul > li {
+    padding: 0px 0px 0px 10px;
+    white-space: nowrap;
+}
+.navbar > ul > li.dropdown > button.dropdown-default-component:before {
+    background-color: #106eea;
+    bottom: 1px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out 0s;
+    visibility: hidden;
+    width: 0px;
 }
 .navbar li {
     position: relative;
 }
-.navbar > ul > li {
-    white-space: nowrap;
-    padding: 0px 0px 0px 10px;
+.navbar ul {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0 12px;
 }
-.navbar .navbar-default-component {
+.dropdown-default-component {
+    align-items: center;
     background: #ffffff;
-    padding: 5px;
+    border: none;
     border-radius: 10px;
-    font-weight: 600;
     color: #444444;
     display: flex;
-    align-items: center;
-    border: none;
-    position: relative;
-}
-.navbar > ul > li.dropdown > button.navbar-default-component:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 1px;
-    left: 0;
-    background-color: #106eea;
-    visibility: hidden;
-    width: 0px;
-    transition: all 0.3s ease-in-out 0s;
-}
-.navbar li.dropdown button.navbar-default-component:focus,
-.navbar li.dropdown button.navbar-default-component:hover {
-    color: #106eea;
-}
-.navbar li.dropdown button.navbar-default-component:focus:before,
-.navbar li.dropdown button.navbar-default-component:hover:before,
-.navbar li.dropdown:hover > button.navbar-default-component:before,
-.navbar .active:before {
-    visibility: visible;
-    width: 100%;
-}
-.navbar .dropdown ul {
-    display: block;
-    position: absolute;
-    top: calc(100% + 30px);
-    margin: 0;
+    font-weight: 600;
     padding: 5px;
-    z-index: 99;
-    opacity: 0;
-    visibility: hidden;
-    background: #fff;
-    box-shadow: 0px 0px 10px rgba(127, 137, 161, 0.1);
-    transition: 0.3s;
+    position: relative;
+    width: 100%;
 }
-.navbar .dropdown ul li {
-    min-width: 200px;
-    padding: 5px 0px;
-}
-.navbar .dropdown ul a {
-    font-size: 14px;
-    text-decoration: none;
-    color: #444444;
-}
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover > a {
-    color: #106eea;
-}
-.navbar button.navbar-default-component:focus ~ ul {
+button.dropdown-default-component:focus ~ ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
 }
+li.dropdown button.dropdown-default-component:focus,
+li.dropdown button.dropdown-default-component:hover {
+    color: #106eea;
+}
+.navbar li.dropdown button.dropdown-default-component:focus:before,
+.navbar li.dropdown button.dropdown-default-component:hover:before,
+.navbar li.dropdown:hover > button.dropdown-default-component:before,
+.navbar .active:before {
+    visibility: visible;
+    width: 100%;
+}
+
 @media (max-width: 992px) {
     #header > div {
-        flex-direction: column;
         align-items: start !important;
-    }
-    .navbar .navbar-default-component {
-        padding: 5px 5px 5px 0px;
+        flex-direction: column;
     }
     .navbar {
-        width: 100%;
         margin-top: 10px;
+        width: 100%;
+    }
+    .navbar .dropdown-default-component {
+        padding: 5px 5px 5px 0px;
     }
     .navbar > ul > li {
         padding: 0px 10px 0px 0px;
@@ -143,4 +167,69 @@ label {
     .navbar {
         display: none;
     }
+    #sidebarDefaultButton,
+    #sidebarDefaultButton + div {
+        display: block;
+    }
+    .dropdown ul li:hover,
+    .dropdown ul li:focus {
+        background: #ededed;
+    }
+}
+
+/* 
+* Sidebar
+*/
+.sidebar {
+    height: 100%;
+    width: 300px;
+    background: #f6f9fe;
+    background-position: bottom;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0s;
+    left: -90px;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0px 12px;
+}
+.sidebar .dropdown ul {
+    display: none;
+    visibility: inherit;
+    opacity: 1;
+}
+.sidebar .dropdown ul {
+    position: inherit;
+    background: #f6f9fe;
+    box-shadow: inherit;
+}
+.sidebar .dropdown-default-component {
+    background: #f6f9fe !important;
+}
+.header-sidebar {
+    background-image: -webkit-linear-gradient(
+        45deg,
+        #88b5ff 0%,
+        #106eea 100%
+    ) !important;
+    padding: 10px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+#contSidebar {
+    width: 100%;
+    height: 100%;
+    background: #00000042;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background-position: bottom;
+    transition: all 0.3s ease-in-out 0s;
+    visibility: hidden;
+    opacity: 0;
 }

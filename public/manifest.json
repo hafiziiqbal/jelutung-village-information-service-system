@@ -4,7 +4,10 @@
     "start_url": "/index.php",
     "background_color": "#ffff",
     "description": "Sistem Informasi Pelayanan Desa Jelutung",
-    "display": "fullscreen",
+    "display": "standalone",
+    "display_modifiers": [
+        "window-controls-overlay"
+    ],
     "theme_color": "#ffff",
     "icons": [
         {

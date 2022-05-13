@@ -8,7 +8,8 @@ Vue.component('default-page', require('./pages/DefaultPage.vue').default);
 
 // Component
 Vue.component('header-default-component', require('./components/HeaderDefaultComponent.vue').default);
-Vue.component('navbar-default-component', require('./components/NavbarDefaultComponent.vue').default);
+Vue.component('dropdown-default-component', require('./components/DropdownDefaultComponent.vue').default);
+Vue.component('sidebar-default-component', require('./components/SidebarDefaultComponent.vue').default);
 
 const app = new Vue({
     el: '#app',
