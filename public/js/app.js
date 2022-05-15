@@ -5396,6 +5396,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["id", "content", "listItem"],
   data: function data() {
@@ -5503,6 +5504,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -5521,12 +5523,204 @@ __webpack_require__.r(__webpack_exports__);
       var time = current.getHours() + ":" + (current.getMinutes() < 10 ? "0" + current.getMinutes() : current.getMinutes());
       this.time = time;
       this.fullDate = day + "," + current.getDate() + " " + month + " " + year;
-      console.log(time);
     }
   },
   mounted: function mounted() {
     this.currentTime();
     setInterval(this.currentTime, 40000);
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/MenuDefaultComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/MenuDefaultComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  methods: {
+    swiperHeroMobile: function swiperHeroMobile() {
+      new Swiper(".hero-card", {
+        speed: 400,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        slidesPerView: "1"
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.swiperHeroMobile();
   }
 });
 
@@ -28196,15 +28390,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _MenuDefaultComponent_vue_vue_type_template_id_1606f6a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MenuDefaultComponent.vue?vue&type=template&id=1606f6a6& */ "./resources/js/components/MenuDefaultComponent.vue?vue&type=template&id=1606f6a6&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _MenuDefaultComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MenuDefaultComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/MenuDefaultComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 ;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _MenuDefaultComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _MenuDefaultComponent_vue_vue_type_template_id_1606f6a6___WEBPACK_IMPORTED_MODULE_0__.render,
   _MenuDefaultComponent_vue_vue_type_template_id_1606f6a6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
@@ -28324,6 +28520,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeroDefaultComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./HeroDefaultComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/HeroDefaultComponent.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeroDefaultComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/MenuDefaultComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/MenuDefaultComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuDefaultComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MenuDefaultComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/MenuDefaultComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuDefaultComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -28447,7 +28659,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("li", { staticClass: "dropdown" }, [
     _c(
-      "button",
+      "a",
       {
         staticClass: "dropdown-default-component",
         attrs: { id: _vm.id },
@@ -28474,12 +28686,9 @@ var render = function () {
         },
       },
       _vm._l(_vm.listItem, function (item, index) {
-        return _c(
-          "li",
-          { key: index },
-          [_c("router-link", { attrs: { to: "/" } }, [_vm._v(_vm._s(item))])],
-          1
-        )
+        return _c("li", { key: index }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v(_vm._s(item))]),
+        ])
       }),
       0
     ),
@@ -28579,11 +28788,13 @@ var render = function () {
                     "list-item": ["Peraturan"],
                   },
                 }),
+                _vm._v(" "),
+                _vm._m(1),
               ],
               1
             ),
             _vm._v(" "),
-            _vm._m(1),
+            _vm._m(2),
           ]),
         ]
       ),
@@ -28612,14 +28823,20 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { attrs: { id: "logo" } }, [
-        _c("h6", { staticClass: "fw-bold text-primary" }, [
-          _vm._v(
-            "\n                    Sistem Informasi & Pelayanan\n                "
-          ),
+        _c("h6", { staticClass: "fw-bold" }, [
+          _vm._v("Sistem Informasi & Pelayanan"),
         ]),
         _vm._v(" "),
         _c("h6", [_vm._v("Desa Jelutung Kec. Pemangkat")]),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown" }, [
+      _c("a", { staticClass: "dropdown-default-component" }, [_vm._v("Login")]),
     ])
   },
   function () {
@@ -28720,7 +28937,7 @@ var render = function () {
                   _c("div", { staticClass: "text-container me-5" }, [
                     _c("label", [
                       _vm._v(
-                        "Selamat Datang di Website Resmi Desa\n                                Jelutung, Kecamatan Pemangkat, Kabupaten\n                                Sambas, Provinsi Kalimantan Barat"
+                        "Selamat Datang di Sistem Informasi\n                                Pelayanan Desa Jelutung, Kecamatan\n                                Pemangkat, Kabupaten Sambas, Provinsi\n                                Kalimantan Barat"
                       ),
                     ]),
                   ]),
@@ -28800,9 +29017,224 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("section", { attrs: { id: "menuDefault" } }, [
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "mobile-menu-default" }, [
+          _c("div", { staticClass: "bar-menu-item-mobile" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col fw-bold" }, [
+                _c("img", {
+                  attrs: { src: "img/i-mb-services.png", width: "24" },
+                }),
+                _vm._v(
+                  "\n                            Pelayanan Desa\n                        "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col fw-bold" }, [
+                _c("img", {
+                  attrs: { src: "img/i-mb-information.png", width: "24" },
+                }),
+                _vm._v(
+                  "\n                            Informasi Desa\n                        "
+                ),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "menu-items mt-3" }, [
+            _c("ul", [
+              _c("li", [
+                _c("img", { attrs: { src: "img/i-mb-article.png" } }),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(
+                  "\n                            Artikel\n                        "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("img", { attrs: { src: "img/i-mb-map.png" } }),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(
+                  "\n                            Peta Desa\n                        "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("img", { attrs: { src: "img/i-mb-sell.png" } }),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(
+                  "\n                            Lapak Desa\n                        "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("img", { attrs: { src: "img/i-mb-anouncement.png" } }),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(
+                  "\n                            Pengumuman Desa\n                        "
+                ),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "menu-items" }, [
+            _c("ul", [
+              _c("li", [
+                _c("img", { attrs: { src: "img/i-mb-job-search.png" } }),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(
+                  "\n                            Lowongan Pekerjaan\n                        "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("img", { attrs: { src: "img/i-mb-construction.png" } }),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(
+                  "\n                            Pembangunan Desa\n                        "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("img", { attrs: { src: "img/i-mb-call-center.png" } }),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(
+                  "\n                            Pengaduan\n                        "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("img", { attrs: { src: "img/i-mb-personal-services.png" } }),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(
+                  "\n                            Layanan Mandiri\n                        "
+                ),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+    ]),
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "desktop-menu-default" }, [
+      _c("li", [
+        _c("div", { staticClass: "list-menu-default" }, [
+          _c("a", [_vm._v(" Artikel ")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("div", { staticClass: "list-menu-default" }, [
+          _c("a", [_vm._v(" Peta Desa ")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("div", { staticClass: "list-menu-default" }, [
+          _c("a", [_vm._v(" Lapak Desa ")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("div", { staticClass: "list-menu-default" }, [
+          _c("a", [_vm._v(" Pengumuman Desa ")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("div", { staticClass: "list-menu-default" }, [
+          _c("a", [_vm._v(" Lowongan Pekerjaan ")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("div", { staticClass: "list-menu-default" }, [
+          _c("a", [_vm._v(" Pembangunan Desa")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("div", { staticClass: "list-menu-default" }, [
+          _c("a", [_vm._v("Pengaduan")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("div", { staticClass: "list-menu-default" }, [
+          _c("a", [_vm._v("layanan Mandiri")]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "hero-card swiper" }, [
+      _c("div", { staticClass: "swiper-wrapper align-items-center" }, [
+        _c("div", { staticClass: "swiper-slide" }, [
+          _c("div", { staticClass: "text-container" }, [
+            _c("label", [
+              _vm._v(
+                "Selamat Datang di Sistem Informasi\n                                    Pelayanan Desa Jelutung, Kecamatan\n                                    Pemangkat, Kabupaten Sambas, Provinsi\n                                    Kalimantan Barat"
+              ),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "swiper-slide" }, [
+          _c("div", { staticClass: "text-container" }, [
+            _c("label", [
+              _vm._v(
+                "Menyediakan Pelayanan Administrasi\n                                    Online Bagi Masyarakat Desa Jelutung\n                                "
+              ),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "swiper-slide" }, [
+          _c("div", { staticClass: "text-container" }, [
+            _c("label", [
+              _vm._v(
+                "Silahkan Tinggalkan Pesan/Komentar pada\n                                    Bagian Bawah Artikel Yang Kami Sajikan\n                                "
+              ),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "swiper-slide" }, [
+          _c("div", { staticClass: "text-container" }, [
+            _c("label", [
+              _vm._v(
+                "Terima Kasih Atas Kunjungan Anda\n                                "
+              ),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -28902,6 +29334,8 @@ var render = function () {
                 "list-item": ["Peraturan"],
               },
             }),
+            _vm._v(" "),
+            _vm._m(0),
           ],
           1
         ),
@@ -28909,7 +29343,16 @@ var render = function () {
     ),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown" }, [
+      _c("a", { staticClass: "dropdown-default-component" }, [_vm._v("Login")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -28953,7 +29396,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-fluid" }, [
+    return _c("div", { staticClass: "container-fluid mt-5" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", [
           _vm._v(

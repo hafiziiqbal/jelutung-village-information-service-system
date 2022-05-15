@@ -1,6 +1,6 @@
 <template>
     <li class="dropdown">
-        <button
+        <a
             v-on:click="toggleDropdown"
             v-bind:id="id"
             class="dropdown-default-component"
@@ -13,14 +13,15 @@
                     transform: 'rotate(' + isRotate + 'deg)',
                 }"
             ></i>
-        </button>
+        </a>
+
         <ul
             :style="{
                 display: this.id.includes('Sidebar') ? isNone : 'block',
             }"
         >
             <li v-for="(item, index) in listItem" :key="index">
-                <router-link :to="'/'">{{ item }}</router-link>
+                <a href="">{{ item }}</a>
             </li>
         </ul>
     </li>

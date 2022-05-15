@@ -11,6 +11,13 @@ const select = (el, all = false) => {
 }
 
 /**
+ * Easy on scroll event listener 
+ */
+const onscroll = (el, listener) => {
+    el.addEventListener('scroll', listener)
+}
+
+/**
  * Easy event listener function
  */
 const on = (type, el, listener, all = false) => {
@@ -65,3 +72,33 @@ on('click', '#contSidebar', function (e) {
 
 
 })
+
+/**
+ * Toggle .header-scrolled class to #header when page is scrolled
+ */
+if (window.matchMedia("(max-width: 600px)").matches) {
+    let selectHeader = select('#header')
+    let selectButtonHeader = select('#header .btn-outline-primary')
+    let selectHeaderLogoSecond = select('#header #logo h6:nth-child(2)')
+    let selectHeaderLogoFirst = select('#header #logo h6:first-child')
+    if (selectHeader) {
+        const headerScrolled = () => {
+            if (window.scrollY > 20) {
+                selectHeader.style.background = 'white'
+                selectButtonHeader.style.borderColor = '#106eea'
+                selectButtonHeader.style.color = '#106eea'
+                selectHeaderLogoSecond.style.color = '#444444'
+                selectHeaderLogoFirst.style.color = '#106eea'
+
+            } else {
+                selectHeader.style.background = '#106eea'
+                selectButtonHeader.style.borderColor = '#ffff'
+                selectButtonHeader.style.color = '#ffff'
+                selectHeaderLogoSecond.style.color = '#ffff'
+                selectHeaderLogoFirst.style.color = '#ffff'
+            }
+        }
+        window.addEventListener('load', headerScrolled)
+        onscroll(document, headerScrolled)
+    }
+}

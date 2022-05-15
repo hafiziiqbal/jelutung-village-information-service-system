@@ -4,7 +4,7 @@
         <header-default-component></header-default-component>
         <hero-default-component></hero-default-component>
         <menu-default-component></menu-default-component>
-        <div class="container-fluid">
+        <div class="container-fluid mt-5">
             <div class="container">
                 <div>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.

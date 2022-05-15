@@ -38,9 +38,10 @@
                         <div class="holder d-flex">
                             <div class="text-container me-5">
                                 <label
-                                    >Selamat Datang di Website Resmi Desa
-                                    Jelutung, Kecamatan Pemangkat, Kabupaten
-                                    Sambas, Provinsi Kalimantan Barat</label
+                                    >Selamat Datang di Sistem Informasi
+                                    Pelayanan Desa Jelutung, Kecamatan
+                                    Pemangkat, Kabupaten Sambas, Provinsi
+                                    Kalimantan Barat</label
                                 >
                             </div>
                             <div class="text-container me-5">
@@ -115,7 +116,6 @@ export default {
             this.time = time;
             this.fullDate =
                 day + "," + current.getDate() + " " + month + " " + year;
-            console.log(time);
         },
     },
     mounted() {

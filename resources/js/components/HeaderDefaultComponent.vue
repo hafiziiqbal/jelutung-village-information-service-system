@@ -11,9 +11,7 @@
                     </div>
                 </div>
                 <div id="logo">
-                    <h6 class="fw-bold text-primary">
-                        Sistem Informasi & Pelayanan
-                    </h6>
+                    <h6 class="fw-bold">Sistem Informasi & Pelayanan</h6>
                     <h6>Desa Jelutung Kec. Pemangkat</h6>
                 </div>
             </div>
@@ -59,6 +57,9 @@
                         content="Produk Hukum"
                         :list-item="['Peraturan']"
                     />
+                    <li class="dropdown">
+                        <a class="dropdown-default-component">Login</a>
+                    </li>
                 </ul>
                 <form class="d-flex ms-2">
                     <input
