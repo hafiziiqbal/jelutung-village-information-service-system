@@ -242,6 +242,13 @@ li.dropdown .dropdown-default-component:hover {
     visibility: inherit;
     opacity: 1;
 }
+.sidebar .cont-items-sidebar {
+    height: 83vh;
+    overflow-y: scroll;
+}
+.sidebar .cont-items-sidebar::-webkit-scrollbar {
+    display: none;
+}
 .sidebar .dropdown ul {
     position: inherit;
     background: #f6f9fe;
@@ -462,6 +469,31 @@ li.dropdown .dropdown-default-component:hover {
     }
 
     #menuDefault .mobile-menu-default {
+        display: block;
+    }
+}
+
+/* 
+* Bottom Tab Bar
+*/
+#bottomTabBar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #ffff;
+    padding: 5px 0;
+    display: none;
+}
+#bottomTabBar * {
+    font-size: 8px;
+    text-align: center;
+}
+#bottomTabBar * .col {
+    width: max-content;
+    flex: inherit;
+}
+@media (max-width: 600px) {
+    #bottomTabBar {
         display: block;
     }
 }
