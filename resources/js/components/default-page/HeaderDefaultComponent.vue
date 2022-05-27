@@ -75,3 +75,7 @@
         </div>
     </header>
 </template>
+
+<style scoped>
+@import "../../../css/components/default-page/HeaderDefaultComponent.css";
+</style>

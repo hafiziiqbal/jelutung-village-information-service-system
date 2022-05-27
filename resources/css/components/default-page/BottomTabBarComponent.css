@@ -1,0 +1,21 @@
+#bottomTabBar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #ffff;
+    padding: 5px 0;
+    display: none;
+}
+#bottomTabBar * {
+    font-size: 8px;
+    text-align: center;
+}
+#bottomTabBar * .col {
+    width: max-content;
+    flex: inherit;
+}
+@media (max-width: 600px) {
+    #bottomTabBar {
+        display: block;
+    }
+}

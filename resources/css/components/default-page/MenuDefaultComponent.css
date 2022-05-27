@@ -1,0 +1,128 @@
+#menuDefault {
+    background: #ffff;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgb(127 137 161 / 30%);
+    min-height: 55px;
+    padding: 15px 0;
+}
+#menuDefault .container {
+    display: flex;
+    align-self: center;
+}
+#menuDefault * {
+    font-weight: bold;
+}
+#menuDefault .desktop-menu-default {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#menuDefault .list-menu-default {
+    padding: 4px 6px;
+    background: #ffffff12;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgb(127 137 161 / 30%);
+}
+#menuDefault li:hover .list-menu-default {
+    color: #106eea;
+    background: #0400ff1f;
+}
+#menuDefault .mobile-menu-default {
+    display: none;
+    width: 100%;
+    z-index: 999;
+    margin-top: 30px;
+}
+#menuDefault .bar-menu-item-mobile {
+    width: 100%;
+    height: 45px;
+    background: white;
+    z-index: 999;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(127 137 161 / 45%);
+    padding: 10px;
+}
+#menuDefault .menu-items {
+    margin-top: 15px;
+}
+#menuDefault .menu-items ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    overflow-y: scroll;
+    padding: 0px;
+    left: 0;
+}
+#menuDefault .menu-items ul::-webkit-scrollbar {
+    display: none;
+}
+#menuDefault .menu-items ul li {
+    width: 70px;
+    margin: 0 15px;
+}
+#menuDefault .hero-card {
+    margin-top: 5.5rem;
+    width: 100%;
+    height: 100px;
+    background: gray;
+    background-image: url(/img/mb-hero.png);
+    background-position-y: center;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+#menuDefault .hero-card label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffff;
+}
+#menuDefault .hero-card .text-container {
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+@media (max-width: 992px) {
+    #menuDefault .desktop-menu-default {
+        display: grid;
+        justify-content: unset;
+        grid-template-columns: auto auto auto;
+        gap: 12px 20px;
+    }
+}
+@media (max-width: 600px) {
+    #menuDefault {
+        margin-top: 22px;
+    }
+    #menuDefault * {
+        font-weight: unset;
+        font-size: 10px;
+        text-align: center;
+    }
+    #menuDefault .desktop-menu-default {
+        display: none;
+    }
+    #menuDefault .container {
+        padding-bottom: 65px;
+    }
+    #menuDefault .container:before {
+        background-color: #106eea;
+        content: "";
+        height: 70px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        border-radius: 0px 0px 100% 100%;
+    }
+
+    #menuDefault .mobile-menu-default {
+        display: block;
+    }
+}

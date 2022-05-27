@@ -53,3 +53,6 @@ export default {
     },
 };
 </script>
+<style scoped>
+@import "../../../css/components/default-page/DropdownDefaultComponent.css";
+</style>

@@ -124,3 +124,7 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+@import "../../../css/components/default-page/HeroDefaultComponent.css";
+</style>

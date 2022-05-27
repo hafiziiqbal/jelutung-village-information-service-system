@@ -37,3 +37,7 @@
         </div>
     </div>
 </template>
+
+<style scoped>
+@import "../../../css/components/default-page/BottomTabBarComponent.css";
+</style>

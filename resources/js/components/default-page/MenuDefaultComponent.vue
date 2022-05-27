@@ -179,3 +179,7 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+@import "../../../css/components/default-page/MenuDefaultComponent.css";
+</style>
