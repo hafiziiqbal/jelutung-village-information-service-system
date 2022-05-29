@@ -17,5 +17,6 @@
 @media (max-width: 600px) {
     #bottomTabBar {
         display: block;
+        z-index: 9999;
     }
 }

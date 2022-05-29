@@ -14,6 +14,8 @@ Vue.component('hero-default-component', require('./components/default-page/HeroD
 Vue.component('home-default-component', require('./components/default-page/HomeDefaultComponent.vue').default);
 Vue.component('menu-default-component', require('./components/default-page/MenuDefaultComponent.vue').default);
 Vue.component('sidebar-default-component', require('./components/default-page/SidebarDefaultComponent.vue').default);
+Vue.component('population-and-top-article-component', require('./components/default-page/home-page-default/PopulationAndTopArticleComponent.vue').default);
+Vue.component('latest-news-component', require('./components/default-page/home-page-default/LatestNewsComponent.vue').default);
 const app = new Vue({
     el: '#app',
     router

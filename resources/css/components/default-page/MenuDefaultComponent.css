@@ -90,6 +90,9 @@
     display: flex;
 }
 @media (max-width: 992px) {
+    #menuDefault * {
+        font-size: 12px;
+    }
     #menuDefault .desktop-menu-default {
         display: grid;
         justify-content: unset;

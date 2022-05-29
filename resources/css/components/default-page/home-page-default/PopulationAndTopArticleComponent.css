@@ -1,0 +1,97 @@
+.card {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.card .card-header {
+    background: #fff;
+    border-color: #0d6efd;
+    font-size: 20px;
+    color: #0d6efd;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.card .img-top-article {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: end;
+}
+.card .text-top-article {
+    padding: 5px 10px 25px 10px;
+    text-align: justify;
+    font-size: 14px;
+    background: #2525258f;
+    color: white;
+}
+.card .text-top-article span {
+    color: #fdab0d;
+    font-weight: bold;
+}
+.card .population-data {
+    background-image: url("/img/bg-1.jpg");
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card .population-data label {
+    font-size: 20px;
+    font-weight: bold;
+}
+.card .population-data span {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #616161;
+}
+.card .population-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.card .population-item:hover span {
+    color: #0d6efd;
+}
+.card .population-item:hover label {
+    border-bottom: 5px solid #0d6efd;
+}
+
+@media (max-width: 992px) {
+    .card .img-top-article,
+    .card .population-data {
+        height: 230px;
+    }
+    .card .card-header {
+        font-size: 12px;
+    }
+    .card .population-data label,
+    .card .text-top-article {
+        font-size: 10px;
+    }
+    .card .population-data span {
+        font-size: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .mb-container-fluid {
+        padding: 3px 12px 0 12px;
+    }
+    .col-6 {
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+    .card .population-data {
+        height: 128px;
+        padding: 5px 20px;
+        justify-content: end;
+    }
+    .card .population-item {
+        margin-bottom: 6px;
+    }
+}
