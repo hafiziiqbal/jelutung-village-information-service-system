@@ -38,6 +38,7 @@ on('click', '#sidebarDefaultButton', function (e) {
     let buttonSidebar = select('#sidebarDefaultButton')
     let contSidebar = select('#contSidebar')
     let sidebar = select('.sidebar')
+    let body = select('body')
     if (buttonSidebar != undefined && contSidebar != undefined) {
         if (buttonSidebar.checked == true) {
             contSidebar.style.visibility = "unset";
@@ -45,6 +46,7 @@ on('click', '#sidebarDefaultButton', function (e) {
             sidebar.style.left = '0'
             sidebar.style.visibility = 'unset'
             sidebar.style.opacity = '1'
+            body.style.overflowY = 'hidden'
         } else {
             contSidebar.style.visibility = "hidden";
             contSidebar.style.opacity = "0";
@@ -62,13 +64,14 @@ on('click', '#contSidebar', function (e) {
     let buttonSidebar = select('#sidebarDefaultButton')
     let contSidebar = select('#contSidebar')
     let sidebar = select('.sidebar')
-
+    let body = select('body')
     buttonSidebar.checked = false;
     contSidebar.style.visibility = "hidden";
     contSidebar.style.opacity = "0";
     sidebar.style.left = '-90px';
     sidebar.style.visibility = 'hidden'
     sidebar.style.opacity = '0'
+    body.style.overflowY = 'scroll'
 
 
 })

@@ -3,8 +3,8 @@ mix.browserSync('http://jelutung-village-information-service-system.test/');
 mix.browserSync({
     proxy: 'http://jelutung-village-information-service-system.test/',
     https: {
-        cert: "./cert/localhost.crt",
-        key: "./cert/localhost.decrypted.key"
+        cert: "./cert/siplu.crt",
+        key: "./cert/siplu.key"
     }
 });
 

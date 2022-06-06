@@ -58,7 +58,11 @@
                         :list-item="['Peraturan']"
                     />
                     <li class="dropdown">
-                        <a class="dropdown-default-component">Login</a>
+                        <router-link
+                            :to="{ name: 'OperatorHome' }"
+                            class="dropdown-default-component"
+                            >Login</router-link
+                        >
                     </li>
                 </ul>
             </div>

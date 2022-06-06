@@ -5,8 +5,9 @@ import router from './router/index.js';
 
 // Pages
 Vue.component('default-page', require('./pages/DefaultPage.vue').default);
+Vue.component('operator-page', require('./pages/OperatorPage.vue').default);
 
-// Component
+// Component Default
 Vue.component('bottom-tab-bar-component', require('./components/default-page/BottomTabBarComponent.vue').default);
 Vue.component('dropdown-default-component', require('./components/default-page/DropdownDefaultComponent.vue').default);
 Vue.component('header-default-component', require('./components/default-page/HeaderDefaultComponent.vue').default);
@@ -16,6 +17,10 @@ Vue.component('menu-default-component', require('./components/default-page/MenuD
 Vue.component('sidebar-default-component', require('./components/default-page/SidebarDefaultComponent.vue').default);
 Vue.component('population-and-top-article-component', require('./components/default-page/home-page-default/PopulationAndTopArticleComponent.vue').default);
 Vue.component('latest-news-component', require('./components/default-page/home-page-default/LatestNewsComponent.vue').default);
+
+// Component Operator
+Vue.component('sidebar-operator-component', require('./components/operator-page/SidebarOperatorComponent.vue').default);
+
 const app = new Vue({
     el: '#app',
     router

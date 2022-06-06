@@ -84,7 +84,7 @@
 
 /* mobile breakpoint */
 .mb-latest-news {
-    height: 288px;
+    height: 400px;
     background-image: url(/img/mb-hero.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -103,8 +103,8 @@
     position: absolute;
 }
 .mb-latest-news-item {
-    width: 121px;
-    height: 260px;
+    width: 150px;
+    height: 350px;
     background: white;
     border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -112,7 +112,8 @@
     overflow: hidden;
 }
 .mb-latest-news-item-header {
-    font-size: 9px;
+    height: 100px;
+    font-size: 11px;
     padding: 5px;
     font-weight: bold;
     background-image: url("/img/bg-1.jpg");
@@ -123,7 +124,7 @@
     color: #000 !important;
 }
 .mb-latest-news-card-image {
-    height: 100px;
+    height: 150px;
 }
 
 .mb-latest-news-card-info {

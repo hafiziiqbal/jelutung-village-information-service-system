@@ -38,7 +38,9 @@
 
 <body>
     <div id="app">
-        <default-page></default-page>
+        <router-view></router-view>
+        {{-- <default-page></default-page> --}}
+        {{-- <operator-page></operator-page> --}}
     </div>
     <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
