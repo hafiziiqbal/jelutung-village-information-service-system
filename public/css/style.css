@@ -37,3 +37,17 @@ li {
 .form-control:focus {
     box-shadow: none;
 }
+
+/* after mounted */
+.add-letter-template .input-card {
+    border: 1px solid #80808069;
+    border-radius: 10px;
+    text-align: right;
+    padding: 3px 10px 10px 10px;
+}
+.add-letter-template .bi-x-circle {
+    cursor: pointer;
+}
+.add-letter-template .bi-x-circle:hover {
+    color: blue;
+}

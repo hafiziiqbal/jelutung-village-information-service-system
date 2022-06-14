@@ -9,9 +9,13 @@ const routes = [{
 }, {
     name: 'OperatorHome',
     path: '/operator',
-    component: require('../pages/OperatorPage.vue').default
+    component: require('../pages/OperatorPage.vue').default,
+    children: [{
+        name: 'CreateLetterTemplate',
+        path: '/operator/letter-template/create',
+        component: require('../components/operator-page/CreateLetterTemplateComponent.vue').default
+    }, ]
 }, ]
-
 
 const router = new VueRouter({
     linkActiveClass: 'active',

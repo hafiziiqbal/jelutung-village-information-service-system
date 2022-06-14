@@ -1,9 +1,12 @@
 <template>
     <div>
         <ul class="operator-sidebar">
-            <router-link :to="'operator'" class="operator-sidebar-brand">
+            <router-link
+                :to="{ name: 'OperatorHome' }"
+                class="operator-sidebar-brand"
+            >
                 <img
-                    :src="'img/apple-white-touch-icon.png'"
+                    :src="'/img/apple-white-touch-icon.png'"
                     style="height: 2rem"
                     alt=""
                 />
@@ -41,7 +44,7 @@
                         <router-link :to="'operator'">
                             <span>Daftar Template</span>
                         </router-link>
-                        <router-link :to="'operator'">
+                        <router-link :to="{ name: 'CreateLetterTemplate' }">
                             <span>Tambah Template</span>
                         </router-link>
                     </div>
@@ -66,6 +69,27 @@
     </div>
 </template>
 
+<script>
+export default {
+    data() {
+        return {};
+    },
+    mounted() {
+        this.hideCollapseTemplate();
+    },
+    methods: {
+        hideCollapseTemplate() {
+            let aLink = document.querySelectorAll(".dropdown-sidebar a");
+            let collapseTemplate = document.querySelector("#collapseTemplate");
+            for (let i = 0; i < aLink.length; i++) {
+                aLink[i].addEventListener("click", () => {
+                    collapseTemplate.classList.remove("show");
+                });
+            }
+        },
+    },
+};
+</script>
 <style scoped>
 @import "../../../css/components/operator-page/SidebarOperatorComponent.css";
 </style>

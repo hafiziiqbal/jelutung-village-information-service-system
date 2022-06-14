@@ -4,10 +4,13 @@
         <div class="content-wrapper">
             <div class="content">
                 <navbar-operator-component></navbar-operator-component>
+                <router-view></router-view>
             </div>
         </div>
     </div>
 </template>
+
+
 
 <style scoped>
 .operator .content-wrapper {
