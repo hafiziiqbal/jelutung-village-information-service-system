@@ -20,6 +20,7 @@ Vue.component('latest-news-component', require('./components/default-page/home-p
 
 // Component Operator
 Vue.component('sidebar-operator-component', require('./components/operator-page/SidebarOperatorComponent.vue').default);
+Vue.component('navbar-operator-component', require('./components/operator-page/NavbarOperatorComponent.vue').default);
 
 const app = new Vue({
     el: '#app',

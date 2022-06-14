@@ -1,7 +1,7 @@
 {
     "name": "Sistem Informasi Pelayanan Desa Jelutung",
     "short_name": "SIPLU",
-    "start_url": "/index.php",
+    "start_url": "/",
     "background_color": "#ffff",
     "description": "Sistem Informasi Pelayanan Desa Jelutung",
     "display": "standalone",
