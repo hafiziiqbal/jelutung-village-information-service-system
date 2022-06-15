@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('letter_template')->constrained('letter_templates')->cascadeOnDelete();
             $table->string('name');
             $table->string('type');
+            $table->string('options')->nullable();
             $table->timestamps();
         });
     }

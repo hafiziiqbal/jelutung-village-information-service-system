@@ -1,18 +1,22 @@
 <template>
     <div class="m-4 add-letter-template">
         <div class="header mb-3" v-text="'Tambah Template Surat'"></div>
-        <form>
+        <form action="/api/letter-template/" v-on:submit.prevent="handleSubmit">
             <div class="mb-3">
                 <label class="form-label" v-text="'Nama Surat'"></label>
                 <input
                     class="form-control"
                     placeholder="Masukan Nama Surat Disini"
-                    name="letterName"
+                    v-model="form.name"
                 />
+                <div class="error" v-if="errors.name">
+                    {{ "*" + errors.name[0] }}
+                </div>
             </div>
             <div class="mb-3">
                 <label class="form-label" v-text="'Kategori Surat'"></label>
-                <select class="form-select" name="letterCategory">
+                <select class="form-select" v-model="form.letterCategory">
+                    <option disabled value="">Pilih Kategori Surat</option>
                     <option
                         v-for="letterCategory in letterCategories"
                         :key="letterCategory.id"
@@ -21,6 +25,9 @@
                         {{ letterCategory.name }}
                     </option>
                 </select>
+                <div class="error" v-if="errors.letterCategory">
+                    {{ "*" + errors.letterCategory[0] }}
+                </div>
             </div>
 
             <div class="mb-3">
@@ -30,7 +37,7 @@
                         <input
                             class="form-check-input"
                             type="radio"
-                            name="forWho"
+                            v-model="form.forWho"
                             value="pribadi"
                             checked
                         />
@@ -41,7 +48,7 @@
                         <input
                             class="form-check-input"
                             type="radio"
-                            name="forWho"
+                            v-model="form.forWho"
                             value="orang-lain"
                         />
                         <label
@@ -50,13 +57,113 @@
                         ></label>
                     </div>
                 </div>
+                <div class="error" v-if="errors.forWho">
+                    {{ "*" + errors.forWho[0] }}
+                </div>
             </div>
 
-            <div id="addInputCont" class="mb-3"></div>
+            <div id="addInputCont" class="mb-3">
+                <div v-for="(input, index) in inputs" :key="index">
+                    <div class="input-card mb-3">
+                        <i
+                            class="bi bi-x-circle"
+                            v-on:click="deleteElement(index)"
+                        ></i>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <input
+                                    class="form-control"
+                                    placeholder="Masukan Nama Input"
+                                    v-model="input.name"
+                                />
+                                <div
+                                    class="error"
+                                    v-if="errors['inputs.' + index + '.name']"
+                                >
+                                    {{
+                                        "*" +
+                                        errors["inputs." + index + ".name"]
+                                    }}
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <select
+                                    class="form-select"
+                                    v-model="input.type.typeName"
+                                >
+                                    <option disabled value="">
+                                        Pilih Tipe Input
+                                    </option>
+                                    <option value="Teks">Teks</option>
+                                    <option value="Teks Panjang">
+                                        Teks Panjang
+                                    </option>
+                                    <option value="Angka">Angka</option>
+                                    <option value="Tanggal">Tanggal</option>
+                                    <option value="Gambar">Gambar</option>
+                                    <option value="Pilihan">Pilihan</option>
+                                </select>
 
-            <button type="button" class="btn btn-dark" v-on:click="addInput">
-                Tambah Input <i class="ms-1 bi bi-plus-circle"></i>
-            </button>
+                                <div
+                                    class="error"
+                                    v-if="errors['inputs.' + index + '.type']"
+                                >
+                                    {{
+                                        "*" +
+                                        errors["inputs." + index + ".type"]
+                                    }}
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="input.type.typeName == 'Pilihan'">
+                            <input
+                                class="form-control"
+                                placeholder="Masukan pilihan, pisahkan dengan koma (,)"
+                                required
+                                v-model="input.type.typeOptions"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-6">
+                    <button
+                        type="button"
+                        class="btn btn-dark"
+                        style="width: 100%"
+                        v-on:click="addInput"
+                    >
+                        Tambah Input <i class="ms-1 bi bi-plus-circle"></i>
+                    </button>
+                </div>
+                <div class="col-6">
+                    <input
+                        type="file"
+                        id="actual-btn"
+                        hidden
+                        @change="uploadObjectDoc"
+                    />
+                    <label for="actual-btn" class="btn btn-success"
+                        >Unggah Docx</label
+                    >
+                    <span id="file-chosen">Tidak Ada File</span>
+                    <div class="error" v-if="errors.docFile">
+                        {{ "*" + errors.docFile[0] }}
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button
+                    type="submin"
+                    class="btn btn-primary"
+                    style="width: 100%"
+                >
+                    Simpan Perubahan
+                </button>
+            </div>
         </form>
     </div>
 </template>
@@ -66,52 +173,42 @@ export default {
     data() {
         return {
             letterCategories: "",
-            incrementNumber: 0,
+            inputs: [],
+            form: {
+                name: "",
+                letterCategory: "",
+                forWho: "",
+                docFile: "",
+            },
+            errors: {},
         };
     },
     mounted() {
         this.getLetterCategory();
+        this.detectDocName();
     },
     methods: {
+        detectDocName() {
+            const actualBtn = document.getElementById("actual-btn");
+            const fileChosen = document.getElementById("file-chosen");
+            actualBtn.addEventListener("change", function () {
+                fileChosen.textContent = this.files[0].name;
+            });
+        },
+        uploadObjectDoc(e) {
+            let document = e.target.files[0];
+            this.form.docFile = document;
+        },
+        deleteElement(index) {
+            this.inputs.splice(index, 1);
+        },
         addInput() {
-            this.incrementNumber = ++this.incrementNumber;
-            let addInputCont = document.querySelector("#addInputCont");
-            let inputCard = document.createElement("div");
-            let closeBtn = document.createElement("i");
-            let inputRow = document.createElement("div");
-            let inputCol1 = document.createElement("div");
-            let inputCol2 = document.createElement("div");
-            let inputForm = document.createElement("input");
-            let inputSelect = document.createElement("select");
-            let jenis = ["Teks", "Teks Panjang", "Angka", "Gambar"];
-
-            inputCard.className = "input-card mb-3";
-            closeBtn.className = "bi bi-x-circle";
-            closeBtn.onclick = function () {
-                this.parentElement.remove();
-            };
-            inputRow.className = "row";
-            inputCol1.className = "col-6";
-            inputCol2.className = "col-6";
-            inputForm.className = "form-control";
-            inputForm.name = "input[" + this.incrementNumber + "][inputName]";
-            inputForm.placeholder = "Masukan Nama Input";
-            inputSelect.className = "form-select";
-            inputSelect.name = "input[" + this.incrementNumber + "][inputType]";
-
-            addInputCont.appendChild(inputCard);
-            inputCard.appendChild(closeBtn);
-            inputCard.appendChild(inputRow);
-            inputRow.appendChild(inputCol1);
-            inputRow.appendChild(inputCol2);
-            inputCol1.appendChild(inputForm);
-            inputCol2.appendChild(inputSelect);
-
-            jenis.forEach((item) => {
-                let inputOption = document.createElement("option");
-                inputOption.value = item;
-                inputOption.innerHTML = item;
-                inputSelect.appendChild(inputOption);
+            this.inputs.push({
+                name: "",
+                type: {
+                    typeName: "",
+                    typeOptions: "",
+                },
             });
         },
 
@@ -119,6 +216,38 @@ export default {
             axios.get("/api/letter-category/").then((response) => {
                 this.letterCategories = response.data;
             });
+        },
+
+        handleSubmit() {
+            // console.log(JSON.parse(JSON.stringify()));
+            let formData = new FormData();
+            Object.entries(this.form).forEach(([key, value]) => {
+                formData.append(key, value);
+            });
+
+            for (let i = 0; i < this.inputs.length; i++) {
+                formData.append("inputs[" + i + "][name]", this.inputs[i].name);
+
+                formData.append(
+                    "inputs[" + i + "][type][typeName]",
+                    this.inputs[i].type.typeName
+                );
+                formData.append(
+                    "inputs[" + i + "][type][typeOptions]",
+                    this.inputs[i].type.typeOptions
+                );
+            }
+
+            axios
+                .post("/api/letter-template/", formData)
+                .then((response) => {
+                    if (response.data.status) {
+                        this.$noty.success(response.data.message);
+                    }
+                })
+                .catch((error) => {
+                    this.errors = error.response.data.errors;
+                });
         },
     },
 };

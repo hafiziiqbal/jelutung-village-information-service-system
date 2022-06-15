@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('for_who');
             $table->foreignId('letter_category')->constrained('letter_categories');
+            $table->string('document');
             $table->timestamps();
         });
     }

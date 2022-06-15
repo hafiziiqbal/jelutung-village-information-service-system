@@ -38,6 +38,11 @@ li {
     box-shadow: none;
 }
 
+.error {
+    font-size: 11px;
+    color: red;
+}
+
 /* after mounted */
 .add-letter-template .input-card {
     border: 1px solid #80808069;

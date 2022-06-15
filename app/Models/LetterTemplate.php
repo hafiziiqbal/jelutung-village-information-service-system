@@ -12,6 +12,7 @@ class LetterTemplate extends Model
         'name',
         'for_who',
         'letter_category',
+        'document'
     ];
 
     protected $hidden = [

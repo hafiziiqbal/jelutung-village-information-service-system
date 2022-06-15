@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\LetterCategoryController;
+use App\Http\Controllers\Api\LetterTemplateController;
 use App\Http\Controllers\Api\TestingApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,7 @@ Route::get('top-article', [TestingApi::class, 'getTopArticle']);
 Route::get('latest-article', [TestingApi::class, 'getLatestArticle']);
 
 Route::resource('letter-category', LetterCategoryController::class);
+Route::resource('letter-template', LetterTemplateController::class);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

@@ -3,6 +3,11 @@ require('./bootstrap');
 import Vue from 'vue';
 import router from './router/index.js';
 
+import VueNoty from 'vuejs-noty';
+Vue.use(VueNoty);
+
+import 'vuejs-noty/dist/vuejs-noty.css'
+
 // Pages
 Vue.component('default-page', require('./pages/DefaultPage.vue').default);
 Vue.component('operator-page', require('./pages/OperatorPage.vue').default);

@@ -12,6 +12,7 @@ class LetterFormInput extends Model
         'letter_template',
         'name',
         'type',
+        'options',
     ];
     protected $hidden = [
         'created_at',
