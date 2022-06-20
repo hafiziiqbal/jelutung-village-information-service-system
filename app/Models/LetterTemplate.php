@@ -12,6 +12,7 @@ class LetterTemplate extends Model
         'name',
         'for_who',
         'letter_category',
+        'need_for_letter',
         'document'
     ];
 
@@ -23,6 +24,11 @@ class LetterTemplate extends Model
     public function letterCategory()
     {
         return $this->belongsTo(LetterCategory::class, 'letter_category', 'id');
+    }
+
+    public function needForLetter()
+    {
+        return $this->belongsTo(NeedForLetter::class, 'need_for_letter', 'id');
     }
 
     public function letterFormInput()

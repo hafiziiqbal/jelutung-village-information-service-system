@@ -28,6 +28,7 @@ class LetterTemplateController extends Controller
             'name' => $request->name,
             'for_who' => $request->forWho,
             'letter_category' => $request->letterCategory,
+            'need_for_letter' => $request->needForLetter,
             'document' => $documentName
         ]);
 

@@ -15,19 +15,34 @@
             </div>
             <div class="mb-3">
                 <label class="form-label" v-text="'Kategori Surat'"></label>
-                <select class="form-select" v-model="form.letterCategory">
-                    <option disabled value="">Pilih Kategori Surat</option>
-                    <option
-                        v-for="letterCategory in letterCategories"
-                        :key="letterCategory.id"
-                        :value="letterCategory.id"
-                    >
-                        {{ letterCategory.name }}
-                    </option>
-                </select>
+                <select
+                    class="form-select"
+                    v-if="is_data_fetched_category == false"
+                ></select>
+                <v-select
+                    v-if="is_data_fetched_category == true"
+                    v-model="letterCategory"
+                    :options="letterCategories"
+                    label="name"
+                ></v-select>
+
                 <div class="error" v-if="errors.letterCategory">
                     {{ "*" + errors.letterCategory[0] }}
                 </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" v-text="'Keperluan'"></label>
+                <select
+                    class="form-select"
+                    v-if="is_data_fetched == false"
+                ></select>
+                <v-select
+                    v-if="is_data_fetched == true"
+                    v-model="needForLetter"
+                    :options="needForLetters"
+                    label="need"
+                ></v-select>
             </div>
 
             <div class="mb-3">
@@ -172,11 +187,15 @@
 export default {
     data() {
         return {
+            is_data_fetched: false,
+            is_data_fetched_category: false,
+            letterCategory: "",
             letterCategories: "",
+            needForLetters: "",
+            needForLetter: "",
             inputs: [],
             form: {
                 name: "",
-                letterCategory: "",
                 forWho: "",
                 docFile: "",
             },
@@ -184,10 +203,15 @@ export default {
         };
     },
     mounted() {
+        this.select();
         this.getLetterCategory();
+        this.getNeedForLetter();
         this.detectDocName();
     },
     methods: {
+        select() {
+            // $("#needForLetter").select2();
+        },
         detectDocName() {
             const actualBtn = document.getElementById("actual-btn");
             const fileChosen = document.getElementById("file-chosen");
@@ -215,6 +239,14 @@ export default {
         getLetterCategory() {
             axios.get("/api/letter-category/").then((response) => {
                 this.letterCategories = response.data;
+                this.is_data_fetched_category = true;
+            });
+        },
+
+        getNeedForLetter() {
+            axios.get("/api/need-for-letter/").then((response) => {
+                this.needForLetters = response.data;
+                this.is_data_fetched = true;
             });
         },
 
@@ -224,6 +256,9 @@ export default {
             Object.entries(this.form).forEach(([key, value]) => {
                 formData.append(key, value);
             });
+
+            formData.append("letterCategory", this.letterCategory.id);
+            formData.append("needForLetter", this.needForLetter.id);
 
             for (let i = 0; i < this.inputs.length; i++) {
                 formData.append("inputs[" + i + "][name]", this.inputs[i].name);

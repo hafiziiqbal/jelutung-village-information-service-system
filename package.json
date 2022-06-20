@@ -28,6 +28,7 @@
     "dependencies": {
         "autoprefixer": "10.4.5",
         "vue-router": "^3.5.3",
+        "vue-select": "^3.18.3",
         "vuejs-noty": "^0.1.4"
     }
 }

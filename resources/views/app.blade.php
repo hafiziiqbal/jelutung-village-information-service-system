@@ -42,7 +42,10 @@
         {{-- <default-page></default-page> --}}
         {{-- <operator-page></operator-page> --}}
     </div>
+    <script src="{{ asset('vendor/jquery/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+    {{-- <script src="{{ asset('vendor/vue-select2/vue-select2.min.js') }}"></script> --}}
+    <link rel="stylesheet" href="{{ asset('vendor/vue-select2/vue-select2.min.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('/sw.js') }}"></script>

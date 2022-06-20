@@ -128,7 +128,7 @@
                     >
                     <img
                         class="img-profile rounded-circle"
-                        :src="'storage/img/profile/operator-avatar.svg'"
+                        :src="'/storage/img/profile/operator-avatar.svg'"
                         alt=""
                     />
                 </a>
@@ -143,11 +143,36 @@ export default {
     },
     mounted() {
         this.detectMobileDevice();
+        this.toogleSideBar();
     },
     methods: {
         detectMobileDevice() {
             let mediaQuery = "(max-width:500px)";
             this.mobileDevice = window.matchMedia(mediaQuery).matches;
+        },
+
+        toogleSideBar() {
+            let sideBarOperationButton = document.querySelector(
+                "#sidebarOperatorButton"
+            );
+            sideBarOperationButton.addEventListener("click", function (e) {
+                let buttonSidebar = sideBarOperationButton;
+                let contSidebar = document.querySelector(".operator-sidebar");
+                let operatorDropdown = document.querySelectorAll(
+                    ".operator-navbar .dropdown-menu"
+                );
+                if (buttonSidebar.checked == true) {
+                    contSidebar.style.display = "none";
+                    for (let i = 0; i < operatorDropdown.length; i++) {
+                        operatorDropdown[i].style.left = "0";
+                    }
+                } else {
+                    contSidebar.style.display = "inherit";
+                    for (let i = 0; i < operatorDropdown.length; i++) {
+                        operatorDropdown[i].style.left = "6.5rem";
+                    }
+                }
+            });
         },
     },
 };

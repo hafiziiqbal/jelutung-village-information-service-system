@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('letter_templates', function (Blueprint $table) {
+        Schema::create('need_for_letters', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('for_who');
-            $table->foreignId('letter_category')->constrained('letter_categories');
-            $table->foreignId('need_for_letter')->constrained('need_for_letters');
-            $table->string('document');
+            $table->string('need');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('letter_templates');
+        Schema::dropIfExists('need_for_letters');
     }
 };

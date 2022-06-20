@@ -57,25 +57,7 @@ on('click', '#sidebarDefaultButton', function (e) {
     }
 })
 
-// Toggle the side navigation operator
-on('click', '#sidebarOperatorButton', function (e) {
-    let buttonSidebar = select('#sidebarOperatorButton')
-    let contSidebar = select('.operator-sidebar')
-    let operatorDropdown = select('.operator-navbar .dropdown-menu', true)
-    if (buttonSidebar.checked == true) {
-        contSidebar.style.display = "none";
-        for (let i = 0; i < operatorDropdown.length; i++) {
-            operatorDropdown[i].style.left = "0"
-        }
 
-    } else {
-        contSidebar.style.display = "inherit";
-        for (let i = 0; i < operatorDropdown.length; i++) {
-            operatorDropdown[i].style.left = "6.5rem"
-        }
-
-    }
-})
 
 
 /*

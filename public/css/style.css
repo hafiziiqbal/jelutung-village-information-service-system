@@ -43,6 +43,11 @@ li {
     color: red;
 }
 
+.select2-container--default .select2-selection--single {
+    background-color: #f8f9fc !important;
+    border: 1px solid #ced4da !important;
+}
+
 /* after mounted */
 .add-letter-template .input-card {
     border: 1px solid #80808069;

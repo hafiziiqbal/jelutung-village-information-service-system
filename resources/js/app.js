@@ -4,9 +4,12 @@ import Vue from 'vue';
 import router from './router/index.js';
 
 import VueNoty from 'vuejs-noty';
+import vSelect from 'vue-select'
 Vue.use(VueNoty);
 
 import 'vuejs-noty/dist/vuejs-noty.css'
+
+Vue.component('v-select', vSelect)
 
 // Pages
 Vue.component('default-page', require('./pages/DefaultPage.vue').default);

@@ -21,14 +21,17 @@ class StoreLetterTemplateRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    
+
 
     public function rules()
     {
+
         return [
+
             'name' => 'required|regex:/^([a-zA-Z.]+)(\s[a-zA-Z.]+)*$/',
             'forWho' => 'required|in:pribadi,orang-lain',
             'letterCategory' => 'required|numeric',
+            'needForLetter' => 'required|numeric',
             'docFile' => 'required|mimes:doc,docx|max:3048',
             'inputs.*.name' => 'required',
             'inputs.*.type.typeName' => 'required',
@@ -47,6 +50,9 @@ class StoreLetterTemplateRequest extends FormRequest
 
             'letterCategory.required' => 'Kategori surat harus dipilih',
             'letterCategory.numeric' => 'Kategori surat harus berupa angka',
+
+            'needForLetter.required' => 'Keperluan surat harus dipilih',
+            'needForLetter.numeric' => 'Keperluan surat harus berupa angka',
 
             'docFile.required' => 'Dokumen harus dimasukan',
             'docFile.mimes' => 'Dokumen harus berbentuk DOC atau DOCX',
