@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('marital_status');
             $table->string('email')->unique()->nullable();
             $table->string('phone_number')->unique();
-            $table->string('password');
+            $table->integer('pin');
             $table->timestamps();
         });
     }

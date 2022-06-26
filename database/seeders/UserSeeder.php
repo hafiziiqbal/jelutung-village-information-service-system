@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
                     "marital_status" => $data['4'],
                     "email" => $data['5'],
                     "phone_number" => $data['6'],
-                    "password" => $data['7'],
+                    "pin" => $data['7'],
                 ]);
                 $user->assignRole('resident');
             }
