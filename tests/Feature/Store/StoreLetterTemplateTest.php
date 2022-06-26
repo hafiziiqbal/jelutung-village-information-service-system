@@ -17,9 +17,8 @@ class StoreLetterTemplateTest extends TestCase
 
         $response = $this->post('/api/letter-template/', [
             'name' => 'Surat Keterangan Tidak Mampu',
-            'forWho' => 'pribadi',
             'letterCategory' => '1',
-            'needForLetter' => '2',
+            'needForLetter' => '3',
             'docFile' => UploadedFile::fake()->create('surat-keterangan-tidak-mampu.docx', 100),
             'inputs'  => [
                 [

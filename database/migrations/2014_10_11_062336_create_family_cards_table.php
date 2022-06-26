@@ -13,15 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('family_cards', function (Blueprint $table) {
             $table->id();
-            $table->string('resident', 16)->constrained('residents', 'nik')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->string('card_number', 16)->unique()->index();
             $table->string('address');
-            $table->string('profession_type');
-            $table->string('marital_status');
-            $table->string('email')->unique()->nullable();
-            $table->string('phone_number')->unique();
-            $table->string('password');
+            $table->string('rt_rw');
+            $table->string('zip_code');
+            $table->string('village');
+            $table->string('districts');
+            $table->string('city');
+            $table->string('province');
+            $table->date('out_date');
             $table->timestamps();
         });
     }
@@ -33,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('family_cards');
     }
 };

@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('letter_templates', function (Blueprint $table) {
+        Schema::create('letter_requests', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignId('letter_category')->constrained('letter_categories');
-            $table->foreignId('need_for_letter')->constrained('need_for_letters');
-            $table->string('document');
+            $table->foreignId('letter_template')->constrained('letter_templates');
+            $table->json('value');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('letter_templates');
+        Schema::dropIfExists('letter_requests');
     }
 };

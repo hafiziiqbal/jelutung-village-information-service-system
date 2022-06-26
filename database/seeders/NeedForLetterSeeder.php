@@ -15,7 +15,7 @@ class NeedForLetterSeeder extends Seeder
      */
     public function run()
     {
-        $needForLetters = ['Keringanan Biaya Perawatan Medis', 'Keringanan Biaya Pendidikan', 'Mendapatkan Bantuan Sembako', 'Menerima Zakat, Infaq dan Shodaqoh'];
+        $needForLetters = ['Umum', 'Perawatan Medis', 'Pendidikan', 'Bantuan'];
         foreach ($needForLetters as  $needForLetter) {
             NeedForLetter::updateOrCreate([
                 'need'  => $needForLetter,

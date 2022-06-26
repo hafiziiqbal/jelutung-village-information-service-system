@@ -30,6 +30,10 @@ Vue.component('latest-news-component', require('./components/default-page/home-p
 Vue.component('sidebar-operator-component', require('./components/operator-page/SidebarOperatorComponent.vue').default);
 Vue.component('navbar-operator-component', require('./components/operator-page/NavbarOperatorComponent.vue').default);
 
+// Component Resident
+Vue.component('sidebar-resident-component', require('./components/resident-page/SidebarResidentComponent.vue').default);
+Vue.component('navbar-resident-component', require('./components/resident-page/NavbarResidentComponent.vue').default);
+
 
 const app = new Vue({
     el: '#app',

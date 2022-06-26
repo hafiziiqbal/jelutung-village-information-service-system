@@ -10,7 +10,6 @@ class LetterTemplate extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'for_who',
         'letter_category',
         'need_for_letter',
         'document'

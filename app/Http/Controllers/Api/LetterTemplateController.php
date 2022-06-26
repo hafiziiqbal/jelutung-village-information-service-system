@@ -26,7 +26,6 @@ class LetterTemplateController extends Controller
 
         $letterTemplate = LetterTemplate::create([
             'name' => $request->name,
-            'for_who' => $request->forWho,
             'letter_category' => $request->letterCategory,
             'need_for_letter' => $request->needForLetter,
             'document' => $documentName

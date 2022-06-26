@@ -14,9 +14,11 @@
                                     Kecamatan Pemangkat, Kabupaten Sambas,
                                     Provinsi Kalbar
                                 </p>
-                                <a class="btn btn-primary mt-3 fw-bold fs-5">
-                                    Pelayanan Desa
-                                </a>
+                                <router-link
+                                    :to="{ name: 'ResidentHome' }"
+                                    class="btn btn-primary mt-3 fw-bold fs-5"
+                                    >Pelayanan Desa</router-link
+                                >
                             </div>
                         </div>
                         <div

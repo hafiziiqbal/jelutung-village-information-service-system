@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\LetterCategoryController;
+use App\Http\Controllers\Api\LetterServiceController;
 use App\Http\Controllers\Api\LetterTemplateController;
 use App\Http\Controllers\Api\NeedForLetterController;
 use App\Http\Controllers\Api\TestingApi;
@@ -24,6 +25,9 @@ Route::get('latest-article', [TestingApi::class, 'getLatestArticle']);
 Route::resource('letter-category', LetterCategoryController::class);
 Route::resource('letter-template', LetterTemplateController::class);
 Route::resource('need-for-letter', NeedForLetterController::class);
+Route::resource('letter-service', LetterServiceController::class);
+Route::get('letter-service/letter-name/{id}', [LetterServiceController::class, 'showLetterFromCategory']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

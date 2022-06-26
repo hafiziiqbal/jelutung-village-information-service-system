@@ -45,38 +45,6 @@
                 ></v-select>
             </div>
 
-            <div class="mb-3">
-                <label class="form-label" v-text="'Diperuntukkan Bagi'"></label>
-                <div class="d-flex">
-                    <div class="form-check me-3">
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            v-model="form.forWho"
-                            value="pribadi"
-                            checked
-                        />
-                        <label class="form-check-label" v-text="'Diri Sendiri'">
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            v-model="form.forWho"
-                            value="orang-lain"
-                        />
-                        <label
-                            class="form-check-label"
-                            v-text="'Orang Lain'"
-                        ></label>
-                    </div>
-                </div>
-                <div class="error" v-if="errors.forWho">
-                    {{ "*" + errors.forWho[0] }}
-                </div>
-            </div>
-
             <div id="addInputCont" class="mb-3">
                 <div v-for="(input, index) in inputs" :key="index">
                     <div class="input-card mb-3">
@@ -196,7 +164,6 @@ export default {
             inputs: [],
             form: {
                 name: "",
-                forWho: "",
                 docFile: "",
             },
             errors: {},

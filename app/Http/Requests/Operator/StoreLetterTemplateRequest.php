@@ -29,7 +29,6 @@ class StoreLetterTemplateRequest extends FormRequest
         return [
 
             'name' => 'required|regex:/^([a-zA-Z.]+)(\s[a-zA-Z.]+)*$/',
-            'forWho' => 'required|in:pribadi,orang-lain',
             'letterCategory' => 'required|numeric',
             'needForLetter' => 'required|numeric',
             'docFile' => 'required|mimes:doc,docx|max:3048',
@@ -44,9 +43,6 @@ class StoreLetterTemplateRequest extends FormRequest
         return [
             'name.required' => 'Nama surat harus diisi',
             'name.regex' => 'Nama surat harus berupa karakter A-Z',
-
-            'forWho.required' => 'Peruntukan surat harus diisi',
-            'forWho.in' => 'Peruntukan surat harus pribadi atau orang lain',
 
             'letterCategory.required' => 'Kategori surat harus dipilih',
             'letterCategory.numeric' => 'Kategori surat harus berupa angka',

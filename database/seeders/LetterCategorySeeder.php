@@ -15,7 +15,7 @@ class LetterCategorySeeder extends Seeder
      */
     public function run()
     {
-        $letterCategories = ['Layanan Umum', 'Kependudukan', 'Layanan Nikah', 'Layanan Pertanahan'];
+        $letterCategories = ['Umum', 'Kependudukan', 'Pernikahan', 'Pertanahan'];
         foreach ($letterCategories as  $letterCategory) {
             LetterCategory::updateOrCreate([
                 'name'  => $letterCategory,
