@@ -1,151 +1,151 @@
 ﻿id,nik,card_number,name,gender,birthplace,birthday,religion,qualification,profession_type,blood_group,marital_status,wedding_date,family_relationship,citizenship,passport_number,kitap_number,father_name,mother_name,life_status
-1,6101051011010000,2105011309110000,SigitPratama,laki-laki,jelutung,1971-04-10,islam,sma,petani,A+,menikah,2003-11-11,Ayah / Kepala Keluarga,WNI,,,OlgaAbidah,KarinaAnindita,hidup
-2,6101051011011000,2105011309110000,ArrivaldaRamadani,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,O,belum menikah,2003-11-12,Anak,WNI,,,SigitPratama,FajriAstuti,hidup
-3,6101051011012000,2105011309110000,DerilandrySaputra,perempuan,jelutung,2005-06-15,islam,sd,pelajar,O,belum menikah,2003-11-13,Anak,WNI,,,SigitPratama,FajriAstuti,hidup
-4,6101051011013000,2105011309110000,EdyJournalisanda,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,O,belum menikah,2003-11-14,Anak,WNI,,,SigitPratama,FajriAstuti,hidup
-5,6101051011014000,2105011309110000,FajriAstuti,perempuan,jelutung,1972-01-14,islam,sma,petani,B,menikah,2003-11-15,Ibu,WNI,,,DellaWijaya,AnggitaRahmasari,hidup
-6,6101051011020000,2105011309120000,JeremiahAzzad,laki-laki,jelutung,1971-04-10,kristen,sma,petani,B,menikah,2003-11-16,Ayah / Kepala Keluarga,WNI,,,ZaraFikri,HannyFauziah,hidup
-7,6101051011021000,2105011309120000,HafizhFachrully,laki-laki,jelutung,2003-11-11,kristen,sd,pelajar,B,belum menikah,2003-11-17,Anak,WNI,,,JeremiahAzzad,RamantaSoleha,hidup
-8,6101051011022000,2105011309120000,AsyrafiNustantomo,laki-laki,pemangkat,2005-06-15,kristen,sd,pelajar,B,belum menikah,2003-11-18,Anak,WNI,,,JeremiahAzzad,RamantaSoleha,hidup
-9,6101051011023000,2105011309120000,AlrendyTriutami,perempuan,jelutung,2001-04-13,kristen,smp,pelajar,A+,belum menikah,2003-11-19,Anak,WNI,,,JeremiahAzzad,RamantaSoleha,hidup
-10,6101051011024000,2105011309120000,RamantaSoleha,perempuan,pemangkat,1972-01-14,kristen,sma,petani,,menikah,2003-11-20,Ibu,WNI,,,EvelinAdriarso,DisyaSilmiHerdani,hidup
-11,6101051011026670,2105011309130000,BanniAisyah,laki-laki,jelutung,1971-04-10,budha,sma,petani,,menikah,2003-11-21,Ayah / Kepala Keluarga,WNI,,,GalihAzzahra,RadenHutauruk,hidup
-12,6101051011028420,2105011309130000,FitraMustikawati,laki-laki,jelutung,2003-11-11,budha,sd,pelajar,,belum menikah,2003-11-22,Anak,WNI,,,BanniAisyah,MuhammadAlyani,hidup
-13,6101051011030180,2105011309130000,FauzanChristine,perempuan,jelutung,2005-06-15,budha,sd,pelajar,,belum menikah,2003-11-23,Anak,WNI,,,BanniAisyah,MuhammadAlyani,hidup
-14,6101051011031940,2105011309130000,ArioHutahaean,perempuan,pemangkat,2001-04-13,budha,smp,pelajar,,belum menikah,2003-11-24,Anak,WNI,,,BanniAisyah,MuhammadAlyani,hidup
-15,6101051011033700,2105011309130000,MuhammadAlyani,perempuan,jelutung,1972-01-14,budha,sma,petani,O,menikah,2003-11-25,Ibu,WNI,,,KarlinaAnindya,AsriMiriamUmam,hidup
-16,6101051011035460,2105011309140000,ArfanMutiara,laki-laki,pemangkat,1971-04-10,islam,sma,petani,O,menikah,2003-11-26,Ayah / Kepala Keluarga,WNI,,,PutrimaMaulidah,ElzaSaputri,hidup
-17,6101051011037210,2105011309140000,AriyadiHarkart,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B+,belum menikah,2003-11-27,Anak,WNI,,,ArfanMutiara,ReynaldiSulistyaningra,hidup
-18,6101051011038970,2105011309140000,EkaAruti,laki-laki,jelutung,2005-06-15,islam,sd,pelajar,B+,belum menikah,2003-11-28,Anak,WNI,,,ArfanMutiara,ReynaldiSulistyaningra,hidup
-19,6101051011040730,2105011309140000,AprianNarimanda,perempuan,jelutung,2001-04-13,islam,smp,pelajar,B+,belum menikah,2003-11-29,Anak,WNI,,,ArfanMutiara,ReynaldiSulistyaningra,hidup
-20,6101051011042490,2105011309140000,ReynaldiSulistyaningra,perempuan,pemangkat,1972-01-14,islam,sma,petani,A+,menikah,2003-11-30,Ibu,WNI,,,NatashaHotasi,TiaraSulistiyo,hidup
-21,6101051011044240,2105011309150000,BimoRiany,laki-laki,jelutung,1971-04-10,islam,sma,petani,O,menikah,2003-12-01,Ayah / Kepala Keluarga,WNI,,,CaesarianaHamdi,PutriJeni,hidup
-22,6101051011046000,2105011309150000,SugrahaRugaya,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,O,belum menikah,2003-12-02,Anak,WNI,,,BimoRiany,AlditioVanesha,hidup
-23,6101051011047760,2105011309150000,RicoSimorangkir,perempuan,jelutung,2005-06-15,islam,sd,pelajar,O,belum menikah,2003-12-03,Anak,WNI,,,BimoRiany,AlditioVanesha,hidup
-24,6101051011049520,2105011309150000,RioPinkanatalini,perempuan,jelutung,2001-04-13,islam,smp,pelajar,B,belum menikah,2003-12-04,Anak,WNI,,,BimoRiany,AlditioVanesha,hidup
-25,6101051011051270,2105011309150000,AlditioVanesha,perempuan,jelutung,1972-01-14,islam,sma,petani,B,menikah,2003-12-05,Ibu,WNI,,,TessaFaradillah,IndiHusein,hidup
-26,6101051011053030,2105011309160000,AdhimDyarini,laki-laki,pemangkat,1971-04-10,islam,sma,petani,B,menikah,2003-12-06,Ayah / Kepala Keluarga,WNI,,,TariNandita,SariTobing,hidup
-27,6101051011054790,2105011309160000,RaySinuka,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B,belum menikah,2003-12-07,Anak,WNI,,,AdhimDyarini,RifqiOctaviana,hidup
-28,6101051011056550,2105011309160000,HarisDickySuputra,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,A+,belum menikah,2003-12-08,Anak,WNI,,,AdhimDyarini,RifqiOctaviana,hidup
-29,6101051011058300,2105011309160000,YudaHardianti,perempuan,jelutung,2001-04-13,islam,smp,pelajar,,belum menikah,2003-12-09,Anak,WNI,,,AdhimDyarini,RifqiOctaviana,hidup
-30,6101051011060060,2105011309160000,RifqiOctaviana,perempuan,jelutung,1972-01-14,islam,sma,petani,,menikah,2003-12-10,Ibu,WNI,,,AthirahOctaza,DaraWidiyasari,hidup
-31,6101051011061820,2105011309170000,AswinHabiba,laki-laki,jelutung,1971-04-10,islam,sma,petani,,menikah,2003-12-11,Ayah / Kepala Keluarga,WNI,,,LavintaApriando,LavinaSali,hidup
-32,6101051011063580,2105011309170000,AdityoBobOctivani,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,,belum menikah,2003-12-12,Anak,WNI,,,AswinHabiba,DanielNurkhayati,hidup
-33,6101051011065330,2105011309170000,FahmiHermawaty,perempuan,jelutung,2005-06-15,islam,sd,pelajar,,belum menikah,2003-12-13,Anak,WNI,,,AswinHabiba,DanielNurkhayati,hidup
-34,6101051011067090,2105011309170000,SatryaNurhazrati,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,O,belum menikah,2003-12-14,Anak,WNI,,,AswinHabiba,DanielNurkhayati,hidup
-35,6101051011068850,2105011309170000,DanielNurkhayati,perempuan,jelutung,1972-01-14,islam,sma,petani,O,menikah,2003-12-15,Ibu,WNI,,,AriniHanifah,IkeRahayu,hidup
-36,6101051011070610,2105011309180000,GeraldiAbidah,laki-laki,jelutung,1971-04-10,islam,sma,petani,B+,menikah,2003-12-16,Ayah / Kepala Keluarga,WNI,,,FianiOctarina,MaratunHalida,hidup
-37,6101051011072360,2105011309180000,CarditoIrwansyah,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B+,belum menikah,2003-12-17,Anak,WNI,,,GeraldiAbidah,YusufWardani,hidup
-38,6101051011074120,2105011309180000,RadjaDefri,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,B+,belum menikah,2003-12-18,Anak,WNI,,,GeraldiAbidah,YusufWardani,hidup
-39,6101051011075880,2105011309180000,ChaerulHartina,perempuan,jelutung,2001-04-13,islam,smp,pelajar,A+,belum menikah,2003-12-19,Anak,WNI,,,GeraldiAbidah,YusufWardani,hidup
-40,6101051011077640,2105011309180000,YusufWardani,perempuan,pemangkat,1972-01-14,islam,sma,petani,O,menikah,2003-12-20,Ibu,WNI,,,DiniyahIrmhaAl-fathan,DwiAnggraini,hidup
-41,6101051011079390,2105011309190000,MuhamadPrapastia,laki-laki,jelutung,1971-04-10,islam,sma,petani,O,menikah,2003-12-21,Ayah / Kepala Keluarga,WNI,,,HasianaPurwanto,RuthcharuniElvinaAriefandi,hidup
-42,6101051011081150,2105011309190000,AndikaLabas,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,O,belum menikah,2003-12-22,Anak,WNI,,,MuhamadPrapastia,ArthurRabani,hidup
-43,6101051011082910,2105011309190000,ReynardHerdani,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B,belum menikah,2003-12-23,Anak,WNI,,,MuhamadPrapastia,ArthurRabani,hidup
-44,6101051011084670,2105011309190000,RianGeryance,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,B,belum menikah,2003-12-24,Anak,WNI,,,MuhamadPrapastia,ArthurRabani,hidup
-45,6101051011086420,2105011309190000,ArthurRabani,perempuan,jelutung,1972-01-14,islam,sma,petani,B,menikah,2003-12-25,Ibu,WNI,,,ChikaKinandatsani,SyenaWidyasmoro,hidup
-46,6101051011088180,2105011309200000,ThomasArdiansyah,laki-laki,pemangkat,1971-04-10,islam,sma,petani,B,menikah,2003-12-26,Ayah / Kepala Keluarga,WNI,,,NabilaPuspitasari,CintyaJosh,hidup
-47,6101051011089940,2105011309200000,KennethAlim,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,A+,belum menikah,2003-12-27,Anak,WNI,,,ThomasArdiansyah,IsmailDhanuPriatni,hidup
-48,6101051011091700,2105011309200000,ElvinElleonora,laki-laki,jelutung,2005-06-15,islam,sd,pelajar,,belum menikah,2003-12-28,Anak,WNI,,,ThomasArdiansyah,IsmailDhanuPriatni,hidup
-49,6101051011093460,2105011309200000,AlfinIrlanWiratmansyah,perempuan,jelutung,2001-04-13,islam,smp,pelajar,,belum menikah,2003-12-29,Anak,WNI,,,ThomasArdiansyah,IsmailDhanuPriatni,hidup
-50,6101051011095210,2105011309200000,IsmailDhanuPriatni,perempuan,pemangkat,1972-01-14,islam,sma,petani,,menikah,2003-12-30,Ibu,WNI,,,MustikaMaureenWidihastuti,ChristySunday,hidup
-51,6101051011096970,2105011309210000,AlviraDeviyanto,laki-laki,jelutung,1971-04-10,islam,sma,petani,,menikah,2003-12-31,Ayah / Kepala Keluarga,WNI,,,SeptiBonitaKama,IndryRahmawati,hidup
-52,6101051011098730,2105011309210000,RadenArahman,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,,belum menikah,2004-01-01,Anak,WNI,,,AlviraDeviyanto,IntanQurniawan,hidup
-53,6101051011100490,2105011309210000,NoviDestrya,perempuan,jelutung,2005-06-15,islam,sd,pelajar,O,belum menikah,2004-01-02,Anak,WNI,,,AlviraDeviyanto,IntanQurniawan,hidup
-54,6101051011102240,2105011309210000,IzzatulAlghifari,perempuan,jelutung,2001-04-13,islam,smp,pelajar,O,belum menikah,2004-01-03,Anak,WNI,,,AlviraDeviyanto,IntanQurniawan,hidup
-55,6101051011104000,2105011309210000,IntanQurniawan,perempuan,jelutung,1972-01-14,islam,sma,petani,B+,menikah,2004-01-04,Ibu,WNI,,,LisnaZahaira,KautsarRudiatin,hidup
-56,6101051011105760,2105011309220000,CaesaraniHalliraAprisilya,laki-laki,pemangkat,1971-04-10,islam,sma,petani,B+,menikah,2004-01-05,Ayah / Kepala Keluarga,WNI,,,DiniyahZahra,KayraaNugroho,hidup
-57,6101051011107520,2105011309220000,ZianiraMuhammad,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B+,belum menikah,2004-01-06,Anak,WNI,,,CaesaraniHalliraAprisilya,TiaraSulistyaningra,hidup
-58,6101051011109270,2105011309220000,IreneUtami,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,A+,belum menikah,2004-01-07,Anak,WNI,,,CaesaraniHalliraAprisilya,TiaraSulistyaningra,hidup
-59,6101051011111030,2105011309220000,FebyRahayoe,perempuan,jelutung,2001-04-13,islam,smp,pelajar,O,belum menikah,2004-01-08,Anak,WNI,,,CaesaraniHalliraAprisilya,TiaraSulistyaningra,hidup
-60,6101051011112790,2105011309220000,TiaraSulistyaningra,perempuan,jelutung,1972-01-14,islam,sma,petani,O,menikah,2004-01-09,Ibu,WNI,,,DiahFebbyTobing,ViniatryAntoni,hidup
-61,6101051011114550,2105011309230000,FarahQosthory,laki-laki,jelutung,1971-04-10,islam,sma,petani,O,menikah,2004-01-10,Ayah / Kepala Keluarga,WNI,,,EllizaRyanda,EllizaRatnasari,hidup
-62,6101051011116300,2105011309230000,AnindyantiUsmani,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,B,belum menikah,2004-01-11,Anak,WNI,,,FarahQosthory,WiwiedHaninditaGardito,hidup
-63,6101051011118060,2105011309230000,AninditaSusanti,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B,belum menikah,2004-01-12,Anak,WNI,,,FarahQosthory,WiwiedHaninditaGardito,hidup
-64,6101051011119820,2105011309230000,JaniarSaputri,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,B,belum menikah,2004-01-13,Anak,WNI,,,FarahQosthory,WiwiedHaninditaGardito,hidup
-65,6101051011121580,2105011309230000,WiwiedHaninditaGardito,perempuan,jelutung,1972-01-14,islam,sma,petani,B,menikah,2004-01-14,Ibu,WNI,,,NindyMutiara,SalsabilaParamadina,hidup
-66,6101051011123330,2105011309240000,SyaviraLarassati,laki-laki,jelutung,1971-04-10,islam,sma,petani,A+,menikah,2004-01-15,Ayah / Kepala Keluarga,WNI,,,AstridPabrelaNizliandry,RianitaMarvina,hidup
-67,6101051011125090,2105011309240000,TitiekRahman,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,,belum menikah,2004-01-16,Anak,WNI,,,SyaviraLarassati,NurmiWillyanda,hidup
-68,6101051011126850,2105011309240000,EfrindaUlfania,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,,belum menikah,2004-01-17,Anak,WNI,,,SyaviraLarassati,NurmiWillyanda,hidup
-69,6101051011128610,2105011309240000,IrmhaDwiraWicaksono,perempuan,jelutung,2001-04-13,islam,smp,pelajar,,belum menikah,2004-01-18,Anak,WNI,,,SyaviraLarassati,NurmiWillyanda,hidup
-70,6101051011130360,2105011309240000,NurmiWillyanda,perempuan,pemangkat,1972-01-14,islam,sma,petani,,menikah,2004-01-19,Ibu,WNI,,,DwiraPurwahyuningrum,NaelFauziyah,hidup
-71,6101051011132120,2105011309250000,NadyaMitsuko,laki-laki,jelutung,1971-04-10,islam,sma,petani,,menikah,2004-01-20,Ayah / Kepala Keluarga,WNI,,,SyarifahFebrian,AgnesRais,hidup
-72,6101051011133880,2105011309250000,FianiAspi,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,O,belum menikah,2004-01-21,Anak,WNI,,,NadyaMitsuko,SafirahFauziyah,hidup
-73,6101051011135640,2105011309250000,SephiraAmalia,perempuan,jelutung,2005-06-15,islam,sd,pelajar,O,belum menikah,2004-01-22,Anak,WNI,,,NadyaMitsuko,SafirahFauziyah,hidup
-74,6101051011137390,2105011309250000,EvelinPinkanatalini,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,B+,belum menikah,2004-01-23,Anak,WNI,,,NadyaMitsuko,SafirahFauziyah,hidup
-75,6101051011139150,2105011309250000,SafirahFauziyah,perempuan,jelutung,1972-01-14,islam,sma,petani,B+,menikah,2004-01-24,Ibu,WNI,,,ArrumKurniawan,YoanFachrully,hidup
-76,6101051011140910,2105011309260000,AndamariKrishti,laki-laki,pemangkat,1971-04-10,kristen,sma,petani,B+,menikah,2004-01-25,Ayah / Kepala Keluarga,WNI,,,HaninditaGlenyIzhar,RiesVillaransi,hidup
-77,6101051011142670,2105011309260000,GitaFajria,laki-laki,jelutung,2003-11-11,kristen,sd,pelajar,A+,belum menikah,2004-01-26,Anak,WNI,,,AndamariKrishti,MeutiaNandita,hidup
-78,6101051011144420,2105011309260000,GlenyFaradillah,laki-laki,jelutung,2005-06-15,kristen,sd,pelajar,O,belum menikah,2004-01-27,Anak,WNI,,,AndamariKrishti,MeutiaNandita,hidup
-79,6101051011146180,2105011309260000,TariAmelia,perempuan,jelutung,2001-04-13,kristen,smp,pelajar,O,belum menikah,2004-01-28,Anak,WNI,,,AndamariKrishti,MeutiaNandita,hidup
-80,6101051011147940,2105011309260000,MeutiaNandita,perempuan,pemangkat,1972-01-14,kristen,sma,petani,O,menikah,2004-01-29,Ibu,WNI,,,JesycaJaya,AndamariMarvina,hidup
-81,6101051011149700,2105011309270000,FitriaAndrianto,laki-laki,jelutung,1971-04-10,budha,sma,petani,B,menikah,2004-01-30,Ayah / Kepala Keluarga,WNI,,,HasianaPrimanelza,NellaTiodimar,hidup
-82,6101051011151460,2105011309270000,NindyaHamdan,laki-laki,pemangkat,2003-11-11,budha,sd,pelajar,B,belum menikah,2004-01-31,Anak,WNI,,,FitriaAndrianto,CynthiaAprisilia,hidup
-83,6101051011153210,2105011309270000,NoorAmsamsyum,perempuan,jelutung,2005-06-15,budha,sd,pelajar,B,belum menikah,2004-02-01,Anak,WNI,,,FitriaAndrianto,CynthiaAprisilia,hidup
-84,6101051011154970,2105011309270000,PuspaRiskiPrasetyo,perempuan,jelutung,2001-04-13,budha,smp,pelajar,B,belum menikah,2004-02-02,Anak,WNI,,,FitriaAndrianto,CynthiaAprisilia,hidup
-85,6101051011156730,2105011309270000,CynthiaAprisilia,perempuan,jelutung,1972-01-14,budha,sma,petani,A+,menikah,2004-02-03,Ibu,WNI,,,TiariP,EsraLangit,hidup
-86,6101051011158490,2105011309280000,InnekeFebrianto,laki-laki,pemangkat,1971-04-10,islam,sma,petani,,menikah,2004-02-04,Ayah / Kepala Keluarga,WNI,,,EvanyRumanti,MiriamWildani,hidup
-87,6101051011160240,2105011309280000,JosephineSabrina,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,,belum menikah,2004-02-05,Anak,WNI,,,InnekeFebrianto,FikaPangestu,hidup
-88,6101051011162000,2105011309280000,ChikaPemana,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,,belum menikah,2004-02-06,Anak,WNI,,,InnekeFebrianto,FikaPangestu,hidup
-89,6101051011163760,2105011309280000,RyneldaYahya,perempuan,jelutung,2001-04-13,islam,smp,pelajar,,belum menikah,2004-02-07,Anak,WNI,,,InnekeFebrianto,FikaPangestu,hidup
-90,6101051011165520,2105011309280000,FikaPangestu,perempuan,jelutung,1972-01-14,islam,sma,petani,,menikah,2004-02-08,Ibu,WNI,,,AisyahGustika,AsihPrasetyo,hidup
-91,6101051011167270,2105011309290000,TheresiaNisrina,laki-laki,jelutung,1971-04-10,islam,sma,petani,O,menikah,2004-02-09,Ayah / Kepala Keluarga,WNI,,,StefannyRahmawati,KamiliaTangenAiman,hidup
-92,6101051011169030,2105011309290000,ElzaVirani,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,O,belum menikah,2004-02-10,Anak,WNI,,,TheresiaNisrina,SilvianaHadian,hidup
-93,6101051011170790,2105011309290000,DevickaSulistiyo,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B+,belum menikah,2004-02-11,Anak,WNI,,,TheresiaNisrina,SilvianaHadian,hidup
-94,6101051011172550,2105011309290000,DiahFadholi,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,B+,belum menikah,2004-02-12,Anak,WNI,,,TheresiaNisrina,SilvianaHadian,hidup
-95,6101051011174300,2105011309290000,SilvianaHadian,perempuan,jelutung,1972-01-14,islam,sma,petani,B+,menikah,2004-02-13,Ibu,WNI,,,DelaDjiddy,KarinaHilmiansyah,hidup
-96,6101051011176060,2105011309300000,AfridaKurniansyah,laki-laki,jelutung,1971-04-10,islam,sma,petani,A+,menikah,2004-02-14,Ayah / Kepala Keluarga,WNI,,,RifannyFitriyah,SiskaNarimanda,hidup
-97,6101051011177820,2105011309300000,DescaFauziah,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,O,belum menikah,2004-02-15,Anak,WNI,,,AfridaKurniansyah,FrisahaMegaPinem,hidup
-98,6101051011179580,2105011309300000,RiryparasNoor,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,O,belum menikah,2004-02-16,Anak,WNI,,,AfridaKurniansyah,FrisahaMegaPinem,hidup
-99,6101051011181330,2105011309300000,RahmaNurkhasanah,perempuan,jelutung,2001-04-13,islam,smp,pelajar,O,belum menikah,2004-02-17,Anak,WNI,,,AfridaKurniansyah,FrisahaMegaPinem,hidup
-100,6101051011183090,2105011309300000,FrisahaMegaPinem,perempuan,pemangkat,1972-01-14,islam,sma,petani,B,menikah,2004-02-18,Ibu,WNI,,,AgustinaHarkart,YosiaSulistyaningra,hidup
-101,6101051011184850,2105011309310000,IraniMeiraniFarandy,laki-laki,jelutung,1971-04-10,islam,sma,petani,B,menikah,2004-02-19,Ayah / Kepala Keluarga,WNI,,,AvrillaSatriana,DaraChusnurWidyatmo,hidup
-102,6101051011186610,2105011309310000,HanakoAndriana,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B,belum menikah,2004-02-20,Anak,WNI,,,IraniMeiraniFarandy,DitaJohirin,hidup
-103,6101051011188360,2105011309310000,KikhmahWidyatama,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B,belum menikah,2004-02-21,Anak,WNI,,,IraniMeiraniFarandy,DitaJohirin,hidup
-104,6101051011190120,2105011309310000,SelvyNoverlia,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,A+,belum menikah,2004-02-22,Anak,WNI,,,IraniMeiraniFarandy,DitaJohirin,hidup
-105,6101051011191880,2105011309310000,DitaJohirin,perempuan,jelutung,1972-01-14,islam,sma,petani,,menikah,2004-02-23,Ibu,WNI,,,MaureenIndriastari,GitaUtami,hidup
-106,6101051011193640,2105011309320000,BungaNisrina,laki-laki,pemangkat,1971-04-10,islam,sma,petani,,menikah,2004-02-24,Ayah / Kepala Keluarga,WNI,,,AstriNisa,NadyaHarkart,hidup
-107,6101051011195390,2105011309320000,VinaWulandari,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,,belum menikah,2004-02-25,Anak,WNI,,,BungaNisrina,MilatiAriefandi,hidup
-108,6101051011197150,2105011309320000,RaissaOktazilvia,laki-laki,jelutung,2005-06-15,islam,sd,pelajar,,belum menikah,2004-02-26,Anak,WNI,,,BungaNisrina,MilatiAriefandi,hidup
-109,6101051011198910,2105011309320000,MestikaDiahKresno,perempuan,jelutung,2001-04-13,islam,smp,pelajar,,belum menikah,2004-02-27,Anak,WNI,,,BungaNisrina,MilatiAriefandi,hidup
-110,6101051011200670,2105011309320000,MilatiAriefandi,perempuan,pemangkat,1972-01-14,islam,sma,petani,O,menikah,2004-02-28,Ibu,WNI,,,SilvynaDitaAdmianawidiastuti,LarasatiParamitha,hidup
-111,6101051011202420,2105011309330000,MercyPermana,laki-laki,jelutung,1971-04-10,islam,sma,petani,O,menikah,2004-02-29,Ayah / Kepala Keluarga,WNI,,,DellaNoerani,SorayaHimawan,hidup
-112,6101051011204180,2105011309330000,NabilaSutanti,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,B+,belum menikah,2004-03-01,Anak,WNI,,,MercyPermana,ChitraArisa,hidup
-113,6101051011205940,2105011309330000,AgustinOktavia,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B+,belum menikah,2004-03-02,Anak,WNI,,,MercyPermana,ChitraArisa,hidup
-114,6101051011207700,2105011309330000,AnggitaRismiarti,perempuan,jelutung,2001-04-13,islam,smp,pelajar,B+,belum menikah,2004-03-03,Anak,WNI,,,MercyPermana,ChitraArisa,hidup
-115,6101051011209460,2105011309330000,ChitraArisa,perempuan,jelutung,1972-01-14,islam,sma,petani,A+,menikah,2004-03-04,Ibu,WNI,,,AyudyahAvieNurkhasanah,DesyTanuwijaya,hidup
-116,6101051011211210,2105011309340000,ZaraPriatni,laki-laki,pemangkat,1971-04-10,kristen,sma,petani,O,menikah,2004-03-05,Ayah / Kepala Keluarga,WNI,,,TiaraJuwita,IntanTursia,hidup
-117,6101051011212970,2105011309340000,HardiantiNirmala,laki-laki,jelutung,2003-11-11,kristen,sd,pelajar,O,belum menikah,2004-03-06,Anak,WNI,,,ZaraPriatni,AngelElmaRialdhie,hidup
-118,6101051011214730,2105011309340000,AthirahFebrian,laki-laki,pemangkat,2005-06-15,kristen,sd,pelajar,O,belum menikah,2004-03-07,Anak,WNI,,,ZaraPriatni,AngelElmaRialdhie,hidup
-119,6101051011216490,2105011309340000,EtiSihombing,perempuan,jelutung,2001-04-13,kristen,smp,pelajar,B,belum menikah,2004-03-08,Anak,WNI,,,ZaraPriatni,AngelElmaRialdhie,hidup
-120,6101051011218240,2105011309340000,AngelElmaRialdhie,perempuan,jelutung,1972-01-14,kristen,sma,petani,B,menikah,2004-03-09,Ibu,WNI,,,LabaikaTriashafira,FaradhiaLonika,hidup
-121,6101051011220000,2105011309350000,VannySinuka,laki-laki,jelutung,1971-04-10,budha,sma,petani,B,menikah,2004-03-10,Ayah / Kepala Keluarga,WNI,,,ShifaWijaya,AnastasiaRozi,hidup
-122,6101051011221760,2105011309350000,WulanAndrianto,laki-laki,pemangkat,2003-11-11,budha,sd,pelajar,B,belum menikah,2004-03-11,Anak,WNI,,,VannySinuka,TriskaSastrawan,hidup
-123,6101051011223520,2105011309350000,PabrelaFathinaSharifa,perempuan,jelutung,2005-06-15,budha,sd,pelajar,A+,belum menikah,2004-03-12,Anak,WNI,,,VannySinuka,TriskaSastrawan,hidup
-124,6101051011225270,2105011309350000,MiriamWidihastuti,perempuan,pemangkat,2001-04-13,budha,smp,pelajar,,belum menikah,2004-03-13,Anak,WNI,,,VannySinuka,TriskaSastrawan,hidup
-125,6101051011227030,2105011309350000,TriskaSastrawan,perempuan,jelutung,1972-01-14,budha,sma,petani,,menikah,2004-03-14,Ibu,WNI,,,WikeNandita,DwiraOklita,hidup
-126,6101051011228790,2105011309360000,VinnyAulia,laki-laki,jelutung,1971-04-10,islam,sma,petani,,menikah,2004-03-15,Ayah / Kepala Keluarga,WNI,,,RahmahTiara,ArifahPratiko,hidup
-127,6101051011230550,2105011309360000,QatrunSyenaAlim,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,,belum menikah,2004-03-16,Anak,WNI,,,VinnyAulia,AdzkiyaBagir,hidup
-128,6101051011232300,2105011309360000,YantiClaudia,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,,belum menikah,2004-03-17,Anak,WNI,,,VinnyAulia,AdzkiyaBagir,hidup
-129,6101051011234060,2105011309360000,SharaSuputra,perempuan,jelutung,2001-04-13,islam,smp,pelajar,O,belum menikah,2004-03-18,Anak,WNI,,,VinnyAulia,AdzkiyaBagir,hidup
-130,6101051011235820,2105011309360000,AdzkiyaBagir,perempuan,pemangkat,1972-01-14,islam,sma,petani,O,menikah,2004-03-19,Ibu,WNI,,,IkeAdhitama,FitriaFikri,hidup
-131,6101051011237580,2105011309370000,TriRozi,laki-laki,jelutung,1971-04-10,islam,sma,petani,B+,menikah,2004-03-20,Ayah / Kepala Keluarga,WNI,,,ShiamiJoan,JennyAntoni,hidup
-132,6101051011239330,2105011309370000,AnniezaIrmaliaSelenia,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B+,belum menikah,2004-03-21,Anak,WNI,,,TriRozi,MegaMazaya,hidup
-133,6101051011241090,2105011309370000,DessitaRahma,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B+,belum menikah,2004-03-22,Anak,WNI,,,TriRozi,MegaMazaya,hidup
-134,6101051011242850,2105011309370000,SalihaHidayanti,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,A+,belum menikah,2004-03-23,Anak,WNI,,,TriRozi,MegaMazaya,hidup
-135,6101051011244610,2105011309370000,MegaMazaya,perempuan,jelutung,1972-01-14,islam,sma,petani,O,menikah,2004-03-24,Ibu,WNI,,,AninditaEfrindaSasna,NoviaFebriyani,hidup
-136,6101051011246360,2105011309380000,LunaSaradina,laki-laki,pemangkat,1971-04-10,islam,sma,petani,O,menikah,2004-03-25,Ayah / Kepala Keluarga,WNI,,,LutfiaPambudi,MariaRyneldaAziz,hidup
-137,6101051011248120,2105011309380000,FauziyahNurkhayati,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,O,belum menikah,2004-03-26,Anak,WNI,,,LunaSaradina,TangenNoviyanti,hidup
-138,6101051011249880,2105011309380000,NafilaJulianto,laki-laki,jelutung,2005-06-15,islam,sd,pelajar,B,belum menikah,2004-03-27,Anak,WNI,,,LunaSaradina,TangenNoviyanti,hidup
-139,6101051011251640,2105011309380000,ErmaPriyanto,perempuan,jelutung,2001-04-13,islam,smp,pelajar,B,belum menikah,2004-03-28,Anak,WNI,,,LunaSaradina,TangenNoviyanti,hidup
-140,6101051011253390,2105011309380000,TangenNoviyanti,perempuan,pemangkat,1972-01-14,islam,sma,petani,B,menikah,2004-03-29,Ibu,WNI,,,SilmiMuharia,YasmineWicaksono,hidup
-141,6101051011255150,2105011309390000,SiannePramantha,laki-laki,jelutung,1971-04-10,kristen,sma,petani,B,menikah,2004-03-30,Ayah / Kepala Keluarga,WNI,,,MeiraniYahya,RetnoMaulinda,hidup
-142,6101051011256910,2105011309390000,CindySunday,laki-laki,pemangkat,2003-11-11,kristen,sd,pelajar,A+,belum menikah,2004-03-31,Anak,WNI,,,SiannePramantha,AdeliaSuheryanto,hidup
-143,6101051011258670,2105011309390000,SarahGorat,perempuan,jelutung,2005-06-15,kristen,sd,pelajar,,belum menikah,2004-04-01,Anak,WNI,,,SiannePramantha,AdeliaSuheryanto,hidup
-144,6101051011260420,2105011309390000,HaniDessyWidiyasari,perempuan,jelutung,2001-04-13,kristen,smp,pelajar,,belum menikah,2004-04-02,Anak,WNI,,,SiannePramantha,AdeliaSuheryanto,hidup
-145,6101051011262180,2105011309390000,AdeliaSuheryanto,perempuan,jelutung,1972-01-14,kristen,sma,petani,,menikah,2004-04-03,Ibu,WNI,,,AssaliaAruti,ShintanyAhugrah,hidup
-146,6101051011263940,2105011309400000,SafiraWidyawati,laki-laki,pemangkat,1971-04-10,budha,sma,petani,,menikah,2004-04-04,Ayah / Kepala Keluarga,WNI,,,MilatiArieska,TasyaVirgina,hidup
-147,6101051011265700,2105011309400000,SeptaniaJaya,laki-laki,jelutung,2003-11-11,budha,sd,pelajar,,belum menikah,2004-04-05,Anak,WNI,,,SafiraWidyawati,GhinaOctaviana,hidup
-148,6101051011267460,2105011309400000,TresnaAsih,laki-laki,pemangkat,2005-06-15,budha,sd,pelajar,O,belum menikah,2004-04-06,Anak,WNI,,,SafiraWidyawati,GhinaOctaviana,hidup
-149,6101051011269210,2105011309400000,HendriyawatiArindaOktaviani,perempuan,jelutung,2001-04-13,budha,smp,pelajar,O,belum menikah,2004-04-07,Anak,WNI,,,SafiraWidyawati,GhinaOctaviana,hidup
-150,6101051011270970,2105011309400000,GhinaOctaviana,perempuan,jelutung,1972-01-14,budha,sma,petani,B+,menikah,2004-04-08,Ibu,WNI,,,FriscaChusnurNoverlia,LisnaFauzunuria,hidup
+1,6101051011010000,2105011309110000,Sigit Pratama,laki-laki,jelutung,1971-04-10,islam,sma,petani,A+,menikah,2003-11-11,Ayah / Kepala Keluarga,WNI,,,Olga Abidah,Karina Anindita,hidup
+2,6101051011011000,2105011309110000,Arrivalda Ramadani,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,O,belum menikah,2003-11-12,Anak,WNI,,,Sigit Pratama,Fajri Astuti,hidup
+3,6101051011012000,2105011309110000,Derilandry Saputra,perempuan,jelutung,2005-06-15,islam,sd,pelajar,O,belum menikah,2003-11-13,Anak,WNI,,,Sigit Pratama,Fajri Astuti,hidup
+4,6101051011013000,2105011309110000,Edy Journalisanda,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,O,belum menikah,2003-11-14,Anak,WNI,,,Sigit Pratama,Fajri Astuti,hidup
+5,6101051011014000,2105011309110000,Fajri Astuti,perempuan,jelutung,1972-01-14,islam,sma,petani,B,menikah,2003-11-15,Ibu,WNI,,,Della Wijaya,Anggita Rahmasari,hidup
+6,6101051011020000,2105011309120000,Jeremiah Azzad,laki-laki,jelutung,1971-04-10,kristen,sma,petani,B,menikah,2003-11-16,Ayah / Kepala Keluarga,WNI,,,Zara Fikri,Hanny Fauziah,hidup
+7,6101051011021000,2105011309120000,Hafizh Fachrully,laki-laki,jelutung,2003-11-11,kristen,sd,pelajar,B,belum menikah,2003-11-17,Anak,WNI,,,Jeremiah Azzad,Ramanta Soleha,hidup
+8,6101051011022000,2105011309120000,Asyrafi Nustantomo,laki-laki,pemangkat,2005-06-15,kristen,sd,pelajar,B,belum menikah,2003-11-18,Anak,WNI,,,Jeremiah Azzad,Ramanta Soleha,hidup
+9,6101051011023000,2105011309120000,Alrendy Triutami,perempuan,jelutung,2001-04-13,kristen,smp,pelajar,A+,belum menikah,2003-11-19,Anak,WNI,,,Jeremiah Azzad,Ramanta Soleha,hidup
+10,6101051011024000,2105011309120000,Ramanta Soleha,perempuan,pemangkat,1972-01-14,kristen,sma,petani,,menikah,2003-11-20,Ibu,WNI,,,Evelin Adriarso,Disya Silmi Herdani,hidup
+11,6101051011026670,2105011309130000,Banni Aisyah,laki-laki,jelutung,1971-04-10,budha,sma,petani,,menikah,2003-11-21,Ayah / Kepala Keluarga,WNI,,,Galih Azzahra,Raden Hutauruk,hidup
+12,6101051011028420,2105011309130000,Fitra Mustikawati,laki-laki,jelutung,2003-11-11,budha,sd,pelajar,,belum menikah,2003-11-22,Anak,WNI,,,Banni Aisyah,Muhammad Alyani,hidup
+13,6101051011030180,2105011309130000,Fauzan Christine,perempuan,jelutung,2005-06-15,budha,sd,pelajar,,belum menikah,2003-11-23,Anak,WNI,,,Banni Aisyah,Muhammad Alyani,hidup
+14,6101051011031940,2105011309130000,Ario Hutahaean,perempuan,pemangkat,2001-04-13,budha,smp,pelajar,,belum menikah,2003-11-24,Anak,WNI,,,Banni Aisyah,Muhammad Alyani,hidup
+15,6101051011033700,2105011309130000,Muhammad Alyani,perempuan,jelutung,1972-01-14,budha,sma,petani,O,menikah,2003-11-25,Ibu,WNI,,,Karlina Anindya,Asri Miriam Umam,hidup
+16,6101051011035460,2105011309140000,Arfan Mutiara,laki-laki,pemangkat,1971-04-10,islam,sma,petani,O,menikah,2003-11-26,Ayah / Kepala Keluarga,WNI,,,Putrima Maulidah,Elza Saputri,hidup
+17,6101051011037210,2105011309140000,Ariyadi Harkart,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B+,belum menikah,2003-11-27,Anak,WNI,,,Arfan Mutiara,Reynaldi Sulistyaningra,hidup
+18,6101051011038970,2105011309140000,Eka Aruti,laki-laki,jelutung,2005-06-15,islam,sd,pelajar,B+,belum menikah,2003-11-28,Anak,WNI,,,Arfan Mutiara,Reynaldi Sulistyaningra,hidup
+19,6101051011040730,2105011309140000,Aprian Narimanda,perempuan,jelutung,2001-04-13,islam,smp,pelajar,B+,belum menikah,2003-11-29,Anak,WNI,,,Arfan Mutiara,Reynaldi Sulistyaningra,hidup
+20,6101051011042490,2105011309140000,Reynaldi Sulistyaningra,perempuan,pemangkat,1972-01-14,islam,sma,petani,A+,menikah,2003-11-30,Ibu,WNI,,,Natasha Hotasi,Tiara Sulistiyo,hidup
+21,6101051011044240,2105011309150000,Bimo Riany,laki-laki,jelutung,1971-04-10,islam,sma,petani,O,menikah,2003-12-01,Ayah / Kepala Keluarga,WNI,,,Caesariana Hamdi,Putri Jeni,hidup
+22,6101051011046000,2105011309150000,Sugraha Rugaya,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,O,belum menikah,2003-12-02,Anak,WNI,,,Bimo Riany,Alditio Vanesha,hidup
+23,6101051011047760,2105011309150000,Rico Simorangkir,perempuan,jelutung,2005-06-15,islam,sd,pelajar,O,belum menikah,2003-12-03,Anak,WNI,,,Bimo Riany,Alditio Vanesha,hidup
+24,6101051011049520,2105011309150000,Rio Pinkanatalini,perempuan,jelutung,2001-04-13,islam,smp,pelajar,B,belum menikah,2003-12-04,Anak,WNI,,,Bimo Riany,Alditio Vanesha,hidup
+25,6101051011051270,2105011309150000,Alditio Vanesha,perempuan,jelutung,1972-01-14,islam,sma,petani,B,menikah,2003-12-05,Ibu,WNI,,,Tessa Faradillah,Indi Husein,hidup
+26,6101051011053030,2105011309160000,Adhim Dyarini,laki-laki,pemangkat,1971-04-10,islam,sma,petani,B,menikah,2003-12-06,Ayah / Kepala Keluarga,WNI,,,Tari Nandita,Sari Tobing,hidup
+27,6101051011054790,2105011309160000,Ray Sinuka,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B,belum menikah,2003-12-07,Anak,WNI,,,Adhim Dyarini,Rifqi Octaviana,hidup
+28,6101051011056550,2105011309160000,Haris Dicky Suputra,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,A+,belum menikah,2003-12-08,Anak,WNI,,,Adhim Dyarini,Rifqi Octaviana,hidup
+29,6101051011058300,2105011309160000,Yuda Hardianti,perempuan,jelutung,2001-04-13,islam,smp,pelajar,,belum menikah,2003-12-09,Anak,WNI,,,Adhim Dyarini,Rifqi Octaviana,hidup
+30,6101051011060060,2105011309160000,Rifqi Octaviana,perempuan,jelutung,1972-01-14,islam,sma,petani,,menikah,2003-12-10,Ibu,WNI,,,Athirah Octaza,Dara Widiyasari,hidup
+31,6101051011061820,2105011309170000,Aswin Habiba,laki-laki,jelutung,1971-04-10,islam,sma,petani,,menikah,2003-12-11,Ayah / Kepala Keluarga,WNI,,,Lavinta Apriando,Lavina Sali,hidup
+32,6101051011063580,2105011309170000,Adityo Bob Octivani,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,,belum menikah,2003-12-12,Anak,WNI,,,Aswin Habiba,Daniel Nurkhayati,hidup
+33,6101051011065330,2105011309170000,Fahmi Hermawaty,perempuan,jelutung,2005-06-15,islam,sd,pelajar,,belum menikah,2003-12-13,Anak,WNI,,,Aswin Habiba,Daniel Nurkhayati,hidup
+34,6101051011067090,2105011309170000,Satrya Nurhazrati,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,O,belum menikah,2003-12-14,Anak,WNI,,,Aswin Habiba,Daniel Nurkhayati,hidup
+35,6101051011068850,2105011309170000,Daniel Nurkhayati,perempuan,jelutung,1972-01-14,islam,sma,petani,O,menikah,2003-12-15,Ibu,WNI,,,Arini Hanifah,Ike Rahayu,hidup
+36,6101051011070610,2105011309180000,Geraldi Abidah,laki-laki,jelutung,1971-04-10,islam,sma,petani,B+,menikah,2003-12-16,Ayah / Kepala Keluarga,WNI,,,Fiani Octarina,Maratun Halida,hidup
+37,6101051011072360,2105011309180000,Cardito Irwansyah,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B+,belum menikah,2003-12-17,Anak,WNI,,,Geraldi Abidah,Yusuf Wardani,hidup
+38,6101051011074120,2105011309180000,Radja Defri,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,B+,belum menikah,2003-12-18,Anak,WNI,,,Geraldi Abidah,Yusuf Wardani,hidup
+39,6101051011075880,2105011309180000,Chaerul Hartina,perempuan,jelutung,2001-04-13,islam,smp,pelajar,A+,belum menikah,2003-12-19,Anak,WNI,,,Geraldi Abidah,Yusuf Wardani,hidup
+40,6101051011077640,2105011309180000,Yusuf Wardani,perempuan,pemangkat,1972-01-14,islam,sma,petani,O,menikah,2003-12-20,Ibu,WNI,,,Diniyah Irmha Al-fathan,Dwi Anggraini,hidup
+41,6101051011079390,2105011309190000,Muhamad Prapastia,laki-laki,jelutung,1971-04-10,islam,sma,petani,O,menikah,2003-12-21,Ayah / Kepala Keluarga,WNI,,,Hasiana Purwanto,Ruthcharuni Elvina Ariefandi,hidup
+42,6101051011081150,2105011309190000,Andika Labas,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,O,belum menikah,2003-12-22,Anak,WNI,,,Muhamad Prapastia,Arthur Rabani,hidup
+43,6101051011082910,2105011309190000,Reynard Herdani,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B,belum menikah,2003-12-23,Anak,WNI,,,Muhamad Prapastia,Arthur Rabani,hidup
+44,6101051011084670,2105011309190000,Rian Geryance,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,B,belum menikah,2003-12-24,Anak,WNI,,,Muhamad Prapastia,Arthur Rabani,hidup
+45,6101051011086420,2105011309190000,Arthur Rabani,perempuan,jelutung,1972-01-14,islam,sma,petani,B,menikah,2003-12-25,Ibu,WNI,,,Chika Kinandatsani,Syena Widyasmoro,hidup
+46,6101051011088180,2105011309200000,Thomas Ardiansyah,laki-laki,pemangkat,1971-04-10,islam,sma,petani,B,menikah,2003-12-26,Ayah / Kepala Keluarga,WNI,,,Nabila Puspitasari,Cintya Josh,hidup
+47,6101051011089940,2105011309200000,Kenneth Alim,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,A+,belum menikah,2003-12-27,Anak,WNI,,,Thomas Ardiansyah,Ismail Dhanu Priatni,hidup
+48,6101051011091700,2105011309200000,Elvin Elleonora,laki-laki,jelutung,2005-06-15,islam,sd,pelajar,,belum menikah,2003-12-28,Anak,WNI,,,Thomas Ardiansyah,Ismail Dhanu Priatni,hidup
+49,6101051011093460,2105011309200000,Alfin Irlan Wiratmansyah,perempuan,jelutung,2001-04-13,islam,smp,pelajar,,belum menikah,2003-12-29,Anak,WNI,,,Thomas Ardiansyah,Ismail Dhanu Priatni,hidup
+50,6101051011095210,2105011309200000,Ismail Dhanu Priatni,perempuan,pemangkat,1972-01-14,islam,sma,petani,,menikah,2003-12-30,Ibu,WNI,,,Mustika Maureen Widihastuti,Christy Sunday,hidup
+51,6101051011096970,2105011309210000,Alvira Deviyanto,laki-laki,jelutung,1971-04-10,islam,sma,petani,,menikah,2003-12-31,Ayah / Kepala Keluarga,WNI,,,Septi Bonita Kama,Indry Rahmawati,hidup
+52,6101051011098730,2105011309210000,Raden Arahman,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,,belum menikah,2004-01-01,Anak,WNI,,,Alvira Deviyanto,Intan Qurniawan,hidup
+53,6101051011100490,2105011309210000,Novi Destrya,perempuan,jelutung,2005-06-15,islam,sd,pelajar,O,belum menikah,2004-01-02,Anak,WNI,,,Alvira Deviyanto,Intan Qurniawan,hidup
+54,6101051011102240,2105011309210000,Izzatul Alghifari,perempuan,jelutung,2001-04-13,islam,smp,pelajar,O,belum menikah,2004-01-03,Anak,WNI,,,Alvira Deviyanto,Intan Qurniawan,hidup
+55,6101051011104000,2105011309210000,Intan Qurniawan,perempuan,jelutung,1972-01-14,islam,sma,petani,B+,menikah,2004-01-04,Ibu,WNI,,,Lisna Zahaira,Kautsar Rudiatin,hidup
+56,6101051011105760,2105011309220000,Caesarani Hallira Aprisilya,laki-laki,pemangkat,1971-04-10,islam,sma,petani,B+,menikah,2004-01-05,Ayah / Kepala Keluarga,WNI,,,Diniyah Zahra,Kayraa Nugroho,hidup
+57,6101051011107520,2105011309220000,Zianira Muhammad,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B+,belum menikah,2004-01-06,Anak,WNI,,,Caesarani Hallira Aprisilya,Tiara Sulistyaningra,hidup
+58,6101051011109270,2105011309220000,Irene Utami,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,A+,belum menikah,2004-01-07,Anak,WNI,,,Caesarani Hallira Aprisilya,Tiara Sulistyaningra,hidup
+59,6101051011111030,2105011309220000,Feby Rahayoe,perempuan,jelutung,2001-04-13,islam,smp,pelajar,O,belum menikah,2004-01-08,Anak,WNI,,,Caesarani Hallira Aprisilya,Tiara Sulistyaningra,hidup
+60,6101051011112790,2105011309220000,Tiara Sulistyaningra,perempuan,jelutung,1972-01-14,islam,sma,petani,O,menikah,2004-01-09,Ibu,WNI,,,Diah Febby Tobing,Viniatry Antoni,hidup
+61,6101051011114550,2105011309230000,Farah Qosthory,laki-laki,jelutung,1971-04-10,islam,sma,petani,O,menikah,2004-01-10,Ayah / Kepala Keluarga,WNI,,,Elliza Ryanda,Elliza Ratnasari,hidup
+62,6101051011116300,2105011309230000,Anindyanti Usmani,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,B,belum menikah,2004-01-11,Anak,WNI,,,Farah Qosthory,Wiwied Hanindita Gardito,hidup
+63,6101051011118060,2105011309230000,Anindita Susanti,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B,belum menikah,2004-01-12,Anak,WNI,,,Farah Qosthory,Wiwied Hanindita Gardito,hidup
+64,6101051011119820,2105011309230000,Janiar Saputri,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,B,belum menikah,2004-01-13,Anak,WNI,,,Farah Qosthory,Wiwied Hanindita Gardito,hidup
+65,6101051011121580,2105011309230000,Wiwied Hanindita Gardito,perempuan,jelutung,1972-01-14,islam,sma,petani,B,menikah,2004-01-14,Ibu,WNI,,,Nindy Mutiara,Salsabila Paramadina,hidup
+66,6101051011123330,2105011309240000,Syavira Larassati,laki-laki,jelutung,1971-04-10,islam,sma,petani,A+,menikah,2004-01-15,Ayah / Kepala Keluarga,WNI,,,Astrid Pabrela Nizliandry,Rianita Marvina,hidup
+67,6101051011125090,2105011309240000,Titiek Rahman,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,,belum menikah,2004-01-16,Anak,WNI,,,Syavira Larassati,Nurmi Willyanda,hidup
+68,6101051011126850,2105011309240000,Efrinda Ulfania,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,,belum menikah,2004-01-17,Anak,WNI,,,Syavira Larassati,Nurmi Willyanda,hidup
+69,6101051011128610,2105011309240000,Irmha Dwira Wicaksono,perempuan,jelutung,2001-04-13,islam,smp,pelajar,,belum menikah,2004-01-18,Anak,WNI,,,Syavira Larassati,Nurmi Willyanda,hidup
+70,6101051011130360,2105011309240000,Nurmi Willyanda,perempuan,pemangkat,1972-01-14,islam,sma,petani,,menikah,2004-01-19,Ibu,WNI,,,Dwira Purwahyuningrum,Nael Fauziyah,hidup
+71,6101051011132120,2105011309250000,Nadya Mitsuko,laki-laki,jelutung,1971-04-10,islam,sma,petani,,menikah,2004-01-20,Ayah / Kepala Keluarga,WNI,,,Syarifah Febrian,Agnes Rais,hidup
+72,6101051011133880,2105011309250000,Fiani Aspi,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,O,belum menikah,2004-01-21,Anak,WNI,,,Nadya Mitsuko,Safirah Fauziyah,hidup
+73,6101051011135640,2105011309250000,Sephira Amalia,perempuan,jelutung,2005-06-15,islam,sd,pelajar,O,belum menikah,2004-01-22,Anak,WNI,,,Nadya Mitsuko,Safirah Fauziyah,hidup
+74,6101051011137390,2105011309250000,Evelin Pinkanatalini,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,B+,belum menikah,2004-01-23,Anak,WNI,,,Nadya Mitsuko,Safirah Fauziyah,hidup
+75,6101051011139150,2105011309250000,Safirah Fauziyah,perempuan,jelutung,1972-01-14,islam,sma,petani,B+,menikah,2004-01-24,Ibu,WNI,,,Arrum Kurniawan,Yoan Fachrully,hidup
+76,6101051011140910,2105011309260000,Andamari Krishti,laki-laki,pemangkat,1971-04-10,kristen,sma,petani,B+,menikah,2004-01-25,Ayah / Kepala Keluarga,WNI,,,Hanindita Gleny Izhar,Ries Villaransi,hidup
+77,6101051011142670,2105011309260000,Gita Fajria,laki-laki,jelutung,2003-11-11,kristen,sd,pelajar,A+,belum menikah,2004-01-26,Anak,WNI,,,Andamari Krishti,Meutia Nandita,hidup
+78,6101051011144420,2105011309260000,Gleny Faradillah,laki-laki,jelutung,2005-06-15,kristen,sd,pelajar,O,belum menikah,2004-01-27,Anak,WNI,,,Andamari Krishti,Meutia Nandita,hidup
+79,6101051011146180,2105011309260000,Tari Amelia,perempuan,jelutung,2001-04-13,kristen,smp,pelajar,O,belum menikah,2004-01-28,Anak,WNI,,,Andamari Krishti,Meutia Nandita,hidup
+80,6101051011147940,2105011309260000,Meutia Nandita,perempuan,pemangkat,1972-01-14,kristen,sma,petani,O,menikah,2004-01-29,Ibu,WNI,,,Jesyca Jaya,Andamari Marvina,hidup
+81,6101051011149700,2105011309270000,Fitria Andrianto,laki-laki,jelutung,1971-04-10,budha,sma,petani,B,menikah,2004-01-30,Ayah / Kepala Keluarga,WNI,,,Hasiana Primanelza,Nella Tiodimar,hidup
+82,6101051011151460,2105011309270000,Nindya Hamdan,laki-laki,pemangkat,2003-11-11,budha,sd,pelajar,B,belum menikah,2004-01-31,Anak,WNI,,,Fitria Andrianto,Cynthia Aprisilia,hidup
+83,6101051011153210,2105011309270000,Noor Amsamsyum,perempuan,jelutung,2005-06-15,budha,sd,pelajar,B,belum menikah,2004-02-01,Anak,WNI,,,Fitria Andrianto,Cynthia Aprisilia,hidup
+84,6101051011154970,2105011309270000,Puspa Riski Prasetyo,perempuan,jelutung,2001-04-13,budha,smp,pelajar,B,belum menikah,2004-02-02,Anak,WNI,,,Fitria Andrianto,Cynthia Aprisilia,hidup
+85,6101051011156730,2105011309270000,Cynthia Aprisilia,perempuan,jelutung,1972-01-14,budha,sma,petani,A+,menikah,2004-02-03,Ibu,WNI,,,Tiari P,Esra Langit,hidup
+86,6101051011158490,2105011309280000,Inneke Febrianto,laki-laki,pemangkat,1971-04-10,islam,sma,petani,,menikah,2004-02-04,Ayah / Kepala Keluarga,WNI,,,Evany Rumanti,Miriam Wildani,hidup
+87,6101051011160240,2105011309280000,Josephine Sabrina,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,,belum menikah,2004-02-05,Anak,WNI,,,Inneke Febrianto,Fika Pangestu,hidup
+88,6101051011162000,2105011309280000,Chika Pemana,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,,belum menikah,2004-02-06,Anak,WNI,,,Inneke Febrianto,Fika Pangestu,hidup
+89,6101051011163760,2105011309280000,Rynelda Yahya,perempuan,jelutung,2001-04-13,islam,smp,pelajar,,belum menikah,2004-02-07,Anak,WNI,,,Inneke Febrianto,Fika Pangestu,hidup
+90,6101051011165520,2105011309280000,Fika Pangestu,perempuan,jelutung,1972-01-14,islam,sma,petani,,menikah,2004-02-08,Ibu,WNI,,,Aisyah Gustika,Asih Prasetyo,hidup
+91,6101051011167270,2105011309290000,Theresia Nisrina,laki-laki,jelutung,1971-04-10,islam,sma,petani,O,menikah,2004-02-09,Ayah / Kepala Keluarga,WNI,,,Stefanny Rahmawati,Kamilia Tangen Aiman,hidup
+92,6101051011169030,2105011309290000,Elza Virani,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,O,belum menikah,2004-02-10,Anak,WNI,,,Theresia Nisrina,Silviana Hadian,hidup
+93,6101051011170790,2105011309290000,Devicka Sulistiyo,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B+,belum menikah,2004-02-11,Anak,WNI,,,Theresia Nisrina,Silviana Hadian,hidup
+94,6101051011172550,2105011309290000,Diah Fadholi,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,B+,belum menikah,2004-02-12,Anak,WNI,,,Theresia Nisrina,Silviana Hadian,hidup
+95,6101051011174300,2105011309290000,Silviana Hadian,perempuan,jelutung,1972-01-14,islam,sma,petani,B+,menikah,2004-02-13,Ibu,WNI,,,Dela Djiddy,Karina Hilmiansyah,hidup
+96,6101051011176060,2105011309300000,Afrida Kurniansyah,laki-laki,jelutung,1971-04-10,islam,sma,petani,A+,menikah,2004-02-14,Ayah / Kepala Keluarga,WNI,,,Rifanny Fitriyah,Siska Narimanda,hidup
+97,6101051011177820,2105011309300000,Desca Fauziah,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,O,belum menikah,2004-02-15,Anak,WNI,,,Afrida Kurniansyah,Frisaha Mega Pinem,hidup
+98,6101051011179580,2105011309300000,Riryparas Noor,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,O,belum menikah,2004-02-16,Anak,WNI,,,Afrida Kurniansyah,Frisaha Mega Pinem,hidup
+99,6101051011181330,2105011309300000,Rahma Nurkhasanah,perempuan,jelutung,2001-04-13,islam,smp,pelajar,O,belum menikah,2004-02-17,Anak,WNI,,,Afrida Kurniansyah,Frisaha Mega Pinem,hidup
+100,6101051011183090,2105011309300000,Frisaha Mega Pinem,perempuan,pemangkat,1972-01-14,islam,sma,petani,B,menikah,2004-02-18,Ibu,WNI,,,Agustina Harkart,Yosia Sulistyaningra,hidup
+101,6101051011184850,2105011309310000,Irani Meirani Farandy,laki-laki,jelutung,1971-04-10,islam,sma,petani,B,menikah,2004-02-19,Ayah / Kepala Keluarga,WNI,,,Avrilla Satriana,Dara Chusnur Widyatmo,hidup
+102,6101051011186610,2105011309310000,Hanako Andriana,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B,belum menikah,2004-02-20,Anak,WNI,,,Irani Meirani Farandy,Dita Johirin,hidup
+103,6101051011188360,2105011309310000,Kikhmah Widyatama,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B,belum menikah,2004-02-21,Anak,WNI,,,Irani Meirani Farandy,Dita Johirin,hidup
+104,6101051011190120,2105011309310000,Selvy Noverlia,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,A+,belum menikah,2004-02-22,Anak,WNI,,,Irani Meirani Farandy,Dita Johirin,hidup
+105,6101051011191880,2105011309310000,Dita Johirin,perempuan,jelutung,1972-01-14,islam,sma,petani,,menikah,2004-02-23,Ibu,WNI,,,Maureen Indriastari,Gita Utami,hidup
+106,6101051011193640,2105011309320000,Bunga Nisrina,laki-laki,pemangkat,1971-04-10,islam,sma,petani,,menikah,2004-02-24,Ayah / Kepala Keluarga,WNI,,,Astri Nisa,Nadya Harkart,hidup
+107,6101051011195390,2105011309320000,Vina Wulandari,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,,belum menikah,2004-02-25,Anak,WNI,,,Bunga Nisrina,Milati Ariefandi,hidup
+108,6101051011197150,2105011309320000,Raissa Oktazilvia,laki-laki,jelutung,2005-06-15,islam,sd,pelajar,,belum menikah,2004-02-26,Anak,WNI,,,Bunga Nisrina,Milati Ariefandi,hidup
+109,6101051011198910,2105011309320000,Mestika Diah Kresno,perempuan,jelutung,2001-04-13,islam,smp,pelajar,,belum menikah,2004-02-27,Anak,WNI,,,Bunga Nisrina,Milati Ariefandi,hidup
+110,6101051011200670,2105011309320000,Milati Ariefandi,perempuan,pemangkat,1972-01-14,islam,sma,petani,O,menikah,2004-02-28,Ibu,WNI,,,Silvyna Dita Admianawidiastuti,Larasati Paramitha,hidup
+111,6101051011202420,2105011309330000,Mercy Permana,laki-laki,jelutung,1971-04-10,islam,sma,petani,O,menikah,2004-02-29,Ayah / Kepala Keluarga,WNI,,,Della Noerani,Soraya Himawan,hidup
+112,6101051011204180,2105011309330000,Nabila Sutanti,laki-laki,pemangkat,2003-11-11,islam,sd,pelajar,B+,belum menikah,2004-03-01,Anak,WNI,,,Mercy Permana,Chitra Arisa,hidup
+113,6101051011205940,2105011309330000,Agustin Oktavia,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B+,belum menikah,2004-03-02,Anak,WNI,,,Mercy Permana,Chitra Arisa,hidup
+114,6101051011207700,2105011309330000,Anggita Rismiarti,perempuan,jelutung,2001-04-13,islam,smp,pelajar,B+,belum menikah,2004-03-03,Anak,WNI,,,Mercy Permana,Chitra Arisa,hidup
+115,6101051011209460,2105011309330000,Chitra Arisa,perempuan,jelutung,1972-01-14,islam,sma,petani,A+,menikah,2004-03-04,Ibu,WNI,,,Ayudyah Avie Nurkhasanah,Desy Tanuwijaya,hidup
+116,6101051011211210,2105011309340000,Zara Priatni,laki-laki,pemangkat,1971-04-10,kristen,sma,petani,O,menikah,2004-03-05,Ayah / Kepala Keluarga,WNI,,,Tiara Juwita,Intan Tursia,hidup
+117,6101051011212970,2105011309340000,Hardianti Nirmala,laki-laki,jelutung,2003-11-11,kristen,sd,pelajar,O,belum menikah,2004-03-06,Anak,WNI,,,Zara Priatni,Angel Elma Rialdhie,hidup
+118,6101051011214730,2105011309340000,Athirah Febrian,laki-laki,pemangkat,2005-06-15,kristen,sd,pelajar,O,belum menikah,2004-03-07,Anak,WNI,,,Zara Priatni,Angel Elma Rialdhie,hidup
+119,6101051011216490,2105011309340000,Eti Sihombing,perempuan,jelutung,2001-04-13,kristen,smp,pelajar,B,belum menikah,2004-03-08,Anak,WNI,,,Zara Priatni,Angel Elma Rialdhie,hidup
+120,6101051011218240,2105011309340000,Angel Elma Rialdhie,perempuan,jelutung,1972-01-14,kristen,sma,petani,B,menikah,2004-03-09,Ibu,WNI,,,Labaika Triashafira,Faradhia Lonika,hidup
+121,6101051011220000,2105011309350000,Vanny Sinuka,laki-laki,jelutung,1971-04-10,budha,sma,petani,B,menikah,2004-03-10,Ayah / Kepala Keluarga,WNI,,,Shifa Wijaya,Anastasia Rozi,hidup
+122,6101051011221760,2105011309350000,Wulan Andrianto,laki-laki,pemangkat,2003-11-11,budha,sd,pelajar,B,belum menikah,2004-03-11,Anak,WNI,,,Vanny Sinuka,Triska Sastrawan,hidup
+123,6101051011223520,2105011309350000,Pabrela Fathina Sharifa,perempuan,jelutung,2005-06-15,budha,sd,pelajar,A+,belum menikah,2004-03-12,Anak,WNI,,,Vanny Sinuka,Triska Sastrawan,hidup
+124,6101051011225270,2105011309350000,Miriam Widihastuti,perempuan,pemangkat,2001-04-13,budha,smp,pelajar,,belum menikah,2004-03-13,Anak,WNI,,,Vanny Sinuka,Triska Sastrawan,hidup
+125,6101051011227030,2105011309350000,Triska Sastrawan,perempuan,jelutung,1972-01-14,budha,sma,petani,,menikah,2004-03-14,Ibu,WNI,,,Wike Nandita,Dwira Oklita,hidup
+126,6101051011228790,2105011309360000,Vinny Aulia,laki-laki,jelutung,1971-04-10,islam,sma,petani,,menikah,2004-03-15,Ayah / Kepala Keluarga,WNI,,,Rahmah  Tiara,Arifah  Pratiko,hidup
+127,6101051011230550,2105011309360000,Qatrun Syena Alim,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,,belum menikah,2004-03-16,Anak,WNI,,,Vinny Aulia,Adzkiya Bagir,hidup
+128,6101051011232300,2105011309360000,Yanti Claudia,laki-laki,pemangkat,2005-06-15,islam,sd,pelajar,,belum menikah,2004-03-17,Anak,WNI,,,Vinny Aulia,Adzkiya Bagir,hidup
+129,6101051011234060,2105011309360000,Shara Suputra,perempuan,jelutung,2001-04-13,islam,smp,pelajar,O,belum menikah,2004-03-18,Anak,WNI,,,Vinny Aulia,Adzkiya Bagir,hidup
+130,6101051011235820,2105011309360000,Adzkiya Bagir,perempuan,pemangkat,1972-01-14,islam,sma,petani,O,menikah,2004-03-19,Ibu,WNI,,,Ike  Adhitama,Fitria  Fikri,hidup
+131,6101051011237580,2105011309370000,Tri Rozi,laki-laki,jelutung,1971-04-10,islam,sma,petani,B+,menikah,2004-03-20,Ayah / Kepala Keluarga,WNI,,,Shiami  Joan,Jenny  Antoni,hidup
+132,6101051011239330,2105011309370000,Annieza Irmalia Selenia,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,B+,belum menikah,2004-03-21,Anak,WNI,,,Tri Rozi,Mega Mazaya,hidup
+133,6101051011241090,2105011309370000,Dessita Rahma,perempuan,jelutung,2005-06-15,islam,sd,pelajar,B+,belum menikah,2004-03-22,Anak,WNI,,,Tri Rozi,Mega Mazaya,hidup
+134,6101051011242850,2105011309370000,Saliha Hidayanti,perempuan,pemangkat,2001-04-13,islam,smp,pelajar,A+,belum menikah,2004-03-23,Anak,WNI,,,Tri Rozi,Mega Mazaya,hidup
+135,6101051011244610,2105011309370000,Mega Mazaya,perempuan,jelutung,1972-01-14,islam,sma,petani,O,menikah,2004-03-24,Ibu,WNI,,,Anindita  Efrinda  Sasna,Novia  Febriyani,hidup
+136,6101051011246360,2105011309380000,Luna Saradina,laki-laki,pemangkat,1971-04-10,islam,sma,petani,O,menikah,2004-03-25,Ayah / Kepala Keluarga,WNI,,,Lutfia  Pambudi,Maria  Rynelda  Aziz,hidup
+137,6101051011248120,2105011309380000,Fauziyah Nurkhayati,laki-laki,jelutung,2003-11-11,islam,sd,pelajar,O,belum menikah,2004-03-26,Anak,WNI,,,Luna Saradina,Tangen Noviyanti,hidup
+138,6101051011249880,2105011309380000,Nafila Julianto,laki-laki,jelutung,2005-06-15,islam,sd,pelajar,B,belum menikah,2004-03-27,Anak,WNI,,,Luna Saradina,Tangen Noviyanti,hidup
+139,6101051011251640,2105011309380000,Erma Priyanto,perempuan,jelutung,2001-04-13,islam,smp,pelajar,B,belum menikah,2004-03-28,Anak,WNI,,,Luna Saradina,Tangen Noviyanti,hidup
+140,6101051011253390,2105011309380000,Tangen Noviyanti,perempuan,pemangkat,1972-01-14,islam,sma,petani,B,menikah,2004-03-29,Ibu,WNI,,,Silmi  Muharia,Yasmine  Wicaksono,hidup
+141,6101051011255150,2105011309390000,Sianne Pramantha,laki-laki,jelutung,1971-04-10,kristen,sma,petani,B,menikah,2004-03-30,Ayah / Kepala Keluarga,WNI,,,Meirani  Yahya,Retno  Maulinda,hidup
+142,6101051011256910,2105011309390000,Cindy Sunday,laki-laki,pemangkat,2003-11-11,kristen,sd,pelajar,A+,belum menikah,2004-03-31,Anak,WNI,,,Sianne Pramantha,Adelia Suheryanto,hidup
+143,6101051011258670,2105011309390000,Sarah Gorat,perempuan,jelutung,2005-06-15,kristen,sd,pelajar,,belum menikah,2004-04-01,Anak,WNI,,,Sianne Pramantha,Adelia Suheryanto,hidup
+144,6101051011260420,2105011309390000,Hani Dessy Widiyasari,perempuan,jelutung,2001-04-13,kristen,smp,pelajar,,belum menikah,2004-04-02,Anak,WNI,,,Sianne Pramantha,Adelia Suheryanto,hidup
+145,6101051011262180,2105011309390000,Adelia Suheryanto,perempuan,jelutung,1972-01-14,kristen,sma,petani,,menikah,2004-04-03,Ibu,WNI,,,Assalia  Aruti,Shintany  Ahugrah,hidup
+146,6101051011263940,2105011309400000,Safira Widyawati,laki-laki,pemangkat,1971-04-10,budha,sma,petani,,menikah,2004-04-04,Ayah / Kepala Keluarga,WNI,,,Milati  Arieska,Tasya  Virgina,hidup
+147,6101051011265700,2105011309400000,Septania Jaya,laki-laki,jelutung,2003-11-11,budha,sd,pelajar,,belum menikah,2004-04-05,Anak,WNI,,,Safira Widyawati,Ghina Octaviana,hidup
+148,6101051011267460,2105011309400000,Tresna Asih,laki-laki,pemangkat,2005-06-15,budha,sd,pelajar,O,belum menikah,2004-04-06,Anak,WNI,,,Safira Widyawati,Ghina Octaviana,hidup
+149,6101051011269210,2105011309400000,Hendriyawati Arinda Oktaviani,perempuan,jelutung,2001-04-13,budha,smp,pelajar,O,belum menikah,2004-04-07,Anak,WNI,,,Safira Widyawati,Ghina Octaviana,hidup
+150,6101051011270970,2105011309400000,Ghina Octaviana,perempuan,jelutung,1972-01-14,budha,sma,petani,B+,menikah,2004-04-08,Ibu,WNI,,,Frisca  Chusnur  Noverlia,Lisna  Fauzunuria,hidup

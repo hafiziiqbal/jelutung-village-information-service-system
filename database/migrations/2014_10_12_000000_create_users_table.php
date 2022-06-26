@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nik', 16)->constrained('residents', 'nik')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('address');
-            $table->string('profession_type');
+            $table->string('profession');
             $table->string('marital_status');
             $table->string('email')->unique()->nullable();
             $table->string('phone_number')->unique();
