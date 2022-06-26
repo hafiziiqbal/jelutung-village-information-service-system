@@ -6,7 +6,13 @@ const routes = [{
         name: 'Home',
         path: '/',
         component: require('../pages/DefaultPage.vue').default
-    }, {
+    },
+    {
+        name: 'Login',
+        path: '/login',
+        component: require('../components/auth/LoginComponent.vue').default,
+    },
+    {
         name: 'OperatorHome',
         path: '/operator',
         component: require('../pages/OperatorPage.vue').default,

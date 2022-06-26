@@ -59,7 +59,7 @@
                     />
                     <li class="dropdown">
                         <router-link
-                            :to="{ name: 'OperatorHome' }"
+                            :to="{ name: 'Login' }"
                             class="dropdown-default-component"
                             >Login</router-link
                         >

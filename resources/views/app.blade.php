@@ -39,8 +39,6 @@
 <body>
     <div id="app">
         <router-view></router-view>
-        {{-- <default-page></default-page> --}}
-        {{-- <operator-page></operator-page> --}}
     </div>
     <script src="{{ asset('vendor/jquery/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
