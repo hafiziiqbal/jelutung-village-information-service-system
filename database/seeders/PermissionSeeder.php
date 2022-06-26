@@ -11,9 +11,10 @@ class PermissionSeeder extends Seeder
 
     public function run()
     {
+        $roleArray = ['administrator', 'operator', 'resident'];
         $permisionsArray = [
             [
-                'name'  => 'letter service access',
+                'name'  => 'manage website data and features',
                 'guard_name' => 'api'
             ],
             [
@@ -21,12 +22,14 @@ class PermissionSeeder extends Seeder
                 'guard_name' => 'api'
             ],
             [
-                'name'  => 'manage website data and features',
+                'name'  => 'letter service access',
                 'guard_name' => 'api'
             ],
+
         ];
-        foreach ($permisionsArray as  $permission) {
-            Permission::updateOrCreate($permission);
+        foreach ($permisionsArray as  $key => $permission) {
+            $permissionCreateOrUpdate =  Permission::updateOrCreate($permission);
+            $permissionCreateOrUpdate->assignRole($roleArray[$key]);
         }
     }
 }
