@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('resident', 16)->constrained('residents', 'nik')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->string('nik', 16)->constrained('residents', 'nik')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('address');
             $table->string('profession_type');
             $table->string('marital_status');
