@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\LetterCategory;
 use App\Models\LetterFormInput;
 use App\Models\LetterRequest;
 use App\Models\LetterTemplate;

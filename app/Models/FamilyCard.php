@@ -23,4 +23,9 @@ class FamilyCard extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function resident()
+    {
+        return $this->hasOne(Resident::class, 'card_number');
+    }
 }

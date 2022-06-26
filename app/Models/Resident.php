@@ -34,4 +34,9 @@ class Resident extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function familyCard()
+    {
+        return $this->belongsTo(FamilyCard::class, 'card_number', 'card_number');
+    }
 }

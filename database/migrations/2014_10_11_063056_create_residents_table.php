@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('profession_type');
             $table->string('blood_group')->nullable();
             $table->string('marital_status');
-            $table->string('wedding_date')->nullable();
+            $table->date('wedding_date')->nullable();
             $table->string('family_relationship');
             $table->string('citizenship');
             $table->string('passport_number')->nullable();
