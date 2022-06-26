@@ -1,11 +1,11 @@
 ﻿id,nik,address,profession,marital_status,email,phone_number,password
 1,6101051011026670,Dusun Sei Lakum,pegawai negeri,menikah,banni@gmail.com,089513591811,administrator
 2,6101051011020000,Dusun Yudha Putra,pegawai negeri,menikah,jeremiah@gmail.com,089513591812,operator
-3,6101051011010000,Dusun Yudha Putra,petani,menikah,,089513591813,password
-4,6101051011014000,Dusun Yudha Putra,petani,menikah,,089513591814,password
-5,6101051011053030,Dusun Yudha Putra,petani,menikah,,089513591815,password
-6,6101051011060060,Dusun Yudha Putra,petani,menikah,,089513591816,password
-7,6101051011061820,Dusun Yudha Putra,petani,menikah,,089513591817,password
-8,6101051011068850,Dusun Yudha Putra,petani,menikah,,089513591818,password
-9,6101051011070610,Dusun Yudha Putra,petani,menikah,,089513591819,password
-10,6101051011077640,Dusun Yudha Putra,petani,menikah,,089513591820,password
+3,6101051011010000,Dusun Yudha Putra,petani,menikah,no_email_1,089513591813,password
+4,6101051011014000,Dusun Yudha Putra,petani,menikah,no_email_2,089513591814,password
+5,6101051011053030,Dusun Yudha Putra,petani,menikah,no_email_3,089513591815,password
+6,6101051011060060,Dusun Yudha Putra,petani,menikah,no_email_4,089513591816,password
+7,6101051011061820,Dusun Yudha Putra,petani,menikah,no_email_5,089513591817,password
+8,6101051011068850,Dusun Yudha Putra,petani,menikah,no_email_6,089513591818,password
+9,6101051011070610,Dusun Yudha Putra,petani,menikah,no_email_7,089513591819,password
+10,6101051011077640,Dusun Yudha Putra,petani,menikah,no_email_8,089513591820,password
