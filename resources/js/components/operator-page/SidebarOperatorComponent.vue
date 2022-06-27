@@ -1,10 +1,7 @@
 <template>
     <div>
         <ul class="operator-sidebar">
-            <router-link
-                :to="{ name: 'OperatorHome' }"
-                class="operator-sidebar-brand"
-            >
+            <router-link :to="{ name: 'Home' }" class="operator-sidebar-brand">
                 <img
                     :src="'/img/apple-white-touch-icon.png'"
                     style="height: 2rem"
@@ -59,6 +56,20 @@
                     </div>
                 </router-link>
             </li>
+
+            <hr class="sidebar-divider" />
+            <li class="nav-item">
+                <div class="logout">
+                    <button
+                        type="button"
+                        class="btn btn-danger"
+                        v-on:click="destroyCookie"
+                    >
+                        <i class="bi bi-door-open-fill"></i>
+                        <span v-text="'Logout'"></span>
+                    </button>
+                </div>
+            </li>
         </ul>
 
         <script
@@ -86,6 +97,10 @@ export default {
                     collapseTemplate.classList.remove("show");
                 });
             }
+        },
+        destroyCookie() {
+            this.$cookies.remove("sisteminformasipelayanandesajelutung_token");
+            this.$router.push({ name: "Home" });
         },
     },
 };

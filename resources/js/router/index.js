@@ -32,10 +32,16 @@ const routes = [{
         path: '/operator',
         component: require('../pages/OperatorPage.vue').default,
         children: [{
-            name: 'CreateLetterTemplate',
-            path: '/operator/letter-template/create',
-            component: require('../components/operator-page/CreateLetterTemplateComponent.vue').default
-        }, ],
+                name: 'CreateLetterTemplate',
+                path: '/operator/letter-template/create',
+                component: require('../components/operator-page/CreateLetterTemplateComponent.vue').default
+            },
+            {
+                name: 'PageNotFound',
+                path: "*",
+                component: require('../components/404NotFoundComponent.vue').default
+            }
+        ],
         beforeEnter(to, from, next) {
             let token = Vue.$cookies.get("sisteminformasipelayanandesajelutung_token");
             if (token === null) {
@@ -56,10 +62,16 @@ const routes = [{
         path: '/resident',
         component: require('../pages/ResidentPage.vue').default,
         children: [{
-            name: 'LetterService',
-            path: '/resident/letter-service/',
-            component: require('../components/resident-page/LetterServiceComponent.vue').default
-        }, ],
+                name: 'LetterService',
+                path: '/resident/letter-service/',
+                component: require('../components/resident-page/LetterServiceComponent.vue').default
+            },
+            {
+                name: 'PageNotFound',
+                path: "*",
+                component: require('../components/404NotFoundComponent.vue').default
+            }
+        ],
         beforeEnter(to, from, next) {
             let token = Vue.$cookies.get("sisteminformasipelayanandesajelutung_token");
             if (token === null) {

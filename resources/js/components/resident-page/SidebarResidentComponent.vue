@@ -1,16 +1,13 @@
 <template>
     <div>
         <ul class="operator-sidebar">
-            <router-link
-                :to="{ name: 'ResidentHome' }"
-                class="operator-sidebar-brand"
-            >
+            <router-link :to="{ name: 'Home' }" class="operator-sidebar-brand">
                 <img
                     :src="'/img/apple-white-touch-icon.png'"
                     style="height: 2rem"
                     alt=""
                 />
-                <h6 class="fw-bold text-light">RESIDENT</h6>
+                <h6 class="fw-bold text-light">PENDUDUK</h6>
             </router-link>
 
             <li class="nav-item">
@@ -37,6 +34,19 @@
                     </router-link>
                 </div>
             </li>
+            <hr class="sidebar-divider" />
+            <li class="nav-item">
+                <div class="logout">
+                    <button
+                        type="button"
+                        class="btn btn-danger"
+                        v-on:click="destroyCookie"
+                    >
+                        <i class="bi bi-door-open-fill"></i>
+                        <span v-text="'Logout'"></span>
+                    </button>
+                </div>
+            </li>
         </ul>
 
         <!-- <script
@@ -53,7 +63,12 @@ export default {
         return {};
     },
     mounted() {},
-    methods: {},
+    methods: {
+        destroyCookie() {
+            this.$cookies.remove("sisteminformasipelayanandesajelutung_token");
+            this.$router.push({ name: "Home" });
+        },
+    },
 };
 </script>
 <style scoped>
