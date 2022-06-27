@@ -61,3 +61,10 @@ li {
 .add-letter-template .bi-x-circle:hover {
     color: blue;
 }
+
+.logout {
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    display: flex;
+}
