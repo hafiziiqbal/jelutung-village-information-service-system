@@ -21,5 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(LetterCategorySeeder::class);
         $this->call(NeedForLetterSeeder::class);
+        $this->call(LetterTemplateSeeder::class);
+        $this->call(LetterFormInputSeeder::class);
     }
 }

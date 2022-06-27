@@ -23,9 +23,23 @@ class LetterTemplateController extends Controller
     public function store(StoreLetterTemplateRequest $request)
     {
         $documentName = time() . preg_replace('/\s+/', '', strtolower($request->name)) . '.' . $request->docFile->extension();
-
+        $letterName = '';
+        switch ($request->needForLetter) {
+            case '1':
+                $letterName = $request->name;
+                break;
+            case '2':
+                $letterName = $request->name . ' (Medis)';
+                break;
+            case '3':
+                $letterName = $request->name . ' (Pendidikan)';
+                break;
+            case '4':
+                $letterName = $request->name . ' (Bantuan)';
+                break;
+        }
         $letterTemplate = LetterTemplate::create([
-            'name' => $request->name,
+            'name' => $letterName,
             'letter_category' => $request->letterCategory,
             'need_for_letter' => $request->needForLetter,
             'document' => $documentName

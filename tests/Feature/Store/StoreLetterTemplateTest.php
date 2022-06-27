@@ -46,7 +46,7 @@ class StoreLetterTemplateTest extends TestCase
                     'name' => 'jenis kelamin pemohon',
                     'type' => [
                         'typeName' => 'Pilihan',
-                        'typeOptions' => 'laki laki, perempuan'
+                        'typeOptions' => 'laki laki; perempuan'
                     ],
                 ],
                 [

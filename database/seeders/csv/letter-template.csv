@@ -1,0 +1,4 @@
+﻿id,name,letter_category,need_for_letter,document
+1,surat keterangan tidak mampu (pendidikan),1,3,testing-document.docx
+2,surat keterangan tidak mampu (medis),1,2,testing-document.docx
+3,surat keterangan usaha,1,1,testing-document.docx
