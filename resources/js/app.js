@@ -4,8 +4,11 @@ import Vue from 'vue';
 import router from './router/index.js';
 
 import VueNoty from 'vuejs-noty';
-import vSelect from 'vue-select'
+import vSelect from 'vue-select';
+import VueCookies from 'vue-cookies';
+
 Vue.use(VueNoty);
+Vue.use(VueCookies);
 
 import 'vuejs-noty/dist/vuejs-noty.css'
 
@@ -37,5 +40,5 @@ Vue.component('navbar-resident-component', require('./components/resident-page/N
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
 });

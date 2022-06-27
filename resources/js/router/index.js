@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 Vue.use(VueRouter)
 
 const routes = [{
@@ -11,6 +12,20 @@ const routes = [{
         name: 'Login',
         path: '/login',
         component: require('../components/auth/LoginComponent.vue').default,
+        beforeEnter(to, from, next) {
+            let token = Vue.$cookies.get("sisteminformasipelayanandesajelutung_token");
+            if (token == null) {
+                next()
+            } else if (token['role'][0] == 'operator') {
+                next({
+                    name: "OperatorHome"
+                });
+            } else if (token['role'][0] == 'resident') {
+                next({
+                    name: "ResidentHome"
+                });
+            }
+        }
     },
     {
         name: 'OperatorHome',
@@ -20,7 +35,21 @@ const routes = [{
             name: 'CreateLetterTemplate',
             path: '/operator/letter-template/create',
             component: require('../components/operator-page/CreateLetterTemplateComponent.vue').default
-        }, ]
+        }, ],
+        beforeEnter(to, from, next) {
+            let token = Vue.$cookies.get("sisteminformasipelayanandesajelutung_token");
+            if (token === null) {
+                next({
+                    name: "Login"
+                });
+            } else if (token['role'][0] == 'operator') {
+                next();
+            } else if (token['role'][0] == 'resident') {
+                next({
+                    name: "ResidentHome"
+                });
+            }
+        }
     },
     {
         name: 'ResidentHome',
@@ -30,7 +59,21 @@ const routes = [{
             name: 'LetterService',
             path: '/resident/letter-service/',
             component: require('../components/resident-page/LetterServiceComponent.vue').default
-        }, ]
+        }, ],
+        beforeEnter(to, from, next) {
+            let token = Vue.$cookies.get("sisteminformasipelayanandesajelutung_token");
+            if (token === null) {
+                next({
+                    name: "Login"
+                });
+            } else if (token['role'][0] == 'resident') {
+                next();
+            } else if (token['role'][0] == 'operator') {
+                next({
+                    name: "OperatorHome"
+                });
+            }
+        }
     },
 ]
 

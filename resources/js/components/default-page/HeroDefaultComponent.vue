@@ -15,7 +15,7 @@
                                     Provinsi Kalbar
                                 </p>
                                 <router-link
-                                    :to="{ name: 'ResidentHome' }"
+                                    :to="{ name: 'Login' }"
                                     class="btn btn-primary mt-3 fw-bold fs-5"
                                     >Pelayanan Desa</router-link
                                 >

@@ -25,7 +25,7 @@ class User extends Authenticatable
     ];
 
     protected $hidden = [
-        'password',
+        'pin',
         'created_at',
         'updated_at'
     ];

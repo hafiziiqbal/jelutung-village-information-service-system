@@ -24,28 +24,48 @@
                     <div class="header-auth mb-4">
                         <h3>Masuk Ke Aplikasi</h3>
                     </div>
-                    <form class="mb-5">
-                        <input
-                            type="number"
-                            class="form-control mb-2"
-                            placeholder="Nomor Hp"
-                            required
-                        />
-                        <input
-                            type="number"
-                            class="form-control mb-2"
-                            placeholder="Kode PIN"
-                            required
-                        />
-                        <div class="mb-2 form-check d-flex">
+                    <form
+                        action="/api/login/"
+                        v-on:submit.prevent="handleSubmit"
+                        class="mb-5"
+                    >
+                        <div class="mb-2">
                             <input
-                                type="checkbox"
-                                class="form-check-input me-2"
-                                id="exampleCheck1"
+                                type="number"
+                                class="form-control"
+                                placeholder="Nomor Hp"
+                                required
+                                v-model="form.phone_number"
                             />
-                            <label class="form-check-label text-start"
-                                >Tampilkan PIN</label
-                            >
+                            <div class="error" v-if="errors['phone_number']">
+                                <label
+                                    v-for="(error, index) in errors[
+                                        'phone_number'
+                                    ]"
+                                    :key="index"
+                                >
+                                    {{ " *" + error }}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <input
+                                type="password"
+                                class="form-control"
+                                placeholder="Kode PIN"
+                                required
+                                pattern="[0-9]*"
+                                inputmode="numeric"
+                                v-model="form.pin"
+                            />
+                            <div class="error" v-if="errors['pin']">
+                                <label
+                                    v-for="(error, index) in errors['pin']"
+                                    :key="index"
+                                >
+                                    {{ " *" + error }}
+                                </label>
+                            </div>
                         </div>
                         <button type="submit" class="btn login">MASUK</button>
                     </form>
@@ -60,6 +80,53 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            form: {
+                phone_number: "",
+                pin: "",
+            },
+            errors: {},
+        };
+    },
+    mounted() {},
+    methods: {
+        handleSubmit() {
+            axios
+                .post("/api/login/", this.form)
+                .then((response) => {
+                    if (response.data.status) {
+                        this.$cookies.set(
+                            "sisteminformasipelayanandesajelutung_token",
+                            response.data
+                        );
+                        response.data["role"].forEach((role) => {
+                            switch (role) {
+                                case "administrator":
+                                    console.log("ini admin");
+                                    break;
+                                case "operator":
+                                    this.$router.push({ name: "OperatorHome" });
+                                    break;
+                                default:
+                                    this.$router.push({ name: "ResidentHome" });
+                            }
+                        });
+                    }
+                })
+                .catch((error) => {
+                    if (error.response.data.errors == undefined) {
+                        this.$noty.error(error.response.data.message);
+                    } else {
+                        this.errors = error.response.data.errors;
+                    }
+                });
+        },
+    },
+};
+</script>
 
 <style scoped>
 .cont-auth {

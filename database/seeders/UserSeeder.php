@@ -24,18 +24,19 @@ class UserSeeder extends Seeder
                     "phone_number" => $data['6'],
                     "pin" => $data['7'],
                 ]);
-                $user->assignRole('resident');
             }
             $firstline = false;
         }
         fclose($csvFile);
 
-        $userSpecial = User::select('id')->whereIn('id', [1, 2])->get();
+        $userSpecial = User::select('id')->get();
         foreach ($userSpecial as $user) {
             if ($user->id == 1) {
                 $user->assignRole('administrator');
-            } else {
+            } elseif ($user->id == 2) {
                 $user->assignRole('operator');
+            } else {
+                $user->assignRole('resident');
             }
         }
     }
