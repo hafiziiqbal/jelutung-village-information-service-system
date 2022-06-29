@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('letter_requests', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('letter_template')->constrained('letter_templates');
             $table->json('value');
             $table->timestamps();

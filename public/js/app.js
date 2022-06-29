@@ -6347,37 +6347,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -6801,6 +6770,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6931,17 +6933,59 @@ __webpack_require__.r(__webpack_exports__);
         input: {},
         letter_id: ""
       },
-      errors: "",
+      errors: {},
       idLetterFormInput: "",
       letterByCategory: "",
       letterCategories: null,
-      letterFormInputs: ""
+      letterFormInputs: "",
+      disabled: {}
     };
   },
   mounted: function mounted() {
     this.getLetterCategory();
   },
   methods: {
+    ifNikExist: function ifNikExist() {
+      var nik = document.getElementById("nik");
+
+      if (nik) {
+        console.log("masuk");
+        document.getElementById("nik").setAttribute("onKeyDown", "return false");
+      } else {
+        console.log("tidak masuk");
+      }
+    },
+    uploadImage: function uploadImage(e) {
+      var image = e.target.files[0];
+      var name = e.target.name;
+      var mime = image.name.split(".").pop();
+      var errorImage = document.getElementById(name);
+
+      switch (mime.toLowerCase()) {
+        case "jpg":
+          this.form.input[name] = image;
+          errorImage.classList.remove("error");
+          errorImage.innerHTML = "";
+          break;
+
+        case "png":
+          this.form.input[name] = image;
+          errorImage.classList.remove("error");
+          errorImage.innerHTML = "";
+          break;
+
+        case "jpeg":
+          this.form.input[name] = image;
+          errorImage.classList.remove("error");
+          errorImage.innerHTML = "";
+          break;
+
+        default:
+          errorImage.classList.add("error");
+          errorImage.innerHTML = "Gambar harus berupa jpg, png atau jpeg";
+          break;
+      }
+    },
     getLetterCategory: function getLetterCategory() {
       var _this = this;
 
@@ -6963,20 +7007,81 @@ __webpack_require__.r(__webpack_exports__);
 
       this.form.letter_id = id;
       this.letterFormInputs = "";
+      var user = this.$cookies.get("sisteminformasipelayanandesajelutung_token").result.user;
       axios.get("/api/letter-service/" + id).then(function (response) {
         _this3.letterFormInputs = response.data;
+
+        for (var i = 0; i < _this3.letterFormInputs.length; i++) {
+          // name
+          if (_this3.letterFormInputs[i].name.toLowerCase().includes("nama pemohon") || _this3.letterFormInputs[i].name.toLowerCase().includes("nama lengkap") || _this3.letterFormInputs[i].name == "nama") {
+            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.name;
+            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
+          } // nik
+
+
+          if (_this3.letterFormInputs[i].name.toLowerCase().includes("nik") || _this3.letterFormInputs[i].name.toLowerCase().includes("nomor induk kependudukan")) {
+            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.nik;
+          } // jenis kelamin
+
+
+          if (_this3.letterFormInputs[i].name.toLowerCase().includes("jenis kelamin") || _this3.letterFormInputs[i].name.toLowerCase().includes("kelamin")) {
+            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.gender;
+            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
+          } // tempat lahir
+
+
+          if (_this3.letterFormInputs[i].name.toLowerCase().includes("tempat lahir")) {
+            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.birthplace;
+            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
+          } // tanggal lahir
+
+
+          if (_this3.letterFormInputs[i].name.toLowerCase().includes("tanggal lahir")) {
+            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.birthday;
+            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
+          } // agama
+
+
+          if (_this3.letterFormInputs[i].name.toLowerCase().includes("agama") && !_this3.letterFormInputs[i].name.toLowerCase().includes("orang tua") && !_this3.letterFormInputs[i].name.toLowerCase().includes("wali")) {
+            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.religion;
+            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
+          } // warga negara
+
+
+          if (_this3.letterFormInputs[i].name.toLowerCase().includes("warga negara") || _this3.letterFormInputs[i].name.toLowerCase().includes("kewarganegaraan")) {
+            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.citizenship;
+            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
+          }
+        }
       });
     },
     handleSubmit: function handleSubmit() {
       var _this4 = this;
 
-      axios.post("/api/letter-service/", this.form).then(function (response) {// if (response.data.status) {
-        //     this.$noty.success(response.data.message);
-        // }
-      })["catch"](function (error) {
-        _this4.errors = error.response.data.errors;
-        console.log(_this4.errors);
-      });
+      var user_id = this.$cookies.get("sisteminformasipelayanandesajelutung_token").result.user_id;
+
+      if (document.querySelector(".error") == undefined) {
+        var formData = new FormData();
+        formData.append("letter_id", this.form.letter_id);
+        formData.append("user_id", user_id);
+        Object.entries(this.form.input).forEach(function (_ref) {
+          var _ref2 = _slicedToArray(_ref, 2),
+              key = _ref2[0],
+              value = _ref2[1];
+
+          formData.append(key, value);
+        });
+        axios.post("/api/letter-service/", formData).then(function (response) {
+          if (response.data.status) {
+            _this4.$noty.success(response.data.message);
+          }
+        })["catch"](function (error) {
+          _this4.errors = error.response.data.errors;
+          console.log(_this4.errors);
+        });
+      } else {
+        this.$noty.error("Inputan belum tepat");
+      }
     }
   }
 });
@@ -12788,7 +12893,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.add-letter-template .header[data-v-10baa5af] {\r\n    font-size: 22px;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #3e64d3;\n}\n.add-letter-template .form-label[data-v-10baa5af] {\r\n    margin: 0px !important;\r\n    font-size: 13px;\r\n    font-style: italic;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.add-letter-template .header[data-v-10baa5af] {\r\n  font-size: 22px;\r\n  text-transform: uppercase;\r\n  font-weight: bold;\r\n  color: #3e64d3;\n}\n.add-letter-template .form-label[data-v-10baa5af] {\r\n  margin: 0px !important;\r\n  font-size: 13px;\r\n  font-style: italic;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12866,7 +12971,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.letter-service .header[data-v-fa445e08] {\r\n    font-size: 22px;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #3e64d3;\n}\n.letter-service .letter-service-grid[data-v-fa445e08] {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto;\r\n    padding: 0px;\r\n    gap: 12px;\n}\n.letter-service .letter-category-card[data-v-fa445e08] {\r\n    background-color: rgb(54, 93, 205);\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    color: white;\r\n    font-size: 10px;\r\n    font-weight: bold;\r\n    border-radius: 5px;\r\n    padding: 9px;\r\n    cursor: pointer;\n}\n.letter-service .form-label[data-v-fa445e08] {\r\n    font-size: 13px;\r\n    font-style: italic;\r\n    margin-bottom: 1px;\r\n    text-transform: capitalize;\n}\n@media (max-width: 400px) {\n.letter-service .letter-service-grid[data-v-fa445e08] {\r\n        grid-template-columns: auto auto;\n}\n*[data-v-fa445e08] {\r\n        font-size: 12px;\n}\n.letter-service .form-label[data-v-fa445e08] {\r\n        font-size: 12px;\n}\n.m-4[data-v-fa445e08] {\r\n        margin: 0.5rem !important;\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.letter-service .header[data-v-fa445e08] {\r\n  font-size: 22px;\r\n  text-transform: uppercase;\r\n  font-weight: bold;\r\n  color: #3e64d3;\n}\n.letter-service .letter-service-grid[data-v-fa445e08] {\r\n  display: grid;\r\n  grid-template-columns: auto auto auto auto;\r\n  padding: 0px;\r\n  gap: 12px;\n}\n.letter-service .letter-category-card[data-v-fa445e08] {\r\n  background-color: rgb(54, 93, 205);\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  color: white;\r\n  font-size: 10px;\r\n  font-weight: bold;\r\n  border-radius: 5px;\r\n  padding: 9px;\r\n  cursor: pointer;\n}\n.letter-service .form-label[data-v-fa445e08] {\r\n  font-size: 13px;\r\n  font-style: italic;\r\n  margin-bottom: 1px;\r\n  text-transform: capitalize;\n}\n@media (max-width: 400px) {\n.letter-service .letter-service-grid[data-v-fa445e08] {\r\n    grid-template-columns: auto auto;\n}\n*[data-v-fa445e08] {\r\n    font-size: 12px;\n}\n.letter-service .form-label[data-v-fa445e08] {\r\n    font-size: 12px;\n}\n.m-4[data-v-fa445e08] {\r\n    margin: 0.5rem !important;\n}\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34902,9 +35007,7 @@ var render = function () {
           _vm.errors.name
             ? _c("div", { staticClass: "error" }, [
                 _vm._v(
-                  "\n                " +
-                    _vm._s("*" + _vm.errors.name[0]) +
-                    "\n            "
+                  "\n        " + _vm._s("*" + _vm.errors.name[0]) + "\n      "
                 ),
               ])
             : _vm._e(),
@@ -34939,9 +35042,9 @@ var render = function () {
             _vm.errors.letterCategory
               ? _c("div", { staticClass: "error" }, [
                   _vm._v(
-                    "\n                " +
+                    "\n        " +
                       _vm._s("*" + _vm.errors.letterCategory[0]) +
-                      "\n            "
+                      "\n      "
                   ),
                 ])
               : _vm._e(),
@@ -34973,6 +35076,16 @@ var render = function () {
                     expression: "needForLetter",
                   },
                 })
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.errors.needForLetter
+              ? _c("div", { staticClass: "error" }, [
+                  _vm._v(
+                    "\n        " +
+                      _vm._s("*" + _vm.errors.needForLetter[0]) +
+                      "\n      "
+                  ),
+                ])
               : _vm._e(),
           ],
           1
@@ -35020,11 +35133,11 @@ var render = function () {
                     _vm.errors["inputs." + index + ".name"]
                       ? _c("div", { staticClass: "error" }, [
                           _vm._v(
-                            "\n                                " +
+                            "\n                " +
                               _vm._s(
                                 "*" + _vm.errors["inputs." + index + ".name"]
                               ) +
-                              "\n                            "
+                              "\n              "
                           ),
                         ])
                       : _vm._e(),
@@ -35065,9 +35178,7 @@ var render = function () {
                       },
                       [
                         _c("option", { attrs: { disabled: "", value: "" } }, [
-                          _vm._v(
-                            "\n                                    Pilih Tipe Input\n                                "
-                          ),
+                          _vm._v("Pilih Tipe Input"),
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "Teks" } }, [
@@ -35075,9 +35186,7 @@ var render = function () {
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "Teks Panjang" } }, [
-                          _vm._v(
-                            "\n                                    Teks Panjang\n                                "
-                          ),
+                          _vm._v("Teks Panjang"),
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "Angka" } }, [
@@ -35101,11 +35210,11 @@ var render = function () {
                     _vm.errors["inputs." + index + ".type"]
                       ? _c("div", { staticClass: "error" }, [
                           _vm._v(
-                            "\n                                " +
+                            "\n                " +
                               _vm._s(
                                 "*" + _vm.errors["inputs." + index + ".type"]
                               ) +
-                              "\n                            "
+                              "\n              "
                           ),
                         ])
                       : _vm._e(),
@@ -35126,8 +35235,9 @@ var render = function () {
                         staticClass: "form-control",
                         attrs: {
                           placeholder:
-                            "Masukan pilihan, pisahkan dengan koma (,)",
+                            "pisahkan dengan titik koma (;) dan tidak boleh spasi",
                           required: "",
+                          pattern: "[^\\s]+",
                         },
                         domProps: { value: input.type.typeOptions },
                         on: {
@@ -35162,7 +35272,7 @@ var render = function () {
                 on: { click: _vm.addInput },
               },
               [
-                _vm._v("\n                    Tambah Input "),
+                _vm._v("\n          Tambah Input "),
                 _c("i", { staticClass: "ms-1 bi bi-plus-circle" }),
               ]
             ),
@@ -35187,9 +35297,9 @@ var render = function () {
             _vm.errors.docFile
               ? _c("div", { staticClass: "error" }, [
                   _vm._v(
-                    "\n                    " +
+                    "\n          " +
                       _vm._s("*" + _vm.errors.docFile[0]) +
-                      "\n                "
+                      "\n        "
                   ),
                 ])
               : _vm._e(),
@@ -35214,7 +35324,7 @@ var staticRenderFns = [
           staticStyle: { width: "100%" },
           attrs: { type: "submin" },
         },
-        [_vm._v("\n                Simpan Perubahan\n            ")]
+        [_vm._v("\n        Simpan Perubahan\n      ")]
       ),
     ])
   },
@@ -35724,11 +35834,7 @@ var render = function () {
                 },
               },
             },
-            [
-              _vm._v(
-                "\n            " + _vm._s(letterCategory.name) + "\n        "
-              ),
-            ]
+            [_vm._v("\n      " + _vm._s(letterCategory.name) + "\n    ")]
           )
         }),
         0
@@ -35779,225 +35885,285 @@ var render = function () {
         },
         [
           _vm._l(_vm.letterFormInputs, function (letterFormInput, index) {
-            return _c(
-              "div",
-              { key: index, staticClass: "mb-3" },
-              [
-                _c("label", {
-                  staticClass: "form-label",
-                  domProps: { textContent: _vm._s(letterFormInput.name) },
-                }),
-                _vm._v(" "),
-                letterFormInput.type.toLowerCase() == "teks"
-                  ? _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value:
-                            _vm.form.input[
-                              letterFormInput.name
-                                .toLowerCase()
-                                .replaceAll(" ", "_")
-                            ],
-                          expression:
-                            "\n                    form.input[\n                        letterFormInput.name\n                            .toLowerCase()\n                            .replaceAll(' ', '_')\n                    ]\n                ",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      domProps: {
+            return _c("div", { key: index, staticClass: "mb-3" }, [
+              _c("label", {
+                staticClass: "form-label",
+                domProps: { textContent: _vm._s(letterFormInput.name) },
+              }),
+              _vm._v(" "),
+              letterFormInput.type.toLowerCase() == "teks"
+                ? _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
                         value:
                           _vm.form.input[
                             letterFormInput.name
                               .toLowerCase()
                               .replaceAll(" ", "_")
                           ],
+                        expression:
+                          "\n          form.input[letterFormInput.name.toLowerCase().replaceAll(' ', '_')]\n        ",
                       },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.form.input,
-                            letterFormInput.name
-                              .toLowerCase()
-                              .replaceAll(" ", "_"),
-                            $event.target.value
-                          )
-                        },
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      disabled:
+                        _vm.disabled[
+                          letterFormInput.name
+                            .toLowerCase()
+                            .replaceAll(" ", "_")
+                        ],
+                    },
+                    domProps: {
+                      value:
+                        _vm.form.input[
+                          letterFormInput.name
+                            .toLowerCase()
+                            .replaceAll(" ", "_")
+                        ],
+                    },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.form.input,
+                          letterFormInput.name
+                            .toLowerCase()
+                            .replaceAll(" ", "_"),
+                          $event.target.value
+                        )
                       },
-                    })
-                  : _vm._e(),
-                _vm._v(" "),
-                letterFormInput.type.toLowerCase() == "angka"
-                  ? _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value:
-                            _vm.form.input[
-                              letterFormInput.name
-                                .toLowerCase()
-                                .replaceAll(" ", "_")
-                            ],
-                          expression:
-                            "\n                    form.input[\n                        letterFormInput.name\n                            .toLowerCase()\n                            .replaceAll(' ', '_')\n                    ]\n                ",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: { type: "number" },
-                      domProps: {
+                    },
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              letterFormInput.type.toLowerCase() == "angka"
+                ? _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
                         value:
                           _vm.form.input[
                             letterFormInput.name
                               .toLowerCase()
                               .replaceAll(" ", "_")
                           ],
+                        expression:
+                          "\n          form.input[letterFormInput.name.toLowerCase().replaceAll(' ', '_')]\n        ",
                       },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.form.input,
-                            letterFormInput.name
-                              .toLowerCase()
-                              .replaceAll(" ", "_"),
-                            $event.target.value
-                          )
-                        },
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      onKeyDown:
+                        letterFormInput.name.toLowerCase().includes("nik") ||
+                        letterFormInput.name
+                          .toLowerCase()
+                          .includes("nomor induk kependudukan")
+                          ? "return false"
+                          : "return true",
+                      type: "number",
+                    },
+                    domProps: {
+                      value:
+                        _vm.form.input[
+                          letterFormInput.name
+                            .toLowerCase()
+                            .replaceAll(" ", "_")
+                        ],
+                    },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.form.input,
+                          letterFormInput.name
+                            .toLowerCase()
+                            .replaceAll(" ", "_"),
+                          $event.target.value
+                        )
                       },
-                    })
-                  : _vm._e(),
-                _vm._v(" "),
-                letterFormInput.type.toLowerCase() == "tanggal"
-                  ? _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value:
-                            _vm.form.input[
-                              letterFormInput.name
-                                .toLowerCase()
-                                .replaceAll(" ", "_")
-                            ],
-                          expression:
-                            "\n                    form.input[\n                        letterFormInput.name\n                            .toLowerCase()\n                            .replaceAll(' ', '_')\n                    ]\n                ",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: { type: "date" },
-                      domProps: {
+                    },
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              letterFormInput.type.toLowerCase() == "tanggal"
+                ? _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
                         value:
                           _vm.form.input[
                             letterFormInput.name
                               .toLowerCase()
                               .replaceAll(" ", "_")
                           ],
+                        expression:
+                          "\n          form.input[letterFormInput.name.toLowerCase().replaceAll(' ', '_')]\n        ",
                       },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.form.input,
-                            letterFormInput.name
-                              .toLowerCase()
-                              .replaceAll(" ", "_"),
-                            $event.target.value
-                          )
-                        },
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "date",
+                      disabled:
+                        _vm.disabled[
+                          letterFormInput.name
+                            .toLowerCase()
+                            .replaceAll(" ", "_")
+                        ],
+                    },
+                    domProps: {
+                      value:
+                        _vm.form.input[
+                          letterFormInput.name
+                            .toLowerCase()
+                            .replaceAll(" ", "_")
+                        ],
+                    },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.form.input,
+                          letterFormInput.name
+                            .toLowerCase()
+                            .replaceAll(" ", "_"),
+                          $event.target.value
+                        )
                       },
-                    })
-                  : _vm._e(),
-                _vm._v(" "),
-                letterFormInput.type.toLowerCase() == "pilihan"
-                  ? _c(
-                      "div",
-                      { staticClass: "d-flex" },
-                      _vm._l(
-                        letterFormInput.options.split(";"),
-                        function (option, index) {
-                          return _c(
-                            "div",
-                            { key: index, staticClass: "form-check me-3" },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value:
-                                      _vm.form.input[
-                                        letterFormInput.name
-                                          .toLowerCase()
-                                          .replaceAll(" ", "_")
-                                      ],
-                                    expression:
-                                      "\n                            form.input[\n                                letterFormInput.name\n                                    .toLowerCase()\n                                    .replaceAll(' ', '_')\n                            ]\n                        ",
-                                  },
-                                ],
-                                staticClass: "form-check-input",
-                                attrs: { type: "radio" },
-                                domProps: {
-                                  value: option,
-                                  checked: _vm._q(
+                    },
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              letterFormInput.type.toLowerCase() == "gambar"
+                ? _c("input", {
+                    staticClass: "form-control input-file",
+                    attrs: {
+                      type: "file",
+                      name: letterFormInput.name
+                        .toLowerCase()
+                        .replaceAll(" ", "_"),
+                    },
+                    on: { change: _vm.uploadImage },
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              letterFormInput.type.toLowerCase() == "pilihan"
+                ? _c(
+                    "div",
+                    { staticClass: "d-flex" },
+                    _vm._l(
+                      letterFormInput.options.split(";"),
+                      function (option, index) {
+                        return _c(
+                          "div",
+                          { key: index, staticClass: "form-check me-3" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value:
                                     _vm.form.input[
                                       letterFormInput.name
                                         .toLowerCase()
                                         .replaceAll(" ", "_")
                                     ],
+                                  expression:
+                                    "\n              form.input[\n                letterFormInput.name.toLowerCase().replaceAll(' ', '_')\n              ]\n            ",
+                                },
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: {
+                                type: "radio",
+                                disabled:
+                                  _vm.disabled[
+                                    letterFormInput.name
+                                      .toLowerCase()
+                                      .replaceAll(" ", "_")
+                                  ],
+                              },
+                              domProps: {
+                                value: option,
+                                checked: _vm._q(
+                                  _vm.form.input[
+                                    letterFormInput.name
+                                      .toLowerCase()
+                                      .replaceAll(" ", "_")
+                                  ],
+                                  option
+                                ),
+                              },
+                              on: {
+                                change: function ($event) {
+                                  _vm.$set(
+                                    _vm.form.input,
+                                    letterFormInput.name
+                                      .toLowerCase()
+                                      .replaceAll(" ", "_"),
                                     option
-                                  ),
+                                  )
                                 },
-                                on: {
-                                  change: function ($event) {
-                                    _vm.$set(
-                                      _vm.form.input,
-                                      letterFormInput.name
-                                        .toLowerCase()
-                                        .replaceAll(" ", "_"),
-                                      option
-                                    )
-                                  },
-                                },
-                              }),
-                              _vm._v(" "),
-                              _c("label", {
-                                staticClass: "form-check-label",
-                                domProps: { textContent: _vm._s(option) },
-                              }),
-                            ]
-                          )
-                        }
-                      ),
-                      0
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm._l(_vm.errors, function (error, index) {
-                  return _c("div", { key: index }, [
-                    index ==
-                    "input." +
-                      letterFormInput.name.toLowerCase().replaceAll(" ", "_")
-                      ? _c("div", { staticClass: "error" }, [
-                          _vm._v(
-                            "\n                    " +
-                              _vm._s("*" + error) +
-                              "\n                "
-                          ),
-                        ])
-                      : _vm._e(),
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("label", {
+                              staticClass: "form-check-label",
+                              domProps: { textContent: _vm._s(option) },
+                            }),
+                          ]
+                        )
+                      }
+                    ),
+                    0
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              (letterFormInput.type.toLowerCase() != "gambar" &&
+                _vm.form.input[
+                  letterFormInput.name.toLowerCase().replaceAll(" ", "_")
+                ] == null) ||
+              _vm.form.input[
+                letterFormInput.name.toLowerCase().replaceAll(" ", "_")
+              ] == ""
+                ? _c("div", { staticClass: "error" }, [
+                    _c("span", [
+                      _vm._v(_vm._s(letterFormInput.name + " harus diisi")),
+                    ]),
                   ])
-                }),
-              ],
-              2
-            )
+                : _vm._e(),
+              _vm._v(" "),
+              letterFormInput.type.toLowerCase() == "gambar"
+                ? _c(
+                    "div",
+                    {
+                      staticClass: "error",
+                      attrs: {
+                        id: letterFormInput.name
+                          .toLowerCase()
+                          .replaceAll(" ", "_"),
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n        " +
+                          _vm._s(letterFormInput.name + " harus diisi") +
+                          "\n      "
+                      ),
+                    ]
+                  )
+                : _vm._e(),
+            ])
           }),
           _vm._v(" "),
           _vm.letterFormInputs != ""
@@ -36007,9 +36173,9 @@ var render = function () {
                   {
                     staticClass: "btn btn-primary",
                     staticStyle: { width: "100%" },
-                    attrs: { type: "submin" },
+                    attrs: { id: "submitBtn", type: "submin" },
                   },
-                  [_vm._v("\n                Ajukan Surat\n            ")]
+                  [_vm._v("\n        Ajukan Surat\n      ")]
                 ),
               ])
             : _vm._e(),

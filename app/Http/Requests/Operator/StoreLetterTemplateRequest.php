@@ -45,10 +45,10 @@ class StoreLetterTemplateRequest extends FormRequest
             'name.regex' => 'Nama surat harus berupa karakter A-Z',
 
             'letterCategory.required' => 'Kategori surat harus dipilih',
-            'letterCategory.numeric' => 'Kategori surat harus berupa angka',
+            'letterCategory.numeric' => 'Kategori surat harus dipilih',
 
             'needForLetter.required' => 'Keperluan surat harus dipilih',
-            'needForLetter.numeric' => 'Keperluan surat harus berupa angka',
+            'needForLetter.numeric' => 'Keperluan surat harus dipilih',
 
             'docFile.required' => 'Dokumen harus dimasukan',
             'docFile.mimes' => 'Dokumen harus berbentuk DOC atau DOCX',

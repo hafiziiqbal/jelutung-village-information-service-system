@@ -1,7 +1,9 @@
 require('./bootstrap');
 
+
 import Vue from 'vue';
 import router from './router/index.js';
+
 
 import VueNoty from 'vuejs-noty';
 import vSelect from 'vue-select';

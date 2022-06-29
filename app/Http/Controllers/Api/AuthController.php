@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Resident;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,8 +22,10 @@ class AuthController extends Controller
         if ($loginRequest != null) {
             Auth::login($loginRequest);
             $user = Auth::user();
+            $resident = Resident::where('nik', $user->nik)->first();
             $success['token'] =  $user->createToken('SistemInformasiPelayananJelutung')->plainTextToken;
-            $success['nik'] =  $user->nik;
+            $success['user'] =  $resident;
+            $success['user_id'] =  $user->id;
             return response()->json(
                 [
                     'result' => $success,

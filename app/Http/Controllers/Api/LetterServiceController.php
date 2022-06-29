@@ -7,6 +7,10 @@ use App\Models\LetterFormInput;
 use App\Models\LetterRequest;
 use App\Models\LetterTemplate;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Echo_;
+use stdClass;
+
+use function PHPUnit\Framework\returnSelf;
 
 class LetterServiceController extends Controller
 {
@@ -21,45 +25,32 @@ class LetterServiceController extends Controller
 
     public function store(Request $request)
     {
-
-        // -VALIDATION----------------------------------------------------------------------------------------------------------
-        $requestMapping = [
-            'letter_id' => 'required|numeric',
-        ];
-        $messageValidation = [];
-        $letterTemplate = LetterFormInput::where('letter_template', $request->letter_id)->get();
-        foreach ($letterTemplate as $key => $value) {
-            $letterName = str_replace(' ', '_', strtolower($value->name));
-            if ($request->input != null) {
-                foreach ($request->input as $key1 => $value1) {
-                    if ($letterName == $key1 || $value1 != '') {
-                        if (str_contains($key1, 'nomor_induk') || str_contains($key1, 'nik')) {
-                            $requestMapping['input.' . $key1] = 'numeric|digits:16';
-                            $messageValidation['input.' . $key1 . '.numeric'] = 'data harus berupa angka';
-                            $messageValidation['input.' . $key1 . '.digits'] = 'data harus 16 digit';
-                        } elseif (str_contains($key1, 'tanggal')) {
-                            $requestMapping['input.' . $key1] = 'date';
-                            $messageValidation['input.' . $key1 . '.date'] = 'data harus berupa tanggal';
-                        }
-                        $requestMapping['input.' . $letterName] = 'required';
-                        $messageValidation['input.' . $letterName . '.required'] = 'data harus diisi';
-                    } else {
-                        $requestMapping['input.' . $letterName] = 'required';
-                        $messageValidation['input.' . $letterName . '.required'] = 'data harus diisi';
-                    }
-                }
+        $jsonLetterService = new stdClass;
+        foreach ($request->all() as $key => $value) {
+            if (str_contains($key, 'foto') || str_contains($key, 'gambar')) {
+                $imageName = time() . preg_replace('/\s+/', '', strtolower($key)) . '.' . $request->file($key)->extension();
+                $request->file($key)->storeAs('public/img/support-documents', $imageName);
+                $jsonLetterService->$key = $imageName;
             } else {
-                $requestMapping['input.' . $letterName] = 'required';
-                $messageValidation['input.' . $letterName . '.required'] = 'data harus diisi';
+                if ($key !== 'letter_id' && $key != 'user_id') {
+                    $jsonLetterService->$key = $value;
+                }
             }
         }
-        $validated = $request->validate($requestMapping, $messageValidation);
-        // -VALIDATION----------------------------------------------------------------------------------------------------------
 
         $createLetterRequest = LetterRequest::create([
-            'letter_template' => $validated['letter_id'],
-            "value" => $validated['input']
+            'user_id' => $request->user_id,
+            'letter_template' => $request->letter_id,
+            "value" => $jsonLetterService
         ]);
+
+        return response()->json(
+            [
+                'message' => 'Permohonan surat telah dikirimkan, silahkan tunggu dalam 24 jam',
+                'status' => true
+            ],
+            200
+        );
     }
 
     public function show($id)

@@ -12,6 +12,7 @@ class LetterRequest extends Model
         'value' => 'array'
     ];
     protected $fillable = [
+        'user_id',
         'letter_template',
         'value',
     ];
