@@ -2,20 +2,33 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Models\LetterFormInput;
+use stdClass;
+use Illuminate\Http\Request;
 use App\Models\LetterRequest;
 use App\Models\LetterTemplate;
-use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\Echo_;
-use stdClass;
+use App\Models\LetterFormInput;
 
-use function PHPUnit\Framework\returnSelf;
+use App\Http\Controllers\Controller;
 
 class LetterServiceController extends Controller
 {
     public function index()
     {
+        $letterRequest = LetterRequest::with('letter', 'user.name')->get();
+        $mapLetterRequest = $letterRequest->map(function ($item, $key) {
+            return [
+                'name' => $item->user->name->name,
+                'letter_name' => $item->letter->name,
+                'value' => $item->value,
+                'created_at' => date('d/m/Y h:m', strtotime($item->created_at))
+
+            ];
+        });
+
+        return response()->json(
+            $mapLetterRequest,
+            200
+        );
     }
 
     public function create()

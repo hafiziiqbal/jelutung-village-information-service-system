@@ -32,6 +32,11 @@ class LetterTemplate extends Model
 
     public function letterFormInput()
     {
-        return $this->hasMany(LetterTemplate::class, 'letter_template');
+        return $this->hasMany(LetterFormInput::class, 'letter_template');
+    }
+
+    public function letterRequest()
+    {
+        return $this->hasMany(LetterRequest::class, 'letter_template');
     }
 }

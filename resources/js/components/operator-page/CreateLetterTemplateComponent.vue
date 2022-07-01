@@ -139,15 +139,11 @@ export default {
     };
   },
   mounted() {
-    this.select();
     this.getLetterCategory();
     this.getNeedForLetter();
     this.detectDocName();
   },
   methods: {
-    select() {
-      // $("#needForLetter").select2();
-    },
     detectDocName() {
       const actualBtn = document.getElementById("actual-btn");
       const fileChosen = document.getElementById("file-chosen");
@@ -236,5 +232,14 @@ export default {
   margin: 0px !important;
   font-size: 13px;
   font-style: italic;
+}
+@media (max-width: 500px) {
+  .add-letter-template .header {
+    text-align: center;
+    font-size: 20px;
+  }
+  .add-letter-template form * {
+    font-size: 10px !important;
+  }
 }
 </style>

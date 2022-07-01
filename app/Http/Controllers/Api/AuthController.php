@@ -17,12 +17,12 @@ class AuthController extends Controller
 
     public function login(LoginRequest $request)
     {
-        $loginRequest = User::where('phone_number', $request->phone_number)->where('pin', $request->pin)->first();
+        $loginRequest = User::where('phone_number', $request->phone_number)->where('pin', $request->pin)->with('resident')->first();
 
         if ($loginRequest != null) {
             Auth::login($loginRequest);
             $user = Auth::user();
-            $resident = Resident::where('nik', $user->nik)->first();
+            $resident = $loginRequest->resident;
             $success['token'] =  $user->createToken('SistemInformasiPelayananJelutung')->plainTextToken;
             $success['user'] =  $resident;
             $success['user_id'] =  $user->id;

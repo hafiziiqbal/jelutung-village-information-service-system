@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [{
         name: 'Home',
         path: '/',
-        component: require('../pages/DefaultPage.vue').default
+        component: require('../pages/DefaultPage.vue').default,
     },
     {
         name: 'Login',
@@ -37,7 +37,12 @@ const routes = [{
                 component: require('../components/operator-page/CreateLetterTemplateComponent.vue').default
             },
             {
-                name: 'PageNotFound',
+                name: 'LetterRequestOperator',
+                path: '/operator/letter-request',
+                component: require('../components/operator-page/LetterRequestOperatorComponent.vue').default
+            },
+            {
+                name: 'PageNotFoundOperator',
                 path: "*",
                 component: require('../components/404NotFoundComponent.vue').default
             }
@@ -67,7 +72,7 @@ const routes = [{
                 component: require('../components/resident-page/LetterServiceComponent.vue').default
             },
             {
-                name: 'PageNotFound',
+                name: 'PageNotFoundResident',
                 path: "*",
                 component: require('../components/404NotFoundComponent.vue').default
             }

@@ -15,6 +15,7 @@ class User extends Authenticatable
     protected $guard_name = 'api';
 
     protected $fillable = [
+        'id',
         'nik',
         'address',
         'profession_type',
@@ -29,4 +30,14 @@ class User extends Authenticatable
         'created_at',
         'updated_at'
     ];
+
+    public function resident()
+    {
+        return $this->belongsTo(Resident::class, 'nik', 'nik');
+    }
+
+    public function name()
+    {
+        return $this->belongsTo(Resident::class, 'nik', 'nik')->select(['nik', 'name']);
+    }
 }

@@ -43,4 +43,5 @@ Vue.component('navbar-resident-component', require('./components/resident-page/N
 const app = new Vue({
     el: '#app',
     router,
+
 });

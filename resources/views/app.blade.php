@@ -23,12 +23,13 @@
     <!-- possible content values: default, black or black-translucent -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-
     {{-- CSS --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/datatables/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/datatables/responsive.bootstrap5.min.css') }}">
 
     <!-- Google Fonts -->
     <link
@@ -42,7 +43,9 @@
     </div>
     <script src="{{ asset('vendor/jquery/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
-    {{-- <script src="{{ asset('vendor/vue-select2/vue-select2.min.js') }}"></script> --}}
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.responsive.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('vendor/vue-select2/vue-select2.min.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>

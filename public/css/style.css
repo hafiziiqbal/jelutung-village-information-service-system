@@ -68,3 +68,12 @@ li {
     font-weight: bold;
     display: flex;
 }
+
+@media (max-width: 500px) {
+    .btn,
+    .letter-request-operator-content,
+    div.dataTables_wrapper div.dataTables_length select,
+    div.dataTables_wrapper div.dataTables_filter input {
+        font-size: 10px !important;
+    }
+}
