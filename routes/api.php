@@ -31,9 +31,10 @@ Route::get('latest-article', [TestingApi::class, 'getLatestArticle']);
 // Route::group(['middleware' => ['auth:sanctum']], function () {
 Route::resource('letter-category', LetterCategoryController::class);
 Route::resource('letter-template', LetterTemplateController::class);
-Route::resource('need-for-letter', NeedForLetterController::class);
-Route::resource('letter-service', LetterServiceController::class);
+Route::get('letter-service/document', [LetterServiceController::class, 'createDocument']);
 Route::get('letter-service/letter-name/{id}', [LetterServiceController::class, 'showLetterFromCategory']);
+Route::resource('letter-service', LetterServiceController::class);
+
 // });
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

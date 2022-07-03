@@ -6278,75 +6278,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -6354,9 +6285,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       is_data_fetched_category: false,
       letterCategory: "",
       letterCategories: "",
-      needForLetters: "",
-      needForLetter: "",
-      inputs: [],
       form: {
         name: "",
         docFile: ""
@@ -6366,7 +6294,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   },
   mounted: function mounted() {
     this.getLetterCategory();
-    this.getNeedForLetter();
     this.detectDocName();
   },
   methods: {
@@ -6381,18 +6308,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       var document = e.target.files[0];
       this.form.docFile = document;
     },
-    deleteElement: function deleteElement(index) {
-      this.inputs.splice(index, 1);
-    },
-    addInput: function addInput() {
-      this.inputs.push({
-        name: "",
-        type: {
-          typeName: "",
-          typeOptions: ""
-        }
-      });
-    },
     getLetterCategory: function getLetterCategory() {
       var _this = this;
 
@@ -6401,16 +6316,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         _this.is_data_fetched_category = true;
       });
     },
-    getNeedForLetter: function getNeedForLetter() {
-      var _this2 = this;
-
-      axios.get("/api/need-for-letter/").then(function (response) {
-        _this2.needForLetters = response.data;
-        _this2.is_data_fetched = true;
-      });
-    },
     handleSubmit: function handleSubmit() {
-      var _this3 = this;
+      var _this2 = this;
 
       // console.log(JSON.parse(JSON.stringify()));
       var formData = new FormData();
@@ -6422,20 +6329,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         formData.append(key, value);
       });
       formData.append("letterCategory", this.letterCategory.id);
-      formData.append("needForLetter", this.needForLetter.id);
-
-      for (var i = 0; i < this.inputs.length; i++) {
-        formData.append("inputs[" + i + "][name]", this.inputs[i].name);
-        formData.append("inputs[" + i + "][type][typeName]", this.inputs[i].type.typeName);
-        formData.append("inputs[" + i + "][type][typeOptions]", this.inputs[i].type.typeOptions);
-      }
-
       axios.post("/api/letter-template/", formData).then(function (response) {
         if (response.data.status) {
-          _this3.$noty.success(response.data.message);
+          _this2.$noty.success(response.data.message);
         }
       })["catch"](function (error) {
-        _this3.errors = error.response.data.errors;
+        _this2.errors = error.response.data.errors;
       });
     }
   }
@@ -6994,26 +6893,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -7022,26 +6901,40 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         letter_id: ""
       },
       errors: {},
-      idLetterFormInput: "",
+      idFormInput: "",
       letterByCategory: "",
       letterCategories: null,
-      letterFormInputs: "",
-      disabled: {}
+      formInputs: ""
     };
   },
   mounted: function mounted() {
     this.getLetterCategory();
   },
   methods: {
-    ifNikExist: function ifNikExist() {
-      var nik = document.getElementById("nik");
+    getFormInput: function getFormInput(id) {
+      var _this = this;
 
-      if (nik) {
-        console.log("masuk");
-        document.getElementById("nik").setAttribute("onKeyDown", "return false");
-      } else {
-        console.log("tidak masuk");
-      }
+      this.form.letter_id = id;
+      this.formInputs = "";
+      axios.get("/api/letter-service/" + id).then(function (response) {
+        _this.formInputs = response.data;
+      });
+    },
+    getLetterCategory: function getLetterCategory() {
+      var _this2 = this;
+
+      axios.get("/api/letter-category/").then(function (response) {
+        _this2.letterCategories = response.data;
+      });
+    },
+    getLetterByCategory: function getLetterByCategory(id) {
+      var _this3 = this;
+
+      this.letterByCategory = "";
+      this.letterFormInputs = "";
+      axios.get("/api/letter-service/letter-name/" + id).then(function (response) {
+        _this3.letterByCategory = response.data;
+      });
     },
     uploadImage: function uploadImage(e) {
       var image = e.target.files[0];
@@ -7073,75 +6966,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
           errorImage.innerHTML = "Gambar harus berupa jpg, png atau jpeg";
           break;
       }
-    },
-    getLetterCategory: function getLetterCategory() {
-      var _this = this;
-
-      axios.get("/api/letter-category/").then(function (response) {
-        _this.letterCategories = response.data;
-      });
-    },
-    getLetterByCategory: function getLetterByCategory(id) {
-      var _this2 = this;
-
-      this.letterByCategory = "";
-      this.letterFormInputs = "";
-      axios.get("/api/letter-service/letter-name/" + id).then(function (response) {
-        _this2.letterByCategory = response.data;
-      });
-    },
-    getLetterFormInput: function getLetterFormInput(id) {
-      var _this3 = this;
-
-      this.form.letter_id = id;
-      this.letterFormInputs = "";
-      var user = this.$cookies.get("sisteminformasipelayanandesajelutung_token").result.user;
-      axios.get("/api/letter-service/" + id).then(function (response) {
-        _this3.letterFormInputs = response.data;
-
-        for (var i = 0; i < _this3.letterFormInputs.length; i++) {
-          // name
-          if (_this3.letterFormInputs[i].name.toLowerCase().includes("nama pemohon") || _this3.letterFormInputs[i].name.toLowerCase().includes("nama lengkap") || _this3.letterFormInputs[i].name == "nama") {
-            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.name;
-            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
-          } // nik
-
-
-          if (_this3.letterFormInputs[i].name.toLowerCase().includes("nik") || _this3.letterFormInputs[i].name.toLowerCase().includes("nomor induk kependudukan")) {
-            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.nik;
-          } // jenis kelamin
-
-
-          if (_this3.letterFormInputs[i].name.toLowerCase().includes("jenis kelamin") || _this3.letterFormInputs[i].name.toLowerCase().includes("kelamin")) {
-            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.gender;
-            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
-          } // tempat lahir
-
-
-          if (_this3.letterFormInputs[i].name.toLowerCase().includes("tempat lahir")) {
-            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.birthplace;
-            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
-          } // tanggal lahir
-
-
-          if (_this3.letterFormInputs[i].name.toLowerCase().includes("tanggal lahir")) {
-            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.birthday;
-            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
-          } // agama
-
-
-          if (_this3.letterFormInputs[i].name.toLowerCase().includes("agama") && !_this3.letterFormInputs[i].name.toLowerCase().includes("orang tua") && !_this3.letterFormInputs[i].name.toLowerCase().includes("wali")) {
-            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.religion;
-            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
-          } // warga negara
-
-
-          if (_this3.letterFormInputs[i].name.toLowerCase().includes("warga negara") || _this3.letterFormInputs[i].name.toLowerCase().includes("kewarganegaraan")) {
-            _this3.form.input[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = user.citizenship;
-            _this3.disabled[_this3.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")] = "0";
-          }
-        }
-      });
     },
     handleSubmit: function handleSubmit() {
       var _this4 = this;
@@ -35332,258 +35156,31 @@ var render = function () {
           1
         ),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "mb-3" },
-          [
-            _c("label", {
-              staticClass: "form-label",
-              domProps: { textContent: _vm._s("Keperluan") },
-            }),
-            _vm._v(" "),
-            _vm.is_data_fetched == false
-              ? _c("select", { staticClass: "form-select" })
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.is_data_fetched == true
-              ? _c("v-select", {
-                  attrs: { options: _vm.needForLetters, label: "need" },
-                  model: {
-                    value: _vm.needForLetter,
-                    callback: function ($$v) {
-                      _vm.needForLetter = $$v
-                    },
-                    expression: "needForLetter",
-                  },
-                })
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.errors.needForLetter
-              ? _c("div", { staticClass: "error" }, [
-                  _vm._v(
-                    "\n        " +
-                      _vm._s("*" + _vm.errors.needForLetter[0]) +
-                      "\n      "
-                  ),
-                ])
-              : _vm._e(),
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "mb-3", attrs: { id: "addInputCont" } },
-          _vm._l(_vm.inputs, function (input, index) {
-            return _c("div", { key: index }, [
-              _c("div", { staticClass: "input-card mb-3" }, [
-                _c("i", {
-                  staticClass: "bi bi-x-circle",
-                  on: {
-                    click: function ($event) {
-                      return _vm.deleteElement(index)
-                    },
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mb-3" }, [
-                  _c("div", { staticClass: "col-6" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: input.name,
-                          expression: "input.name",
-                        },
-                      ],
-                      staticClass: "form-control",
-                      attrs: { placeholder: "Masukan Nama Input" },
-                      domProps: { value: input.name },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(input, "name", $event.target.value)
-                        },
-                      },
-                    }),
-                    _vm._v(" "),
-                    _vm.errors["inputs." + index + ".name"]
-                      ? _c("div", { staticClass: "error" }, [
-                          _vm._v(
-                            "\n                " +
-                              _vm._s(
-                                "*" + _vm.errors["inputs." + index + ".name"]
-                              ) +
-                              "\n              "
-                          ),
-                        ])
-                      : _vm._e(),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-6" }, [
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: input.type.typeName,
-                            expression: "input.type.typeName",
-                          },
-                        ],
-                        staticClass: "form-select",
-                        on: {
-                          change: function ($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function (o) {
-                                return o.selected
-                              })
-                              .map(function (o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              input.type,
-                              "typeName",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          },
-                        },
-                      },
-                      [
-                        _c("option", { attrs: { disabled: "", value: "" } }, [
-                          _vm._v("Pilih Tipe Input"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Teks" } }, [
-                          _vm._v("Teks"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Teks Panjang" } }, [
-                          _vm._v("Teks Panjang"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Angka" } }, [
-                          _vm._v("Angka"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Tanggal" } }, [
-                          _vm._v("Tanggal"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Gambar" } }, [
-                          _vm._v("Gambar"),
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Pilihan" } }, [
-                          _vm._v("Pilihan"),
-                        ]),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm.errors["inputs." + index + ".type"]
-                      ? _c("div", { staticClass: "error" }, [
-                          _vm._v(
-                            "\n                " +
-                              _vm._s(
-                                "*" + _vm.errors["inputs." + index + ".type"]
-                              ) +
-                              "\n              "
-                          ),
-                        ])
-                      : _vm._e(),
-                  ]),
-                ]),
-                _vm._v(" "),
-                input.type.typeName == "Pilihan"
-                  ? _c("div", [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: input.type.typeOptions,
-                            expression: "input.type.typeOptions",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          placeholder:
-                            "pisahkan dengan titik koma (;) dan tidak boleh spasi",
-                          required: "",
-                          pattern: "[^\\s]+",
-                        },
-                        domProps: { value: input.type.typeOptions },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              input.type,
-                              "typeOptions",
-                              $event.target.value
-                            )
-                          },
-                        },
-                      }),
-                    ])
-                  : _vm._e(),
-              ]),
-            ])
+        _c("div", { staticClass: "mb-3" }, [
+          _c("input", {
+            attrs: { type: "file", id: "actual-btn", hidden: "" },
+            on: { change: _vm.uploadObjectDoc },
           }),
-          0
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "row mb-3" }, [
-          _c("div", { staticClass: "col-6" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-dark",
-                staticStyle: { width: "100%" },
-                attrs: { type: "button" },
-                on: { click: _vm.addInput },
-              },
-              [
-                _vm._v("\n          Tambah Input "),
-                _c("i", { staticClass: "ms-1 bi bi-plus-circle" }),
-              ]
-            ),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "btn btn-success", attrs: { for: "actual-btn" } },
+            [_vm._v("Unggah Template Docx")]
+          ),
+          _vm._v(" "),
+          _c("span", { attrs: { id: "file-chosen" } }, [
+            _vm._v("Tidak Ada File"),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-6" }, [
-            _c("input", {
-              attrs: { type: "file", id: "actual-btn", hidden: "" },
-              on: { change: _vm.uploadObjectDoc },
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              { staticClass: "btn btn-success", attrs: { for: "actual-btn" } },
-              [_vm._v("Unggah Docx")]
-            ),
-            _vm._v(" "),
-            _c("span", { attrs: { id: "file-chosen" } }, [
-              _vm._v("Tidak Ada File"),
-            ]),
-            _vm._v(" "),
-            _vm.errors.docFile
-              ? _c("div", { staticClass: "error" }, [
-                  _vm._v(
-                    "\n          " +
-                      _vm._s("*" + _vm.errors.docFile[0]) +
-                      "\n        "
-                  ),
-                ])
-              : _vm._e(),
-          ]),
+          _vm.errors.docFile
+            ? _c("div", { staticClass: "error" }, [
+                _vm._v(
+                  "\n        " +
+                    _vm._s("*" + _vm.errors.docFile[0]) +
+                    "\n      "
+                ),
+              ])
+            : _vm._e(),
         ]),
         _vm._v(" "),
         _vm._m(0),
@@ -36229,15 +35826,15 @@ var render = function () {
             },
             on: {
               input: function ($event) {
-                return _vm.getLetterFormInput(_vm.idLetterFormInput.id)
+                return _vm.getFormInput(_vm.idFormInput.id)
               },
             },
             model: {
-              value: _vm.idLetterFormInput,
+              value: _vm.idFormInput,
               callback: function ($$v) {
-                _vm.idLetterFormInput = $$v
+                _vm.idFormInput = $$v
               },
-              expression: "idLetterFormInput",
+              expression: "idFormInput",
             },
           })
         : _vm._e(),
@@ -36254,280 +35851,206 @@ var render = function () {
           },
         },
         [
-          _vm._l(_vm.letterFormInputs, function (letterFormInput, index) {
+          _vm._l(_vm.formInputs, function (formInput, index) {
             return _c("div", { key: index, staticClass: "mb-3" }, [
-              _c("label", {
-                staticClass: "form-label",
-                domProps: { textContent: _vm._s(letterFormInput.name) },
-              }),
+              formInput.type == "default" || formInput.type == "text"
+                ? _c("div", [
+                    _c("label", {
+                      staticClass: "form-label",
+                      domProps: {
+                        textContent: _vm._s(formInput.name.replace(/_/g, " ")),
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.input[formInput.name],
+                          expression: "form.input[formInput.name]",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.form.input[formInput.name] },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.input,
+                            formInput.name,
+                            $event.target.value
+                          )
+                        },
+                      },
+                    }),
+                  ])
+                : _vm._e(),
               _vm._v(" "),
-              letterFormInput.type.toLowerCase() == "teks"
-                ? _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value:
-                          _vm.form.input[
-                            letterFormInput.name
-                              .toLowerCase()
-                              .replaceAll(" ", "_")
+              formInput.type == "date"
+                ? _c("div", [
+                    _c("label", {
+                      staticClass: "form-label",
+                      domProps: {
+                        textContent: _vm._s(formInput.name.replace(/_/g, " ")),
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.input[formInput.name],
+                          expression: "form.input[formInput.name]",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "date" },
+                      domProps: { value: _vm.form.input[formInput.name] },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.input,
+                            formInput.name,
+                            $event.target.value
+                          )
+                        },
+                      },
+                    }),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              formInput.type == "image"
+                ? _c("div", [
+                    _c("label", {
+                      staticClass: "form-label",
+                      domProps: {
+                        textContent: _vm._s(formInput.name.replace(/_/g, " ")),
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "file", name: formInput.name },
+                      on: { change: _vm.uploadImage },
+                    }),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              formInput.type == "options_gender"
+                ? _c("div", [
+                    _c("label", {
+                      staticClass: "form-label",
+                      domProps: {
+                        textContent: _vm._s(formInput.name.replace(/_/g, " ")),
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "d-flex" }, [
+                      _c("div", { staticClass: "me-4" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.input[formInput.name],
+                              expression: "form.input[formInput.name]",
+                            },
                           ],
-                        expression:
-                          "\n          form.input[letterFormInput.name.toLowerCase().replaceAll(' ', '_')]\n        ",
-                      },
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      disabled:
-                        _vm.disabled[
-                          letterFormInput.name
-                            .toLowerCase()
-                            .replaceAll(" ", "_")
-                        ],
-                    },
-                    domProps: {
-                      value:
-                        _vm.form.input[
-                          letterFormInput.name
-                            .toLowerCase()
-                            .replaceAll(" ", "_")
-                        ],
-                    },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.input,
-                          letterFormInput.name
-                            .toLowerCase()
-                            .replaceAll(" ", "_"),
-                          $event.target.value
-                        )
-                      },
-                    },
-                  })
-                : _vm._e(),
-              _vm._v(" "),
-              letterFormInput.type.toLowerCase() == "angka"
-                ? _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value:
-                          _vm.form.input[
-                            letterFormInput.name
-                              .toLowerCase()
-                              .replaceAll(" ", "_")
+                          staticClass: "form-check-input",
+                          attrs: { type: "radio", value: "laki-laki" },
+                          domProps: {
+                            checked: _vm._q(
+                              _vm.form.input[formInput.name],
+                              "laki-laki"
+                            ),
+                          },
+                          on: {
+                            change: function ($event) {
+                              return _vm.$set(
+                                _vm.form.input,
+                                formInput.name,
+                                "laki-laki"
+                              )
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("label", {
+                          staticClass: "form-check-label",
+                          domProps: { textContent: _vm._s("Laki-Laki") },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.input[formInput.name],
+                              expression: "form.input[formInput.name]",
+                            },
                           ],
-                        expression:
-                          "\n          form.input[letterFormInput.name.toLowerCase().replaceAll(' ', '_')]\n        ",
-                      },
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      onKeyDown:
-                        letterFormInput.name.toLowerCase().includes("nik") ||
-                        letterFormInput.name
-                          .toLowerCase()
-                          .includes("nomor induk kependudukan")
-                          ? "return false"
-                          : "return true",
-                      type: "number",
-                    },
-                    domProps: {
-                      value:
-                        _vm.form.input[
-                          letterFormInput.name
-                            .toLowerCase()
-                            .replaceAll(" ", "_")
-                        ],
-                    },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.input,
-                          letterFormInput.name
-                            .toLowerCase()
-                            .replaceAll(" ", "_"),
-                          $event.target.value
-                        )
-                      },
-                    },
-                  })
-                : _vm._e(),
-              _vm._v(" "),
-              letterFormInput.type.toLowerCase() == "tanggal"
-                ? _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value:
-                          _vm.form.input[
-                            letterFormInput.name
-                              .toLowerCase()
-                              .replaceAll(" ", "_")
-                          ],
-                        expression:
-                          "\n          form.input[letterFormInput.name.toLowerCase().replaceAll(' ', '_')]\n        ",
-                      },
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "date",
-                      disabled:
-                        _vm.disabled[
-                          letterFormInput.name
-                            .toLowerCase()
-                            .replaceAll(" ", "_")
-                        ],
-                    },
-                    domProps: {
-                      value:
-                        _vm.form.input[
-                          letterFormInput.name
-                            .toLowerCase()
-                            .replaceAll(" ", "_")
-                        ],
-                    },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.input,
-                          letterFormInput.name
-                            .toLowerCase()
-                            .replaceAll(" ", "_"),
-                          $event.target.value
-                        )
-                      },
-                    },
-                  })
-                : _vm._e(),
-              _vm._v(" "),
-              letterFormInput.type.toLowerCase() == "gambar"
-                ? _c("input", {
-                    staticClass: "form-control input-file",
-                    attrs: {
-                      type: "file",
-                      name: letterFormInput.name
-                        .toLowerCase()
-                        .replaceAll(" ", "_"),
-                    },
-                    on: { change: _vm.uploadImage },
-                  })
-                : _vm._e(),
-              _vm._v(" "),
-              letterFormInput.type.toLowerCase() == "pilihan"
-                ? _c(
-                    "div",
-                    { staticClass: "d-flex" },
-                    _vm._l(
-                      letterFormInput.options.split(";"),
-                      function (option, index) {
-                        return _c(
-                          "div",
-                          { key: index, staticClass: "form-check me-3" },
-                          [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.form.input[
-                                      letterFormInput.name
-                                        .toLowerCase()
-                                        .replaceAll(" ", "_")
-                                    ],
-                                  expression:
-                                    "\n              form.input[\n                letterFormInput.name.toLowerCase().replaceAll(' ', '_')\n              ]\n            ",
-                                },
-                              ],
-                              staticClass: "form-check-input",
-                              attrs: {
-                                type: "radio",
-                                disabled:
-                                  _vm.disabled[
-                                    letterFormInput.name
-                                      .toLowerCase()
-                                      .replaceAll(" ", "_")
-                                  ],
-                              },
-                              domProps: {
-                                value: option,
-                                checked: _vm._q(
-                                  _vm.form.input[
-                                    letterFormInput.name
-                                      .toLowerCase()
-                                      .replaceAll(" ", "_")
-                                  ],
-                                  option
-                                ),
-                              },
-                              on: {
-                                change: function ($event) {
-                                  _vm.$set(
-                                    _vm.form.input,
-                                    letterFormInput.name
-                                      .toLowerCase()
-                                      .replaceAll(" ", "_"),
-                                    option
-                                  )
-                                },
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("label", {
-                              staticClass: "form-check-label",
-                              domProps: { textContent: _vm._s(option) },
-                            }),
-                          ]
-                        )
-                      }
-                    ),
-                    0
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              (letterFormInput.type.toLowerCase() != "gambar" &&
-                _vm.form.input[
-                  letterFormInput.name.toLowerCase().replaceAll(" ", "_")
-                ] == null) ||
-              _vm.form.input[
-                letterFormInput.name.toLowerCase().replaceAll(" ", "_")
-              ] == ""
-                ? _c("div", { staticClass: "error" }, [
-                    _c("span", [
-                      _vm._v(_vm._s(letterFormInput.name + " harus diisi")),
+                          staticClass: "form-check-input",
+                          attrs: { type: "radio", value: "perempuan" },
+                          domProps: {
+                            checked: _vm._q(
+                              _vm.form.input[formInput.name],
+                              "perempuan"
+                            ),
+                          },
+                          on: {
+                            change: function ($event) {
+                              return _vm.$set(
+                                _vm.form.input,
+                                formInput.name,
+                                "perempuan"
+                              )
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("label", {
+                          staticClass: "form-check-label",
+                          domProps: { textContent: _vm._s("Perempuan") },
+                        }),
+                      ]),
                     ]),
                   ])
                 : _vm._e(),
               _vm._v(" "),
-              letterFormInput.type.toLowerCase() == "gambar"
+              (formInput.type != "image" &&
+                _vm.form.input[formInput.name] == null) ||
+              _vm.form.input[formInput.name] == ""
+                ? _c("div", { staticClass: "error" }, [
+                    _c("span", [
+                      _vm._v(
+                        _vm._s(
+                          formInput.name.replace(/_/g, " ") + " harus diisi"
+                        )
+                      ),
+                    ]),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              formInput.type == "image"
                 ? _c(
                     "div",
-                    {
-                      staticClass: "error",
-                      attrs: {
-                        id: letterFormInput.name
-                          .toLowerCase()
-                          .replaceAll(" ", "_"),
-                      },
-                    },
+                    { staticClass: "error", attrs: { id: formInput.name } },
                     [
                       _vm._v(
                         "\n        " +
-                          _vm._s(letterFormInput.name + " harus diisi") +
+                          _vm._s(
+                            formInput.name.replace(/_/g, " ") + " harus diisi"
+                          ) +
                           "\n      "
                       ),
                     ]
@@ -36536,18 +36059,15 @@ var render = function () {
             ])
           }),
           _vm._v(" "),
-          _vm.letterFormInputs != ""
-            ? _c("div", [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary",
-                    staticStyle: { width: "100%" },
-                    attrs: { id: "submitBtn", type: "submin" },
-                  },
-                  [_vm._v("\n        Ajukan Surat\n      ")]
-                ),
-              ])
+          _vm.formInputs != ""
+            ? _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  staticStyle: { width: "100%" },
+                },
+                [_vm._v("\n      Ajukan Surat\n    ")]
+              )
             : _vm._e(),
         ],
         2

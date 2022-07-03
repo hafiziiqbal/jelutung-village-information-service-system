@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\LetterRequest;
 use App\Models\LetterTemplate;
 use App\Models\LetterFormInput;
-
 use App\Http\Controllers\Controller;
+use PhpOffice\PhpWord\TemplateProcessor;
 
 class LetterServiceController extends Controller
 {
@@ -68,8 +68,34 @@ class LetterServiceController extends Controller
 
     public function show($id)
     {
-        $letterFormInput = LetterFormInput::where('letter_template', $id)->get();
-        return response()->json($letterFormInput, 200);
+        $letterFormInput = LetterTemplate::find($id)->select('id', 'document')->first();
+        $templateProcessor = new TemplateProcessor('storage/documents/letter-template/' . $letterFormInput->document);
+        $keyInputs = array();
+
+        // remapping array
+        foreach ($templateProcessor->getVariables() as $key => $input) {
+
+            // validation input and give type
+            if (!str_contains($input, 'nomor_surat') && !str_contains($input, 'tanggal_keluar') && !str_contains($input, 'qr_code')) {
+                $type = 'default';
+
+                if (str_contains($input, 'tanggal')) {
+                    $type = 'date';
+                } elseif (str_contains($input, 'nama')) {
+                    $type = 'text';
+                } elseif (str_contains($input, 'gambar') || str_contains($input, 'foto')) {
+                    $type = 'image';
+                } elseif (str_contains($input, 'kelamin')) {
+                    $type = 'options_gender';
+                }
+
+                $inputObject = new stdClass();
+                $inputObject->name = $input;
+                $inputObject->type = $type;
+                array_push($keyInputs, $inputObject);
+            }
+        }
+        return response()->json($keyInputs, 200);
     }
 
     public function edit($id)
@@ -91,5 +117,19 @@ class LetterServiceController extends Controller
     {
         $letterByCategory = LetterTemplate::select('id', 'name', 'letter_category')->whereRelation('letterCategory', 'id', '=', $id)->get();
         return response()->json($letterByCategory, 200);
+    }
+
+    public function createDocument()
+    {
+        $templateProcessor = new TemplateProcessor('Template.docx');
+        $pathQrCode = public_path('code-qr.jpg');
+        return $templateProcessor->getVariables();
+        exit();
+        $templateProcessor->setValues([
+            'firstname' => 'Hafizi',
+            'lastname' => 'iqbal',
+        ]);
+        $templateProcessor->setImageValue('codeQR', array('path' => 'code-qr.jpg', 'width' => 100, 'height' => 100, 'ratio' => false));
+        $templateProcessor->saveAs('hafizi.docx');
     }
 }

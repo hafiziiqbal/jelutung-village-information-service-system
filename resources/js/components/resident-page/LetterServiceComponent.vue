@@ -20,124 +20,104 @@
       v-if="letterByCategory != ''"
       :options="letterByCategory"
       label="name"
-      v-model="idLetterFormInput"
-      @input="getLetterFormInput(idLetterFormInput.id)"
+      v-model="idFormInput"
+      @input="getFormInput(idFormInput.id)"
     ></v-select>
     <form action="/api/letter-service/" v-on:submit.prevent="handleSubmit">
-      <div
-        class="mb-3"
-        v-for="(letterFormInput, index) in letterFormInputs"
-        :key="index"
-      >
-        <label class="form-label" v-text="letterFormInput.name"></label>
-        <input
-          v-if="letterFormInput.type.toLowerCase() == 'teks'"
-          class="form-control"
-          :disabled="
-            disabled[letterFormInput.name.toLowerCase().replaceAll(' ', '_')]
-          "
-          v-model="
-            form.input[letterFormInput.name.toLowerCase().replaceAll(' ', '_')]
-          "
-        />
-        <input
-          v-if="letterFormInput.type.toLowerCase() == 'angka'"
-          class="form-control"
-          :onKeyDown="
-            letterFormInput.name.toLowerCase().includes('nik') ||
-            letterFormInput.name
-              .toLowerCase()
-              .includes('nomor induk kependudukan')
-              ? 'return false'
-              : 'return true'
-          "
-          type="number"
-          v-model="
-            form.input[letterFormInput.name.toLowerCase().replaceAll(' ', '_')]
-          "
-        />
+      <div class="mb-3" v-for="(formInput, index) in formInputs" :key="index">
+        <!-- if input default or text -->
+        <div v-if="formInput.type == 'default' || formInput.type == 'text'">
+          <label
+            class="form-label"
+            v-text="formInput.name.replace(/_/g, ' ')"
+          ></label>
+          <input
+            class="form-control"
+            type="text"
+            v-model="form.input[formInput.name]"
+          />
+        </div>
 
-        <input
-          v-if="letterFormInput.type.toLowerCase() == 'tanggal'"
-          class="form-control"
-          type="date"
-          :disabled="
-            disabled[letterFormInput.name.toLowerCase().replaceAll(' ', '_')]
-          "
-          v-model="
-            form.input[letterFormInput.name.toLowerCase().replaceAll(' ', '_')]
-          "
-        />
-        <input
-          v-if="letterFormInput.type.toLowerCase() == 'gambar'"
-          class="form-control input-file"
-          type="file"
-          :name="letterFormInput.name.toLowerCase().replaceAll(' ', '_')"
-          v-on:change="uploadImage"
-        />
-        <div
-          class="d-flex"
-          v-if="letterFormInput.type.toLowerCase() == 'pilihan'"
-        >
-          <div
-            class="form-check me-3"
-            v-for="(option, index) in letterFormInput.options.split(';')"
-            :key="index"
-          >
-            <input
-              class="form-check-input"
-              type="radio"
-              :value="option"
-              :disabled="
-                disabled[
-                  letterFormInput.name.toLowerCase().replaceAll(' ', '_')
-                ]
-              "
-              v-model="
-                form.input[
-                  letterFormInput.name.toLowerCase().replaceAll(' ', '_')
-                ]
-              "
-            />
-            <label class="form-check-label" v-text="option"> </label>
+        <!-- if input date -->
+        <div v-if="formInput.type == 'date'">
+          <label
+            class="form-label"
+            v-text="formInput.name.replace(/_/g, ' ')"
+          ></label>
+          <input
+            class="form-control"
+            type="date"
+            v-model="form.input[formInput.name]"
+          />
+        </div>
+
+        <!-- if input date -->
+        <div v-if="formInput.type == 'image'">
+          <label
+            class="form-label"
+            v-text="formInput.name.replace(/_/g, ' ')"
+          ></label>
+          <input
+            class="form-control"
+            type="file"
+            :name="formInput.name"
+            v-on:change="uploadImage"
+          />
+        </div>
+
+        <!-- if input options -->
+        <div v-if="formInput.type == 'options_gender'">
+          <label
+            class="form-label"
+            v-text="formInput.name.replace(/_/g, ' ')"
+          ></label>
+          <div class="d-flex">
+            <div class="me-4">
+              <input
+                class="form-check-input"
+                type="radio"
+                value="laki-laki"
+                v-model="form.input[formInput.name]"
+              />
+              <label class="form-check-label" v-text="'Laki-Laki'"> </label>
+            </div>
+            <div>
+              <input
+                class="form-check-input"
+                type="radio"
+                value="perempuan"
+                v-model="form.input[formInput.name]"
+              />
+              <label class="form-check-label" v-text="'Perempuan'"></label>
+            </div>
           </div>
         </div>
 
-        <!-- error -->
         <div
           class="error"
           v-if="
-            (letterFormInput.type.toLowerCase() != 'gambar' &&
-              form.input[
-                letterFormInput.name.toLowerCase().replaceAll(' ', '_')
-              ] == null) ||
-            form.input[
-              letterFormInput.name.toLowerCase().replaceAll(' ', '_')
-            ] == ''
+            (formInput.type != 'image' && form.input[formInput.name] == null) ||
+            form.input[formInput.name] == ''
           "
         >
-          <span>{{ letterFormInput.name + " harus diisi" }}</span>
+          <span>{{ formInput.name.replace(/_/g, " ") + " harus diisi" }}</span>
         </div>
-
         <div
-          :id="letterFormInput.name.toLowerCase().replaceAll(' ', '_')"
+          :id="formInput.name"
           class="error"
-          v-if="letterFormInput.type.toLowerCase() == 'gambar'"
+          v-if="formInput.type == 'image'"
         >
-          {{ letterFormInput.name + " harus diisi" }}
+          {{ formInput.name.replace(/_/g, " ") + " harus diisi" }}
         </div>
       </div>
 
-      <div v-if="letterFormInputs != ''">
-        <button
-          id="submitBtn"
-          type="submin"
-          class="btn btn-primary"
-          style="width: 100%"
-        >
-          Ajukan Surat
-        </button>
-      </div>
+      <button
+        v-if="formInputs != ''"
+        class="btn btn-primary"
+        style="width: 100%"
+      >
+        Ajukan Surat
+      </button>
     </form>
   </div>
 </template>
@@ -151,27 +131,34 @@ export default {
         letter_id: "",
       },
       errors: {},
-      idLetterFormInput: "",
+      idFormInput: "",
       letterByCategory: "",
       letterCategories: null,
-      letterFormInputs: "",
-      disabled: {},
+      formInputs: "",
     };
   },
   mounted() {
     this.getLetterCategory();
   },
   methods: {
-    ifNikExist() {
-      let nik = document.getElementById("nik");
-      if (nik) {
-        console.log("masuk");
-        document
-          .getElementById("nik")
-          .setAttribute("onKeyDown", "return false");
-      } else {
-        console.log("tidak masuk");
-      }
+    getFormInput(id) {
+      this.form.letter_id = id;
+      this.formInputs = "";
+      axios.get("/api/letter-service/" + id).then((response) => {
+        this.formInputs = response.data;
+      });
+    },
+    getLetterCategory() {
+      axios.get("/api/letter-category/").then((response) => {
+        this.letterCategories = response.data;
+      });
+    },
+    getLetterByCategory(id) {
+      this.letterByCategory = "";
+      this.letterFormInputs = "";
+      axios.get("/api/letter-service/letter-name/" + id).then((response) => {
+        this.letterByCategory = response.data;
+      });
     },
     uploadImage(e) {
       let image = e.target.files[0];
@@ -195,138 +182,11 @@ export default {
           errorImage.classList.remove("error");
           errorImage.innerHTML = "";
           break;
-
         default:
           errorImage.classList.add("error");
           errorImage.innerHTML = "Gambar harus berupa jpg, png atau jpeg";
           break;
       }
-    },
-    getLetterCategory() {
-      axios.get("/api/letter-category/").then((response) => {
-        this.letterCategories = response.data;
-      });
-    },
-    getLetterByCategory(id) {
-      this.letterByCategory = "";
-      this.letterFormInputs = "";
-      axios.get("/api/letter-service/letter-name/" + id).then((response) => {
-        this.letterByCategory = response.data;
-      });
-    },
-    getLetterFormInput(id) {
-      this.form.letter_id = id;
-      this.letterFormInputs = "";
-      let user = this.$cookies.get("sisteminformasipelayanandesajelutung_token")
-        .result.user;
-      axios.get("/api/letter-service/" + id).then((response) => {
-        this.letterFormInputs = response.data;
-        for (let i = 0; i < this.letterFormInputs.length; i++) {
-          // name
-          if (
-            this.letterFormInputs[i].name
-              .toLowerCase()
-              .includes("nama pemohon") ||
-            this.letterFormInputs[i].name
-              .toLowerCase()
-              .includes("nama lengkap") ||
-            this.letterFormInputs[i].name == "nama"
-          ) {
-            this.form.input[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = user.name;
-            this.disabled[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = "0";
-          }
-
-          // nik
-          if (
-            this.letterFormInputs[i].name.toLowerCase().includes("nik") ||
-            this.letterFormInputs[i].name
-              .toLowerCase()
-              .includes("nomor induk kependudukan")
-          ) {
-            this.form.input[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = user.nik;
-          }
-
-          // jenis kelamin
-          if (
-            this.letterFormInputs[i].name
-              .toLowerCase()
-              .includes("jenis kelamin") ||
-            this.letterFormInputs[i].name.toLowerCase().includes("kelamin")
-          ) {
-            this.form.input[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = user.gender;
-            this.disabled[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = "0";
-          }
-
-          // tempat lahir
-          if (
-            this.letterFormInputs[i].name.toLowerCase().includes("tempat lahir")
-          ) {
-            this.form.input[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = user.birthplace;
-            this.disabled[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = "0";
-          }
-
-          // tanggal lahir
-          if (
-            this.letterFormInputs[i].name
-              .toLowerCase()
-              .includes("tanggal lahir")
-          ) {
-            this.form.input[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = user.birthday;
-            this.disabled[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = "0";
-          }
-
-          // agama
-          if (
-            this.letterFormInputs[i].name.toLowerCase().includes("agama") &&
-            !this.letterFormInputs[i].name
-              .toLowerCase()
-              .includes("orang tua") &&
-            !this.letterFormInputs[i].name.toLowerCase().includes("wali")
-          ) {
-            this.form.input[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = user.religion;
-            this.disabled[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = "0";
-          }
-
-          // warga negara
-          if (
-            this.letterFormInputs[i].name
-              .toLowerCase()
-              .includes("warga negara") ||
-            this.letterFormInputs[i].name
-              .toLowerCase()
-              .includes("kewarganegaraan")
-          ) {
-            this.form.input[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = user.citizenship;
-            this.disabled[
-              this.letterFormInputs[i].name.toLowerCase().replaceAll(" ", "_")
-            ] = "0";
-          }
-        }
-      });
     },
     handleSubmit() {
       let user_id = this.$cookies.get(

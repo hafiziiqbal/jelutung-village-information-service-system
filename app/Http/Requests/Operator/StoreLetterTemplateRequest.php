@@ -28,13 +28,9 @@ class StoreLetterTemplateRequest extends FormRequest
 
         return [
 
-            'name' => 'required|regex:/^([a-zA-Z.]+)(\s[a-zA-Z.]+)*$/',
+            'name' => 'required',
             'letterCategory' => 'required|numeric',
-            'needForLetter' => 'required|numeric',
-            'docFile' => 'required|mimes:doc,docx|max:3048',
-            'inputs.*.name' => 'required',
-            'inputs.*.type.typeName' => 'required',
-            'inputs.*.type.typeOptions' => 'nullable'
+            'docFile' => 'required|mimes:doc,docx|max:9048',
         ];
     }
 
@@ -42,21 +38,13 @@ class StoreLetterTemplateRequest extends FormRequest
     {
         return [
             'name.required' => 'Nama surat harus diisi',
-            'name.regex' => 'Nama surat harus berupa karakter A-Z',
 
             'letterCategory.required' => 'Kategori surat harus dipilih',
             'letterCategory.numeric' => 'Kategori surat harus dipilih',
 
-            'needForLetter.required' => 'Keperluan surat harus dipilih',
-            'needForLetter.numeric' => 'Keperluan surat harus dipilih',
-
             'docFile.required' => 'Dokumen harus dimasukan',
             'docFile.mimes' => 'Dokumen harus berbentuk DOC atau DOCX',
-            'docFile.max' => 'Dokumen harus maksimal 3 MB',
-
-            'inputs.*.name.required' => 'Input tambahan harus diisi',
-            'inputs.*.type.typeName.required' => 'Jenis input tambahan harus dipilih',
-
+            'docFile.max' => 'Dokumen harus maksimal 9 MB',
         ];
     }
 }

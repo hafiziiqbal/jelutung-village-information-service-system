@@ -11,7 +11,6 @@ class LetterTemplate extends Model
     protected $fillable = [
         'name',
         'letter_category',
-        'need_for_letter',
         'document'
     ];
 
@@ -23,16 +22,6 @@ class LetterTemplate extends Model
     public function letterCategory()
     {
         return $this->belongsTo(LetterCategory::class, 'letter_category', 'id');
-    }
-
-    public function needForLetter()
-    {
-        return $this->belongsTo(NeedForLetter::class, 'need_for_letter', 'id');
-    }
-
-    public function letterFormInput()
-    {
-        return $this->hasMany(LetterFormInput::class, 'letter_template');
     }
 
     public function letterRequest()
